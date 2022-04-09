@@ -13,6 +13,7 @@ Welcome to Test's documentation!
 
    hello.rst
    test
+   PuTTY_certificate_login
 
 Indices and tables
 ==================

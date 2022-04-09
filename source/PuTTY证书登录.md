@@ -1,4 +1,4 @@
-﻿# **PuTTY证书登录**
+﻿# **PuTTY-login**
 例子：![](Aspose.Words.bdf30415-5eef-494e-9141-3b94c18b7c8e.001.png)
 
 1.填写公网IP

@@ -1,0 +1,6 @@
+tar zxf install-tl-unx.tar.gz
+cd install-tl-*
+./install-tl  # install-tl-windows on Windows
+[... messages omitted ...]
+Enter command: i
+[... when done, see below for post-install ...]

@@ -14,6 +14,8 @@ Welcome to Test's documentation!
    hello.rst
    test
    12-22
+   Cisco_config
+   123
 
 Indices and tables
 ==================

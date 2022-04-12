@@ -1,6 +1,6 @@
-﻿Cisco 单机-BGP配置
+# Cisco 单机-BGP配置
 
-GRE over IPSEC-双线BGP
+## ****GRE over IPSEC-双线BGP****
 
 service timestamps debug datetime localtime
 

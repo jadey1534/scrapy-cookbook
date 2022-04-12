@@ -17,7 +17,7 @@ VPN；BGP）
 ## **二. MPLS报文：**
 MPLS报文总共4Byte，32bit。
 
-![image1.jpeg](./imgs/Aspose.Words.12273e48-67f8-4e55-9e03-28e776284506.001.jpeg)
+![image1.jpeg](../imgs/Aspose.Words.12273e48-67f8-4e55-9e03-28e776284506.001.jpeg)
 
 1. **LABEL：**20bit，用来显示标签号，可以使用2^20为1048576个标签号
 

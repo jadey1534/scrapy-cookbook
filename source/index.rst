@@ -17,6 +17,7 @@ Welcome to Test's documentation!
    Cisco_config
    123
    RUNOOB
+   config
 
 Indices and tables
 ==================

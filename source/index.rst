@@ -16,6 +16,7 @@ Welcome to Test's documentation!
    123
    RUNOOB
    config
+   MPLS-Basic.md
    Huawei/MPLS-Basic.md
 
 Indices and tables

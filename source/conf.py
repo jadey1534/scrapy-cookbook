@@ -16,7 +16,7 @@
 import sphinx_rtd_theme
 from recommonmark.parser import CommonMarkParser
 html_theme = "alabaster"
-html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
+html_theme_path = [alabaster.get_html_theme_path()]
 
 source_parsers = {
     '.md': CommonMarkParser,

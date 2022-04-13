@@ -16,8 +16,8 @@ Welcome to Test's documentation!
    123
    RUNOOB
    config
-   MPLS-Basic.md
-   Huawei/MPLS-Basic.md
+   MPLS-MD
+   MPLS-RST
 
 Indices and tables
 ==================

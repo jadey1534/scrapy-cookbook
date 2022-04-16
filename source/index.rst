@@ -4,31 +4,10 @@
 Welcome to Test
 ################
 
-.. panels::
-
-    Content of the top-left panel
-
-    ---
-
-    Content of the top-right panel
-
-    :badge:`example,badge-primary`
-
-    ---
-
-    .. dropdown:: :fa:`eye,mr-1` Bottom-left panel
-
-        Hidden content
-
-    ---
-
-    .. link-button:: https://example.com
-        :text: Clickable Panel
-        :classes: stretched-link
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: Onduty:
 
 
    hello.rst
@@ -39,7 +18,22 @@ Welcome to Test
    MPLS-MD
    MPLS-RST
    zabbix4.4搭建
+   
+.. toctree::
+   :maxdepth: 2
+   :caption: Backbone:
 
+
+   hello.rst
+   test
+ 
+.. toctree::
+   :maxdepth: 2
+   :caption: Ticket:
+   
+   RUNOOB
+
+  
 Indices and tables
 ==================
 

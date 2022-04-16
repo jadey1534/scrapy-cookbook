@@ -11,13 +11,7 @@ Welcome to Test
 
 
    hello.rst
-   test
-   123
-   RUNOOB
-   config
-   MPLS-MD
-   MPLS-RST
-   zabbix4.4搭建
+
    
 .. toctree::
    :maxdepth: 2
@@ -32,6 +26,19 @@ Welcome to Test
    :caption: Ticket:
    
    RUNOOB
+  
+.. toctree::
+   :maxdepth: 2
+   :caption: 服务管理组:
+   
+   test
+   123
+   RUNOOB
+   config
+   MPLS-MD
+   MPLS-RST
+   zabbix4.4搭建
+
 
   
 Indices and tables

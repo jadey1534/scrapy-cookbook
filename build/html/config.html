@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cisco 单机-BGP配置 &mdash; Test 1.0 文档</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/translations.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="genindex.html" />
+    <link rel="search" title="搜索" href="search.html" />
+    <link rel="next" title="MPLS-md" href="MPLS-MD.html" />
+    <link rel="prev" title="test" href="123.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> Test
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Onduty:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="hello.html">hello,world</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Backbone:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="hello.html">hello,world</a></li>
+<li class="toctree-l1"><a class="reference internal" href="test.html">aaaa</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Ticket:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="RUNOOB.html">RUNOOB Markdown Test</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">服务管理组:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="test.html">aaaa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="123.html">test</a></li>
+<li class="toctree-l1"><a class="reference internal" href="RUNOOB.html">RUNOOB Markdown Test</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Cisco 单机-BGP配置</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#gre-over-ipsec-bgp"><strong><strong>GRE over IPSEC-双线BGP</strong></strong></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="MPLS-MD.html">MPLS-md</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MPLS-RST.html">MPLS-rst</a></li>
+<li class="toctree-l1"><a class="reference internal" href="zabbix4.4%E6%90%AD%E5%BB%BA.html">zabbix4.4搭建</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Test</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Cisco 单机-BGP配置</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/config.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="cisco-bgp">
+<h1>Cisco 单机-BGP配置<a class="headerlink" href="#cisco-bgp" title="永久链接至标题">¶</a></h1>
+<section id="gre-over-ipsec-bgp">
+<h2><strong><strong>GRE over IPSEC-双线BGP</strong></strong><a class="headerlink" href="#gre-over-ipsec-bgp" title="永久链接至标题">¶</a></h2>
+<p>service timestamps debug datetime localtime</p>
+<p>service timestamps log datetime localtime</p>
+<p>service password-encryption</p>
+<p>hostname 601249B-TaiPing-HK-Backup</p>
+<p>logging message-counter syslog</p>
+<p>logging buffered 102400</p>
+<p>enable secret 5 $1$dTEa$ME6YtpXjcEa/FXTunMOHu1</p>
+<p>aaa new-model</p>
+<p>aaa authentication login default group tacacs+ local</p>
+<p>aaa authentication enable default group tacacs+ enable</p>
+<p>aaa authorization exec default group tacacs+ local</p>
+<p>aaa authorization commands 15 default group tacacs+ local</p>
+<p>aaa accounting exec default</p>
+<p>aaa session-id common</p>
+<p>clock timezone beijing 8</p>
+<p>ip cef</p>
+<p>username bothwin secret 5 $1$Am4N$PTMSnrn1W4y2st28nWDsH/</p>
+<p>crypto keyring S2S_KEYRING_MAIN</p>
+<p>pre-shared-key address 202.133.229.122 key bothwin</p>
+<p>crypto keyring S2S_KEYRING_BACK</p>
+<p>pre-shared-key address 114.112.236.121 key both-win</p>
+<p>crypto isakmp policy 1</p>
+<p>encr 3des</p>
+<p>authentication pre-share</p>
+<p>group 2</p>
+<p>lifetime 28800</p>
+<p>crypto isakmp profile S2S_profile_MAIN</p>
+<p>keyring S2S_KEYRING_MAIN</p>
+<p>match identity address 202.133.229.122 255.255.255.255</p>
+<p>initiate mode aggressive # 根据接入的PE配置而定</p>
+<p>crypto isakmp profile S2S_profile_BACK</p>
+<p>keyring S2S_KEYRING_BACK</p>
+<p>match identity address 114.112.236.121 255.255.255.255</p>
+<p>crypto ipsec transform-set TS-IPsec esp-3des esp-sha-hmac</p>
+<p>mode tunnel</p>
+<p>ip access-list extended ACL-S2S-BACK</p>
+<p>permit ip host 10.20.241.142 host 10.20.241.242</p>
+<p>ip access-list extended ACL-S2S-main</p>
+<p>permit ip host 10.10.232.140 host 10.10.232.181</p>
+<p>ip access-list extended LAN_NETWORK</p>
+<p>crypto map S2S-IPSEC 10 ipsec-isakmp</p>
+<p>set peer 202.133.229.122</p>
+<p>set transform-set TS-IPsec</p>
+<p>set pfs group2</p>
+<p>set isakmp-profile S2S_profile_MAIN</p>
+<p>match address ACL-S2S-main</p>
+<p>crypto map S2S-IPSEC 20 ipsec-isakmp</p>
+<p>set peer 114.112.236.121</p>
+<p>set transform-set TS-IPsec</p>
+<p>set pfs group2</p>
+<p>set isakmp-profile S2S_profile_BACK</p>
+<p>match address ACL-S2S-BACK</p>
+<p>interface Loopback0</p>
+<p>ip address 10.10.232.140 255.255.255.255</p>
+<p>interface Loopback1</p>
+<p>ip address 10.20.241.142 255.255.255.255</p>
+<p>interface FastEthernet4</p>
+<p>no ip proxy-arp</p>
+<p>description connenct to wan</p>
+<p>ip address 118.143.127.188 255.255.255.240</p>
+<p>crypto map S2S-IPSEC</p>
+<p>interface Tunnel47167</p>
+<p>description pri to twb-upe1</p>
+<p>ip address 10.30.28.14 255.255.255.252</p>
+<p>ip mtu 1500</p>
+<p>ip flow ingress</p>
+<p>ip flow egress</p>
+<p>ip tcp adjust-mss 1400</p>
+<p>load-interval 30</p>
+<p>tunnel source Loopback0</p>
+<p>tunnel destination 10.10.232.181</p>
+<p>interface Tunnel65398</p>
+<p>description backup to dgb-upe1</p>
+<p>ip address 10.30.8.90 255.255.255.252</p>
+<p>ip mtu 1500</p>
+<p>ip flow ingress</p>
+<p>ip flow egress</p>
+<p>ip tcp adjust-mss 1400</p>
+<p>load-interval 30</p>
+<p>tunnel source Loopback1</p>
+<p>tunnel destination 10.20.241.242</p>
+<p>interface Vlan1</p>
+<p>description to-lan</p>
+<p>no ip proxy-arp</p>
+<p>ip address 10.106.3.248 255.255.255.0</p>
+<p>ip sla 1</p>
+<p>icmp-echo 10.30.28.13 source-ip 10.30.28.14</p>
+<p>tos 224</p>
+<p>threshold 3000</p>
+<p>frequency 5</p>
+<p>ip sla schedule 1 life forever start-time now</p>
+<p>ip sla 4</p>
+<p>icmp-echo 10.30.8.89 source-ip 10.30.8.90</p>
+<p>tos 224</p>
+<p>threshold 3000</p>
+<p>frequency 5</p>
+<p>ip sla schedule 4 life forever start-time now</p>
+<p>track 1 ip sla 1 reachability</p>
+<p>delay down 30 up 10</p>
+<p>track 4 ip sla 4 reachability</p>
+<p>delay down 10 up 10</p>
+<p>interface Vlan2</p>
+<p>description to-lan</p>
+<p>ip address 10.106.3.248 255.255.255.0</p>
+<p>router bgp 65202</p>
+<p>no synchronization</p>
+<p>bgp router-id 10.30.28.14</p>
+<p>bgp log-neighbor-changes</p>
+<p>neighbor 10.30.8.89 remote-as 65102</p>
+<p>neighbor 10.30.8.89 update-source Tunnel65398</p>
+<p>neighbor 10.30.28.13 remote-as 65105</p>
+<p>neighbor 10.30.28.13 update-source Tunnel47167</p>
+<p>address-family ipv4</p>
+<p>redistribute connected</p>
+<p>redistribute static route-map bgp-To–VPN-Redistribute-Static</p>
+<p>neighbor 10.30.8.89 activate</p>
+<p>neighbor 10.30.8.89 send-community</p>
+<p>neighbor 10.30.8.89 soft-reconfiguration inbound</p>
+<p>neighbor 10.30.8.89 prefix-list Local-Main-Route out</p>
+<p>neighbor 10.30.28.13 activate</p>
+<p>neighbor 10.30.28.13 send-community</p>
+<p>neighbor 10.30.28.13 soft-reconfiguration inbound</p>
+<p>neighbor 10.30.28.13 prefix-list Local-Main-Route out</p>
+<p>neighbor 10.30.28.13 route-map bgp-map-main in</p>
+<p>exit-address-family</p>
+<p>ip flow-export source Tunnel47167</p>
+<p>ip flow-export version 5</p>
+<p>ip flow-export destination 192.168.254.107 9995</p>
+<p>ip access-list standard AUTH-LOGIN-IP</p>
+<p>permit 113.105.190.147</p>
+<p>permit 134.159.161.194</p>
+<p>permit 120.76.31.146</p>
+<p>permit 202.104.174.178</p>
+<p>permit 118.143.100.106</p>
+<p>permit 114.112.238.8 0.0.0.7</p>
+<p>permit 10.0.0.0 0.255.255.255</p>
+<p>permit 172.16.0.0 0.15.255.255</p>
+<p>permit 192.168.0.0 0.0.255.255</p>
+<p>ip route 10.10.0.0 255.255.0.0 10.106.3.254 tag 8888</p>
+<p>ip route 0.0.0.0 0.0.0.0 FastEthernet4 118.143.127.177 230 tag 7777</p>
+<p>ip route 10.10.232.181 255.255.255.255 FastEthernet4 118.143.127.177 tag 7777</p>
+<p>ip route 10.20.241.242 255.255.255.255 FastEthernet4 118.143.127.177 tag 7777</p>
+<p>ip route 114.113.245.99 255.255.255.255 Tunnel47167 10.30.28.13 tag 7777 name zabbix_pri</p>
+<p>ip route 114.113.245.100 255.255.255.255 Tunnel65398 10.30.8.89 tag 7777 name zabbix_backup</p>
+<p>ip route 114.112.236.121 255.255.255.255 FastEthernet4 118.143.127.177 tag 7777 name ipsecgw_pri</p>
+<p>ip route 202.133.229.122 255.255.255.255 FastEthernet4 118.143.127.177 tag 7777 name ipsecgw_backup</p>
+<p>ip prefix-list Local-Main-Route seq 10 permit 10.10.0.0/16</p>
+<p>ip prefix-list Local-Main-Route seq 30 permit 10.30.28.12/30</p>
+<p>ip prefix-list Local-Main-Route seq 40 permit 10.30.8.88/30</p>
+<p>ip prefix-list Local-Main-Route seq 50 permit 10.106.3.0/24</p>
+<p>route-map bgp-map-main permit 10</p>
+<p>set local-preference 200</p>
+<p>route-map bgp-To–VPN-Redistribute-Static deny 100</p>
+<p>description Deny Redistribution of Static Routes to MPLS VPN</p>
+<p>match tag 7777</p>
+<p>route-map bgp-To–VPN-Redistribute-Static permit 110</p>
+<p>match tag 8888</p>
+<p>set community 65202:100</p>
+<p>route-map bgp-To–VPN-Redistribute-Static permit 200</p>
+<p>description Redistribute All Other Static Routes Without Tag</p>
+<p>tacacs-server host 192.168.55.250</p>
+<p>tacacs-server directed-request</p>
+<p>tacacs-server key 7 00061C120C4C0208</p>
+<p>ip tacacs source-interface loo0</p>
+<p>line vty 0 4</p>
+<p>access-class AUTH-LOGIN-IP in vrf-also</p>
+<p>exec-timeout 60 0</p>
+<p>transport input telnet ssh</p>
+<p>line vty 5 15</p>
+<p>access-class AUTH-LOGIN-IP in vrf-also</p>
+<p>exec-timeout 60 0</p>
+<p>transport input telnet ssh</p>
+<p>ntp server 202.104.174.178</p>
+<p>ntp server 192.168.55.250</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="123.html" class="btn btn-neutral float-left" title="test" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="MPLS-MD.html" class="btn btn-neutral float-right" title="MPLS-md" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2022, Jade.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

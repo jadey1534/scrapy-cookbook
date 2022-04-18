@@ -14,7 +14,9 @@
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 import sphinx_rtd_theme
+import recommonmark
 from recommonmark.parser import CommonMarkParser
+from recommonmark.transform import AutoStructify
 html_theme = "sphinx_rtd_theme"
 html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
@@ -32,6 +34,15 @@ author = 'Jade'
 # The full version, including alpha/beta/rc tags
 release = '1.0'
 
+
+# At the bottom of conf.py
+def setup(app):
+    app.add_config_value('recommonmark_config', {
+            'url_resolver': lambda url: github_doc_root + url,
+            'auto_toc_tree_section': 'Contents',
+            'enable_auto_toc_tree': 'True'
+            }, True)
+    app.add_transform(AutoStructify)
 
 # -- General configuration ---------------------------------------------------
 

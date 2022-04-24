@@ -7,6 +7,7 @@ Welcome to Test
 
 .. toctree::
    :maxdepth: 2
+   :titlesonly:
    :caption: Fastip产品:
 
 
@@ -15,6 +16,7 @@ Welcome to Test
    
 .. toctree::
    :maxdepth: 2
+   :titlesonly:
    :caption: MPLS VPN组网产品服务:
 
 
@@ -23,6 +25,7 @@ Welcome to Test
  
 .. toctree::
    :maxdepth: 2
+   :titlesonly:
    :caption: Fastnet产品服务:
    
    RUNOOB
@@ -42,6 +45,7 @@ Welcome to Test
    
 .. toctree::
    :maxdepth: 2
+   :titlesonly:
    :caption: 华为SD-WAN产品服务:
    
    test

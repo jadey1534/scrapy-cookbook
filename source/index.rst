@@ -29,6 +29,7 @@ Welcome to Test
   
 .. toctree::
    :maxdepth: 2
+   :titlesonly:
    :caption: Epoch产品服务:
    
    test

@@ -69,6 +69,7 @@ exclude_patterns = []
 #
 html_theme = "sphinx_rtd_theme"
 html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
+html_static_path = ['_static']
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -84,4 +85,5 @@ def setup(app):
             'enable_auto_toc_tree': 'True'
             }, True)
     app.add_transform(AutoStructify)
+    app.add_css_file('my_theme.css')
 

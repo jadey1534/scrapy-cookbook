@@ -11,7 +11,7 @@ Welcome to Test
    :caption: Fastip产品:
 
    hello.rst
-   template
+   template.rst
 
    
 .. toctree::

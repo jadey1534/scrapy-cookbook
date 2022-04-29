@@ -4,7 +4,7 @@
 Welcome to Test
 ################
 
-
+.. _Fastip:
 .. toctree::
    :maxdepth: 2
    :includehidden:

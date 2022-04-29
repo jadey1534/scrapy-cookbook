@@ -7,7 +7,6 @@ Welcome to Test
 
 .. toctree::
    :maxdepth: 2
-   :titlesonly:
    :caption: Fastip产品:
 
    hello.rst
@@ -24,7 +23,7 @@ Welcome to Test
    hello.rst
  
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :titlesonly:
    :caption: Fastnet产品服务:
    

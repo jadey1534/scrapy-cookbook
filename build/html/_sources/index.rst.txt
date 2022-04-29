@@ -4,9 +4,10 @@
 Welcome to Test
 ################
 
-
+.. _Fastip:
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
+   :includehidden:
    :caption: Fastip产品:
 
    hello.rst
@@ -14,8 +15,8 @@ Welcome to Test
 
    
 .. toctree::
-   :maxdepth: 2
-   :titlesonly:
+   :maxdepth: 1
+   :includehidden:
    :caption: MPLS VPN组网产品服务:
 
 
@@ -23,14 +24,14 @@ Welcome to Test
  
 .. toctree::
    :maxdepth: 1
-   :titlesonly:
+   :includehidden:
    :caption: Fastnet产品服务:
    
    RUNOOB
   
 .. toctree::
-   :maxdepth: 2
-   :titlesonly:
+   :maxdepth: 1
+   :includehidden:
    :caption: Epoch产品服务:
 
    123
@@ -41,8 +42,8 @@ Welcome to Test
    zabbix4.4搭建
    
 .. toctree::
-   :maxdepth: 2
-   :titlesonly:
+   :maxdepth: 1
+   :includehidden:
    :caption: 华为SD-WAN产品服务:
 
    123

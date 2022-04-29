@@ -6,7 +6,7 @@ Welcome to Test
 
 .. _Fastip:
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :includehidden:
    :caption: Fastip产品:
 
@@ -15,7 +15,7 @@ Welcome to Test
 
    
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :includehidden:
    :caption: MPLS VPN组网产品服务:
 

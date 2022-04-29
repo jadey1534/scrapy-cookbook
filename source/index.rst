@@ -11,7 +11,6 @@ Welcome to Test
 
    hello.rst
    template.rst
-   template1.md
 
    
 .. toctree::

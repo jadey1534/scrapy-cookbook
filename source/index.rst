@@ -7,7 +7,7 @@ Welcome to Test
 
 .. toctree::
    :maxdepth: 2
-   :hidden:
+   :titlesonly:
    :caption: Fastip产品:
 
    hello.rst

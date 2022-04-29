@@ -30,7 +30,7 @@ Welcome to Test
    RUNOOB
   
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :includehidden:
    :caption: Epoch产品服务:
 

@@ -42,7 +42,7 @@ Welcome to Test
    zabbix4.4搭建
    
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :includehidden:
    :caption: 华为SD-WAN产品服务:
 

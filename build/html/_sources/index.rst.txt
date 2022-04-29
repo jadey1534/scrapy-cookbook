@@ -7,11 +7,12 @@ Welcome to Test
 
 .. toctree::
    :maxdepth: 2
-   :hidden:
+   :titlesonly:
    :caption: Fastip产品:
 
    hello.rst
    template.rst
+   template1.md
 
    
 .. toctree::

@@ -20,7 +20,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="索引" href="genindex.html" />
     <link rel="search" title="搜索" href="search.html" />
-    <link rel="next" title="RUNOOB Markdown Test" href="RUNOOB.html" />
+    <link rel="next" title="阿里云-光联SD-WAN项目交付故障演练报告" href="template1.html" />
     <link rel="prev" title="hello,world" href="hello.html" /> 
 </head>
 
@@ -42,29 +42,11 @@
               <p class="caption" role="heading"><span class="caption-text">Fastip产品:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="hello.html">hello,world</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">阿里云-光联SD-WAN项目交付故障演练报告</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#id1">基本拓扑分析</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#image0">网络拓扑图</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#id2">故障演练（2022/4/11）</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#vpngwipsecgw"> VPNGW故障——主IPSecgw中断</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3"> 控制器故障，转发正常</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#cpe"> CPE掉电 /硬件故障（瞬断）</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#cpe-wan"> CPE互联网故障(wan瞬断)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#cpe-lan-lan"> CPE LAN故障(lan)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id4"> CPE流量过载</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#id5">故障演练（2022/4/13）</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#vpngwipsecgw-1">VPNGW故障——主IPSecgw中断</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id7"> CPE互联网故障(wan)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id8">CPE掉电 /硬件故障</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id9"> 模拟打流测试</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">阿里云-光联SD-WAN项目交付故障演练报告</a></li>
+<li class="toctree-l1"><a class="reference internal" href="template1.html">阿里云-光联SD-WAN项目交付故障演练报告</a></li>
+<li class="toctree-l1"><a class="reference internal" href="template1.html#id1">基本拓扑分析</a></li>
+<li class="toctree-l1"><a class="reference internal" href="template1.html#id2">故障演练（2022/4/11）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="template1.html#id5">故障演练（2022/4/13）</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">MPLS VPN组网产品服务:</span></p>
 <ul>
@@ -119,8 +101,8 @@
 <section id="id1">
 <h2>基本拓扑分析<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <section id="image0">
-<h3><a class="reference internal" href="_images/image6.png"><img alt="image0" src="_images/image6.png" style="width: 6.26736in; height: 4.02222in;" /></a>网络拓扑图<a class="headerlink" href="#image0" title="永久链接至标题">¶</a></h3>
-<p><a class="reference internal" href="_images/image7.png"><img alt="image1" src="_images/image7.png" style="width: 6.68472in; height: 1.48681in;" /></a>北京站点：配备一台PC，PC与CE之间通过wifi连接，获得的地址为10.0.20.101/24，网关为10.0.20.1/24。</p>
+<h3><a class="reference internal" href="_images/1a2e572718f49dbe01acdc89c198d765402a7384.png"><img alt="image0" src="_images/1a2e572718f49dbe01acdc89c198d765402a7384.png" style="width: 6.26736in; height: 4.02222in;" /></a>网络拓扑图<a class="headerlink" href="#image0" title="永久链接至标题">¶</a></h3>
+<p><a class="reference internal" href="_images/d8266525a7ebce2449dfe05b1df60474c55513f7.png"><img alt="image1" src="_images/d8266525a7ebce2449dfe05b1df60474c55513f7.png" style="width: 6.68472in; height: 1.48681in;" /></a>北京站点：配备一台PC，PC与CE之间通过wifi连接，获得的地址为10.0.20.101/24，网关为10.0.20.1/24。</p>
 <p>杭州站点：配备一台PC，PC与CE之间通过wfi连接，获得的地址为10.0.19.128/24，网关为10.0.19.1/24。</p>
 <p>两个站点之间通过BGP路由宣告，实现了10.0.20.0/24网段与10.0.19.0/24网段的互访。</p>
 </section>
@@ -139,19 +121,19 @@
 <li><p><strong>时间节点4/12 0.06，北京站点ping操作正常，延迟波动范围为42-46ms</strong></p></li>
 </ol>
 <blockquote>
-<div><p><a class="reference internal" href="_images/image8.png"><img alt="image2" src="_images/image8.png" style="width: 5.59097in; height: 1.875in;" /></a><strong>图2.1.1 数据连接图</strong></p>
+<div><p><a class="reference internal" href="_images/3d3dcf028511afb43995400871fd8e3b156bd001.png"><img alt="image2" src="_images/3d3dcf028511afb43995400871fd8e3b156bd001.png" style="width: 5.59097in; height: 1.875in;" /></a><strong>图2.1.1 数据连接图</strong></p>
 </div></blockquote>
 <ol class="arabic simple" start="2">
 <li><p>时间节点4/12
 0.07,阿里工程师down掉上海节点主IPSec连接，数据流量中断，期间CE上bgp连接仍然存活。</p></li>
 </ol>
 <blockquote>
-<div><p><a class="reference internal" href="_images/image9.png"><img alt="image3" src="_images/image9.png" style="width: 5.61111in; height: 1.70764in;" /></a>图2.1.2 流量中断图</p>
-<p><a class="reference internal" href="_images/image10.png"><img alt="image4" src="_images/image10.png" style="width: 5.54514in; height: 0.84444in;" /></a>图2.1.3 bgp状态查看图</p>
+<div><p><a class="reference internal" href="_images/239f27ef9512cb94e70a53bb66f0b53eb36475c5.png"><img alt="image3" src="_images/239f27ef9512cb94e70a53bb66f0b53eb36475c5.png" style="width: 5.61111in; height: 1.70764in;" /></a>图2.1.2 流量中断图</p>
+<p><a class="reference internal" href="_images/c9cb07111f48947788d137e46c507c4efc526b3f.png"><img alt="image4" src="_images/c9cb07111f48947788d137e46c507c4efc526b3f.png" style="width: 5.54514in; height: 0.84444in;" /></a>图2.1.3 bgp状态查看图</p>
 <p>3、时间节点4/12
 0.10（3min）,流量切换到备线进行传输，延迟波动范围为340-380ms，CE上BGP状态为connect</p>
-<p><a class="reference internal" href="_images/image11.png"><img alt="image5" src="_images/image11.png" style="width: 5.18056in; height: 1.75in;" /></a>图2.1.4 流量恢复图</p>
-<p><a class="reference internal" href="_images/image12.png"><img alt="image6" src="_images/image12.png" style="width: 4.97778in; height: 0.80556in;" /></a>图2.1.5 bgp状态图</p>
+<p><a class="reference internal" href="_images/b523eea768b6c8670090020c8d73b76af45492c8.png"><img alt="image5" src="_images/b523eea768b6c8670090020c8d73b76af45492c8.png" style="width: 5.18056in; height: 1.75in;" /></a>图2.1.4 流量恢复图</p>
+<p><a class="reference internal" href="_images/8fa4be9350ae2e0d44382d5ceec58bab3915308a.png"><img alt="image6" src="_images/8fa4be9350ae2e0d44382d5ceec58bab3915308a.png" style="width: 4.97778in; height: 0.80556in;" /></a>图2.1.5 bgp状态图</p>
 </div></blockquote>
 <p><strong>测试结论：</strong>基本符合预期，仍有较大整改空间。</p>
 <blockquote>
@@ -173,16 +155,16 @@ time参数的配置，以期提高链路的情况检测的敏捷性，缩短链�
 <li><p><strong>时间节点4/11 21.35
 北京ping测试正常，在CE上断掉与epoch的控制通道连接，epoch中空上无法连接到CE端。</strong></p></li>
 </ol>
-<p><a class="reference internal" href="_images/image13.png"><img alt="image7" src="_images/image13.png" style="width: 4.77778in; height: 1.88681in;" /></a>图2.2.1 流量状况图</p>
-<p><a class="reference internal" href="_images/image14.png"><img alt="image8" src="_images/image14.png" style="width: 4.84931in; height: 2.04861in;" /></a></p>
+<p><a class="reference internal" href="_images/4cf7db749a052eb45c50f5c1122fda47050a28f7.png"><img alt="image7" src="_images/4cf7db749a052eb45c50f5c1122fda47050a28f7.png" style="width: 4.77778in; height: 1.88681in;" /></a>图2.2.1 流量状况图</p>
+<p><a class="reference internal" href="_images/8991419f58adb89295c302f22e77e712530ee7af.png"><img alt="image8" src="_images/8991419f58adb89295c302f22e77e712530ee7af.png" style="width: 4.84931in; height: 2.04861in;" /></a></p>
 <p>图2.2.2 epoch中控图</p>
 <ol class="arabic simple" start="2">
 <li><p>时间节点4/11 21.37
 恢复CE上与epoch中控的控制连接，过程中流量无影响，查看整个过程中的ping包无丢包情况。</p></li>
 </ol>
 <blockquote>
-<div><p><a class="reference internal" href="_images/image15.png"><img alt="image9" src="_images/image15.png" style="width: 5.46458in; height: 2.21667in;" /></a>图2.2.3 epoch中控图</p>
-<p><a class="reference internal" href="_images/image16.png"><img alt="image10" src="_images/image16.png" style="width: 5.51319in; height: 1.72639in;" /></a>图2.2.4 数据包接收统计图</p>
+<div><p><a class="reference internal" href="_images/fc4108b7dc7d432b2dc1d3e222968b0b0839f551.png"><img alt="image9" src="_images/fc4108b7dc7d432b2dc1d3e222968b0b0839f551.png" style="width: 5.46458in; height: 2.21667in;" /></a>图2.2.3 epoch中控图</p>
+<p><a class="reference internal" href="_images/5353ee5b263f1b238ff6c66494ec5bcdea6fc91b.png"><img alt="image10" src="_images/5353ee5b263f1b238ff6c66494ec5bcdea6fc91b.png" style="width: 5.51319in; height: 1.72639in;" /></a>图2.2.4 数据包接收统计图</p>
 <p><strong>测试结论：</strong>符合预期。</p>
 </div></blockquote>
 </section>
@@ -195,7 +177,7 @@ time参数的配置，以期提高链路的情况检测的敏捷性，缩短链�
 <p><strong>演练过程：</strong></p>
 </div></blockquote>
 <ol class="arabic simple">
-<li><p><a class="reference internal" href="_images/image17.png"><img alt="image11" src="_images/image17.png" style="width: 5.89444in; height: 2.65347in;" /></a><strong>时间节点4/11 22.11
+<li><p><a class="reference internal" href="_images/05e43e53d11690df5423050bb7ba69d9392b7c95.png"><img alt="image11" src="_images/05e43e53d11690df5423050bb7ba69d9392b7c95.png" style="width: 5.89444in; height: 2.65347in;" /></a><strong>时间节点4/11 22.11
 北京pc正常ping包，拔掉CE设备电源后一段时间插上</strong></p></li>
 </ol>
 <blockquote>
@@ -205,9 +187,9 @@ time参数的配置，以期提高链路的情况检测的敏捷性，缩短链�
 <li><p><strong>时间点4/11 22.13 预计IPSec重启时间为100s左右，数据重新连通。</strong></p></li>
 </ol>
 <blockquote>
-<div><p><a class="reference internal" href="_images/image18.png"><img alt="image12" src="_images/image18.png" style="width: 5.91042in; height: 0.93958in;" /></a><strong>图2.3.2 流量中断图</strong></p>
-<p><a class="reference internal" href="_images/image19.png"><img alt="image13" src="_images/image19.png" style="width: 5.86042in; height: 1.18056in;" /></a>图2.3.3 bgp状态图</p>
-<p><a class="reference internal" href="_images/image20.png"><img alt="image14" src="_images/image20.png" style="width: 5.28403in; height: 1.73333in;" /></a>图2.3.4 数据流量恢复图</p>
+<div><p><a class="reference internal" href="_images/3a15bf73332e5e66dd1ef041c835f2a96a0327fc.png"><img alt="image12" src="_images/3a15bf73332e5e66dd1ef041c835f2a96a0327fc.png" style="width: 5.91042in; height: 0.93958in;" /></a><strong>图2.3.2 流量中断图</strong></p>
+<p><a class="reference internal" href="_images/d5d33f38772ee4047fb44a8de2009bbc553e5287.png"><img alt="image13" src="_images/d5d33f38772ee4047fb44a8de2009bbc553e5287.png" style="width: 5.86042in; height: 1.18056in;" /></a>图2.3.3 bgp状态图</p>
+<p><a class="reference internal" href="_images/397923192b0ffc3342076700e1f4b02a106ef6fa.png"><img alt="image14" src="_images/397923192b0ffc3342076700e1f4b02a106ef6fa.png" style="width: 5.28403in; height: 1.73333in;" /></a>图2.3.4 数据流量恢复图</p>
 <p><strong>测试结论：符合预期。</strong></p>
 </div></blockquote>
 </section>
@@ -223,10 +205,10 @@ time参数的配置，以期提高链路的情况检测的敏捷性，缩短链�
 <li><p><strong>时间节点4/11 21.40 北京pc端ping流量测试正常</strong></p></li>
 </ol>
 <blockquote>
-<div><p><a class="reference internal" href="_images/image21.png"><img alt="image15" src="_images/image21.png" style="width: 5.33958in; height: 1.62639in;" /></a><strong>图2.4.1 流量连通图</strong></p>
+<div><p><a class="reference internal" href="_images/8b8c859fad1cc544869a42302777fa5652e0d030.png"><img alt="image15" src="_images/8b8c859fad1cc544869a42302777fa5652e0d030.png" style="width: 5.33958in; height: 1.62639in;" /></a><strong>图2.4.1 流量连通图</strong></p>
 </div></blockquote>
 <ol class="arabic simple" start="2">
-<li><p><a class="reference internal" href="_images/image22.png"><img alt="image16" src="_images/image22.png" style="width: 5.31042in; height: 2.47153in;" /></a>时间节点4/11 21.41
+<li><p><a class="reference internal" href="_images/8c5e21e4ba99d1797d44092e0425bfcd5bac8b4c.png"><img alt="image16" src="_images/8c5e21e4ba99d1797d44092e0425bfcd5bac8b4c.png" style="width: 5.31042in; height: 2.47153in;" /></a>时间节点4/11 21.41
 短时间内拔插wan口线路，造成数据中断与恢复</p></li>
 </ol>
 <blockquote>
@@ -243,7 +225,7 @@ time参数的配置，以期提高链路的情况检测的敏捷性，缩短链�
 <p><strong>演练过程：</strong></p>
 </div></blockquote>
 <ol class="arabic simple">
-<li><p><a class="reference internal" href="_images/image23.png"><img alt="image17" src="_images/image23.png" style="width: 5.42361in; height: 1.67153in;" /></a><strong>时间节点4/11 21.43
+<li><p><a class="reference internal" href="_images/5a42746899c0c439a9701e863a582d2d0f71e626.png"><img alt="image17" src="_images/5a42746899c0c439a9701e863a582d2d0f71e626.png" style="width: 5.42361in; height: 1.67153in;" /></a><strong>时间节点4/11 21.43
 北京站点ping测试正常，短时间内在ce上down/up
 wifi接口,造成lan口中断。</strong></p></li>
 </ol>
@@ -255,8 +237,8 @@ wifi接口,造成lan口中断。</strong></p></li>
 21.45恢复WiFi接口up状态，持续一段时间未恢复连接，pc端wifi已从其他ap获取IP，重新连接CE端WiFi（21.48）即可正常通信。</p></li>
 </ol>
 <blockquote>
-<div><p><a class="reference internal" href="_images/image24.png"><img alt="image18" src="_images/image24.png" style="width: 5.40278in; height: 3.24375in;" /></a>图2.5.2 数据中断图</p>
-<p><a class="reference internal" href="_images/image25.png"><img alt="image19" src="_images/image25.png" style="width: 5.43056in; height: 1.78472in;" /></a>图2.5.3 数据恢复图</p>
+<div><p><a class="reference internal" href="_images/bad923ad9ceaf548d6566c88442cf28cfd1398f7.png"><img alt="image18" src="_images/bad923ad9ceaf548d6566c88442cf28cfd1398f7.png" style="width: 5.40278in; height: 3.24375in;" /></a>图2.5.2 数据中断图</p>
+<p><a class="reference internal" href="_images/58a18e57629c3e8b2cb35cf9d11d81a636aef053.png"><img alt="image19" src="_images/58a18e57629c3e8b2cb35cf9d11d81a636aef053.png" style="width: 5.43056in; height: 1.78472in;" /></a>图2.5.3 数据恢复图</p>
 <p><strong>测试结论：</strong>符合预期</p>
 </div></blockquote>
 </section>
@@ -273,7 +255,7 @@ wifi接口,造成lan口中断。</strong></p></li>
 北京pc作为iperf3的服务端，杭州CE作为iperf3客户端，向北京pc发起udp流量。北京pc出现丢包和乱序的情况</strong></p></li>
 </ol>
 <blockquote>
-<div><p><a class="reference internal" href="_images/image26.png"><img alt="image20" src="_images/image26.png" style="width: 5.83264in; height: 2.66319in;" /></a><a class="reference internal" href="_images/image27.png"><img alt="image21" src="_images/image27.png" style="width: 5.8875in; height: 3.80278in;" /></a>图2.6.1 iperf3发送端状况图</p>
+<div><p><a class="reference internal" href="_images/91b16c9476691cf7b7214e9be03a80a23559e19a.png"><img alt="image20" src="_images/91b16c9476691cf7b7214e9be03a80a23559e19a.png" style="width: 5.83264in; height: 2.66319in;" /></a><a class="reference internal" href="_images/510ae57e39d71e5af7d0622f0420eb046cb39da2.png"><img alt="image21" src="_images/510ae57e39d71e5af7d0622f0420eb046cb39da2.png" style="width: 5.8875in; height: 3.80278in;" /></a>图2.6.1 iperf3发送端状况图</p>
 <p><strong>图2.6.2 iperf3 接收端状况图</strong></p>
 <p><strong>测试结论：不符合预期</strong></p>
 <p><strong>整改措施：演练过程中出现报文丢失，失序的情况，通过初步排查，判定数据传输过程中，本地带宽导致的丢包失序情况，接下来可以搭建新的实验场景，对流量满载情况的，流量传输质量进行再次测试。</strong></p>
@@ -298,11 +280,11 @@ wifi接口,造成lan口中断。</strong></p></li>
 <blockquote>
 <div><p><strong>数据截图：</strong></p>
 </div></blockquote>
-<p><a class="reference internal" href="_images/image28.png"><img alt="image22" src="_images/image28.png" style="width: 5.90972in; height: 1.98611in;" /></a></p>
+<p><a class="reference internal" href="_images/b9b6ed595b84423222d5ebe5265a428f0347f81a.png"><img alt="image22" src="_images/b9b6ed595b84423222d5ebe5265a428f0347f81a.png" style="width: 5.90972in; height: 1.98611in;" /></a></p>
 <p>图3.1.1 ping流量来回正常</p>
-<p><a class="reference internal" href="_images/image29.png"><img alt="image23" src="_images/image29.png" style="width: 6.48472in; height: 5.72153in;" /></a></p>
+<p><a class="reference internal" href="_images/d1742b3a41f66857d962c7d927b8b9e00de1f212.png"><img alt="image23" src="_images/d1742b3a41f66857d962c7d927b8b9e00de1f212.png" style="width: 6.48472in; height: 5.72153in;" /></a></p>
 <p>图3.1.2 流量切换时间图</p>
-<p><a class="reference internal" href="_images/image30.png"><img alt="image24" src="_images/image30.png" style="width: 6.05208in; height: 2.52083in;" /></a></p>
+<p><a class="reference internal" href="_images/4e955079d02e1226180605f0c109769beae80178.png"><img alt="image24" src="_images/4e955079d02e1226180605f0c109769beae80178.png" style="width: 6.05208in; height: 2.52083in;" /></a></p>
 <p>图3.1.3 流量稳定情况图</p>
 </section>
 <section id="id7">
@@ -323,11 +305,11 @@ wifi接口,造成lan口中断。</strong></p></li>
 <p><strong>测试结论：不符合预期</strong></p>
 <p><strong>整改措施：ipsec的IPSec
 sa存活性和重连机制在当前配置下错误，同时IPSec协议本身在此不够完善。使用新配置可以缓解此处问题，后续将发布补丁从根本上解决。</strong></p>
-<p><a class="reference internal" href="_images/image31.png"><img alt="image25" src="_images/image31.png" style="width: 6.03819in; height: 2.22569in;" /></a></p>
+<p><a class="reference internal" href="_images/2fb965f13588724940cf699db426d634147119f4.png"><img alt="image25" src="_images/2fb965f13588724940cf699db426d634147119f4.png" style="width: 6.03819in; height: 2.22569in;" /></a></p>
 <p>图3.2.1 杭州pc与北京CE数据传输正常</p>
-<p><a class="reference internal" href="_images/image32.png"><img alt="image26" src="_images/image32.png" style="width: 6.29514in; height: 1.4875in;" /></a></p>
+<p><a class="reference internal" href="_images/c24057e43f2ae21e557398c976ec8e2b46bb03d9.png"><img alt="image26" src="_images/c24057e43f2ae21e557398c976ec8e2b46bb03d9.png" style="width: 6.29514in; height: 1.4875in;" /></a></p>
 <p>图3.2.2 杭州ce上查看BGP connect状态持续5分钟。</p>
-<p><a class="reference internal" href="_images/image33.png"><img alt="image27" src="_images/image33.png" style="width: 6.38333in; height: 4.18958in;" /></a>图3.2.3 IPSec存活时间查看为22m51s</p>
+<p><a class="reference internal" href="_images/558f53aeae93772c5dc64ba2428c27f6a5e1976c.png"><img alt="image27" src="_images/558f53aeae93772c5dc64ba2428c27f6a5e1976c.png" style="width: 6.38333in; height: 4.18958in;" /></a>图3.2.3 IPSec存活时间查看为22m51s</p>
 </section>
 <section id="id8">
 <h3>CPE掉电 /硬件故障<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
@@ -346,10 +328,10 @@ sa存活性和重连机制在当前配置下错误，同时IPSec协议本身在�
 <p><strong>测试结论：</strong>基本符合预期，仍有较大改进空间</p>
 <p><strong>整改措施：</strong>在IPSec sa
 up知道VPN胡同存在较大的时延，需要与阿里工程师再次场景复现，并协同诊断，后续发布补丁解决问题。</p>
-<p><a class="reference internal" href="_images/image34.png"><img alt="image28" src="_images/image34.png" style="width: 6.04931in; height: 1.66389in;" /></a></p>
+<p><a class="reference internal" href="_images/fdcee896e1077a1a34583dc6bbf1b3a4ae9f433e.png"><img alt="image28" src="_images/fdcee896e1077a1a34583dc6bbf1b3a4ae9f433e.png" style="width: 6.04931in; height: 1.66389in;" /></a></p>
 <p>图3.3.1 杭州pc与北京CE数据连接成功</p>
-<p><a class="reference internal" href="_images/image35.png"><img alt="image29" src="_images/image35.png" style="width: 6.03681in; height: 1.57083in;" /></a>图3.3.2 BGP连接成功</p>
-<p><a class="reference internal" href="_images/image36.png"><img alt="image30" src="_images/image36.png" style="width: 6.03542in; height: 3.53889in;" /></a></p>
+<p><a class="reference internal" href="_images/0baeb3d7928b6b8751eea0f68cc63a6d05d00338.png"><img alt="image29" src="_images/0baeb3d7928b6b8751eea0f68cc63a6d05d00338.png" style="width: 6.03681in; height: 1.57083in;" /></a>图3.3.2 BGP连接成功</p>
+<p><a class="reference internal" href="_images/e0cf038910a6b02e268c8e86a4e2e2f1e8ad7af8.png"><img alt="image30" src="_images/e0cf038910a6b02e268c8e86a4e2e2f1e8ad7af8.png" style="width: 6.03542in; height: 3.53889in;" /></a></p>
 <p>图3.3.3 于38：15查看IPSec以启动1m6s，预计启动时间为37：07</p>
 </section>
 <section id="id9">
@@ -361,9 +343,9 @@ up知道VPN胡同存在较大的时延，需要与阿里工程师再次场景复
 <p><strong>数据观测记录：</strong>100M的测试环境的打流，模拟北京到杭州的测试环境，打流100M
 实际能够达到到91M。（考虑本地链路的传输情况，基本符合预期）</p>
 </div></blockquote>
-<p><a class="reference internal" href="_images/image37.png"><img alt="image31" src="_images/image37.png" style="width: 5.20833in; height: 3.09514in;" /></a></p>
+<p><a class="reference internal" href="_images/29a58bb76f594bb9fd014b9eef76c25349cba3c3.png"><img alt="image31" src="_images/29a58bb76f594bb9fd014b9eef76c25349cba3c3.png" style="width: 5.20833in; height: 3.09514in;" /></a></p>
 <p>图3.4.1 iperf使用tcp进行大流量模拟</p>
-<p><a class="reference internal" href="_images/image38.png"><img alt="image32" src="_images/image38.png" style="width: 5.125in; height: 2.60417in;" /></a></p>
+<p><a class="reference internal" href="_images/a7a6edcf12dd5eaa613fcaf79ba6b36c23dfa0c1.png"><img alt="image32" src="_images/a7a6edcf12dd5eaa613fcaf79ba6b36c23dfa0c1.png" style="width: 5.125in; height: 2.60417in;" /></a></p>
 <p>图3.4.2 iperf使用udp进行大流量模拟</p>
 <p><strong>测试结论：</strong>符合预期</p>
 </section>
@@ -375,7 +357,7 @@ up知道VPN胡同存在较大的时延，需要与阿里工程师再次场景复
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="hello.html" class="btn btn-neutral float-left" title="hello,world" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="RUNOOB.html" class="btn btn-neutral float-right" title="RUNOOB Markdown Test" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="template1.html" class="btn btn-neutral float-right" title="阿里云-光联SD-WAN项目交付故障演练报告" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

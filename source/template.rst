@@ -1,6 +1,6 @@
-==========================================
+=======================================
 阿里云-光联SD-WAN项目交付故障演练报告
-==========================================
+=======================================
 
 基本拓扑分析
 ============
@@ -17,8 +17,8 @@
 故障演练（2022/4/11）
 =====================
 
- VPNGW故障——主IPSecgw中断 
---------------------------
+ VPNGW故障——主IPSecgw中断
+-------------------------
 
    **演练目的：验证当主IPSec连接故障，流量切换情况**
 
@@ -203,8 +203,8 @@
 
 .. _vpngw故障主ipsecgw中断-1:
 
-VPNGW故障——主IPSecgw中断 
--------------------------
+VPNGW故障——主IPSecgw中断
+------------------------
 
    **演练目的：验证当主IPSec连接故障，流量切换情况**
 
@@ -338,102 +338,102 @@ up知道VPN胡同存在较大的时延，需要与阿里工程师再次场景复
 
 **测试结论：**\ 符合预期
 
-.. |image0| image:: ./imgs//media/image6.png
+.. |image0| image:: ./imgs/1a2e572718f49dbe01acdc89c198d765402a7384.png
    :width: 6.26736in
    :height: 4.02222in
-.. |image1| image:: ./imgs//media/image7.png
+.. |image1| image:: ./imgs/d8266525a7ebce2449dfe05b1df60474c55513f7.png
    :width: 6.68472in
    :height: 1.48681in
-.. |image2| image:: ./imgs//media/image8.png
+.. |image2| image:: ./imgs/3d3dcf028511afb43995400871fd8e3b156bd001.png
    :width: 5.59097in
    :height: 1.875in
-.. |image3| image:: ./imgs//media/image9.png
+.. |image3| image:: ./imgs/239f27ef9512cb94e70a53bb66f0b53eb36475c5.png
    :width: 5.61111in
    :height: 1.70764in
-.. |image4| image:: ./imgs//media/image10.png
+.. |image4| image:: ./imgs/c9cb07111f48947788d137e46c507c4efc526b3f.png
    :width: 5.54514in
    :height: 0.84444in
-.. |image5| image:: ./imgs//media/image11.png
+.. |image5| image:: ./imgs/b523eea768b6c8670090020c8d73b76af45492c8.png
    :width: 5.18056in
    :height: 1.75in
-.. |image6| image:: ./imgs//media/image12.png
+.. |image6| image:: ./imgs/8fa4be9350ae2e0d44382d5ceec58bab3915308a.png
    :width: 4.97778in
    :height: 0.80556in
-.. |image7| image:: ./imgs//media/image13.png
+.. |image7| image:: ./imgs/4cf7db749a052eb45c50f5c1122fda47050a28f7.png
    :width: 4.77778in
    :height: 1.88681in
-.. |image8| image:: ./imgs//media/image14.png
+.. |image8| image:: ./imgs/8991419f58adb89295c302f22e77e712530ee7af.png
    :width: 4.84931in
    :height: 2.04861in
-.. |image9| image:: ./imgs//media/image15.png
+.. |image9| image:: ./imgs/fc4108b7dc7d432b2dc1d3e222968b0b0839f551.png
    :width: 5.46458in
    :height: 2.21667in
-.. |image10| image:: ./imgs//media/image16.png
+.. |image10| image:: ./imgs/5353ee5b263f1b238ff6c66494ec5bcdea6fc91b.png
    :width: 5.51319in
    :height: 1.72639in
-.. |image11| image:: ./imgs//media/image17.png
+.. |image11| image:: ./imgs/05e43e53d11690df5423050bb7ba69d9392b7c95.png
    :width: 5.89444in
    :height: 2.65347in
-.. |image12| image:: ./imgs//media/image18.png
+.. |image12| image:: ./imgs/3a15bf73332e5e66dd1ef041c835f2a96a0327fc.png
    :width: 5.91042in
    :height: 0.93958in
-.. |image13| image:: ./imgs//media/image19.png
+.. |image13| image:: ./imgs/d5d33f38772ee4047fb44a8de2009bbc553e5287.png
    :width: 5.86042in
    :height: 1.18056in
-.. |image14| image:: ./imgs//media/image20.png
+.. |image14| image:: ./imgs/397923192b0ffc3342076700e1f4b02a106ef6fa.png
    :width: 5.28403in
    :height: 1.73333in
-.. |image15| image:: ./imgs//media/image21.png
+.. |image15| image:: ./imgs/8b8c859fad1cc544869a42302777fa5652e0d030.png
    :width: 5.33958in
    :height: 1.62639in
-.. |image16| image:: ./imgs//media/image22.png
+.. |image16| image:: ./imgs/8c5e21e4ba99d1797d44092e0425bfcd5bac8b4c.png
    :width: 5.31042in
    :height: 2.47153in
-.. |image17| image:: ./imgs//media/image23.png
+.. |image17| image:: ./imgs/5a42746899c0c439a9701e863a582d2d0f71e626.png
    :width: 5.42361in
    :height: 1.67153in
-.. |image18| image:: ./imgs//media/image24.png
+.. |image18| image:: ./imgs/bad923ad9ceaf548d6566c88442cf28cfd1398f7.png
    :width: 5.40278in
    :height: 3.24375in
-.. |image19| image:: ./imgs//media/image25.png
+.. |image19| image:: ./imgs/58a18e57629c3e8b2cb35cf9d11d81a636aef053.png
    :width: 5.43056in
    :height: 1.78472in
-.. |image20| image:: ./imgs//media/image26.png
+.. |image20| image:: ./imgs/91b16c9476691cf7b7214e9be03a80a23559e19a.png
    :width: 5.83264in
    :height: 2.66319in
-.. |image21| image:: ./imgs//media/image27.png
+.. |image21| image:: ./imgs/510ae57e39d71e5af7d0622f0420eb046cb39da2.png
    :width: 5.8875in
    :height: 3.80278in
-.. |image22| image:: ./imgs//media/image28.png
+.. |image22| image:: ./imgs/b9b6ed595b84423222d5ebe5265a428f0347f81a.png
    :width: 5.90972in
    :height: 1.98611in
-.. |image23| image:: ./imgs//media/image29.png
+.. |image23| image:: ./imgs/d1742b3a41f66857d962c7d927b8b9e00de1f212.png
    :width: 6.48472in
    :height: 5.72153in
-.. |image24| image:: ./imgs//media/image30.png
+.. |image24| image:: ./imgs/4e955079d02e1226180605f0c109769beae80178.png
    :width: 6.05208in
    :height: 2.52083in
-.. |image25| image:: ./imgs//media/image31.png
+.. |image25| image:: ./imgs/2fb965f13588724940cf699db426d634147119f4.png
    :width: 6.03819in
    :height: 2.22569in
-.. |image26| image:: ./imgs//media/image32.png
+.. |image26| image:: ./imgs/c24057e43f2ae21e557398c976ec8e2b46bb03d9.png
    :width: 6.29514in
    :height: 1.4875in
-.. |image27| image:: ./imgs//media/image33.png
+.. |image27| image:: ./imgs/558f53aeae93772c5dc64ba2428c27f6a5e1976c.png
    :width: 6.38333in
    :height: 4.18958in
-.. |image28| image:: ./imgs//media/image34.png
+.. |image28| image:: ./imgs/fdcee896e1077a1a34583dc6bbf1b3a4ae9f433e.png
    :width: 6.04931in
    :height: 1.66389in
-.. |image29| image:: ./imgs//media/image35.png
+.. |image29| image:: ./imgs/0baeb3d7928b6b8751eea0f68cc63a6d05d00338.png
    :width: 6.03681in
    :height: 1.57083in
-.. |image30| image:: ./imgs//media/image36.png
+.. |image30| image:: ./imgs/e0cf038910a6b02e268c8e86a4e2e2f1e8ad7af8.png
    :width: 6.03542in
    :height: 3.53889in
-.. |image31| image:: ./imgs//media/image37.png
+.. |image31| image:: ./imgs/29a58bb76f594bb9fd014b9eef76c25349cba3c3.png
    :width: 5.20833in
    :height: 3.09514in
-.. |image32| image:: ./imgs//media/image38.png
+.. |image32| image:: ./imgs/a7a6edcf12dd5eaa613fcaf79ba6b36c23dfa0c1.png
    :width: 5.125in
    :height: 2.60417in

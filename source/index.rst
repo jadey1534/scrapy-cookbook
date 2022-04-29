@@ -32,7 +32,7 @@ Welcome to Test
   
 .. toctree::
    :maxdepth: 2
-   :titlesonly:
+   :includehidden:
    :caption: Epoch产品服务:
 
    123

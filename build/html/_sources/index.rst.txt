@@ -11,43 +11,39 @@ Welcome to Test
    :caption: 客户服务运营:
 
    客户服务运营/123.md
-   hello.rst
-   模板-图文解释
+   客户服务运营/config.md
 
    
 .. toctree::
    :maxdepth: 1
    :includehidden:
-   :caption: MPLS VPN组网产品服务:
+   :caption: 平台服务运营:
 
 
-   hello.rst
+   平台服务运营/hello.md
  
 .. toctree::
    :maxdepth: 1
    :includehidden:
-   :caption: Fastnet产品服务:
+   :caption: 运营_服务管理:
    
-   RUNOOB
+   运营_服务管理/模板-图文解释
+   运营_服务管理/MPLS-MD
   
 .. toctree::
    :maxdepth: 1
    :includehidden:
-   :caption: Epoch产品服务:
+   :caption: 非产品服务手册:
 
-   RUNOOB
-   config
-   MPLS-MD
-   MPLS-RST
-   zabbix4.4搭建
+   非产品服务手册/RUNOOB
+   非产品服务手册/zabbix4.4搭建
    
 .. toctree::
    :maxdepth: 1
    :includehidden:
-   :caption: 华为SD-WAN产品服务:
+   :caption: 其他:
 
-   RUNOOB
-   config
+   其他/MPLS-RST
 
 
 

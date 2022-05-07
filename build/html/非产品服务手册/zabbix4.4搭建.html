@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>zabbix4.4搭建 &mdash; Test 1.0 文档</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/translations.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="MPLS-rst" href="../%E5%85%B6%E4%BB%96/MPLS-RST.html" />
+    <link rel="prev" title="RUNOOB Markdown Test" href="RUNOOB.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Test
+            <img src="../_static/Fnetlink.jpg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">客户服务运营:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../%E5%AE%A2%E6%88%B7%E6%9C%8D%E5%8A%A1%E8%BF%90%E8%90%A5/123.html">test</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E5%AE%A2%E6%88%B7%E6%9C%8D%E5%8A%A1%E8%BF%90%E8%90%A5/config.html">Cisco 单机-BGP配置</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">平台服务运营:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../%E5%B9%B3%E5%8F%B0%E6%9C%8D%E5%8A%A1%E8%BF%90%E8%90%A5/hello.html">hello,world</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">运营_服务管理:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../%E8%BF%90%E8%90%A5_%E6%9C%8D%E5%8A%A1%E7%AE%A1%E7%90%86/%E6%A8%A1%E6%9D%BF-%E5%9B%BE%E6%96%87%E8%A7%A3%E9%87%8A.html"><strong>模板-图文解释</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E8%BF%90%E8%90%A5_%E6%9C%8D%E5%8A%A1%E7%AE%A1%E7%90%86/MPLS-MD.html">MPLS-md</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">非产品服务手册:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="RUNOOB.html">RUNOOB Markdown Test</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">zabbix4.4搭建</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#header-n2">环境要求</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#header-n20">安装步骤</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#mariadb">安装mariadb数据库</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#nginx">安装nginx</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#php7-0">安装php7.0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#header-n76">安装zabbix4.4</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">其他:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../%E5%85%B6%E4%BB%96/MPLS-RST.html">MPLS-rst</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Test</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>zabbix4.4搭建</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/非产品服务手册/zabbix4.4搭建.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="zabbix4-4">
+<span id="header-n0"></span><h1>zabbix4.4搭建<a class="headerlink" href="#zabbix4-4" title="永久链接至标题">¶</a></h1>
+<section id="header-n2">
+<span id="id1"></span><h2>环境要求<a class="headerlink" href="#header-n2" title="永久链接至标题">¶</a></h2>
+<p>服务器要求：</p>
+<ul>
+<li><p>centos7</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>root@localhost ~<span class="o">]</span><span class="c1"># cat /etc/centos-release</span>
+CentOS Linux release <span class="m">7</span>.3.1611 <span class="o">(</span>Core<span class="o">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>2G内存</p></li>
+<li><p>双核CPU</p></li>
+<li><p>硬盘空间30-50G</p></li>
+<li><p>zabbix 4.4</p></li>
+<li><p>mariadb数据库</p></li>
+<li><p>ngnix服务</p></li>
+</ul>
+</section>
+<section id="header-n20">
+<span id="id2"></span><h2>安装步骤<a class="headerlink" href="#header-n20" title="永久链接至标题">¶</a></h2>
+<section id="mariadb">
+<span id="header-n21"></span><h3>安装mariadb数据库<a class="headerlink" href="#mariadb" title="永久链接至标题">¶</a></h3>
+<p>更新yum仓库</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>yum -y update
+</pre></div>
+</div>
+<p>删除自带数据库</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>root@localhost ~<span class="o">]</span><span class="c1"># rpm -qa|grep db</span>
+man-db-2.6.3-9.el7.x86_64
+libdb-5.3.21-19.el7.x86_64
+dbus-libs-1.6.12-17.el7.x86_64
+gdbm-1.10-8.el7.x86_64
+dbus-glib-0.100-7.el7.x86_64
+libdb-utils-5.3.21-19.el7.x86_64
+dbus-python-1.1.1-9.el7.x86_64
+python-slip-dbus-0.4.0-2.el7.noarch
+mariadb-libs-5.5.52-1.el7.x86_64
+dbus-1.6.12-17.el7.x86_64
+<span class="o">[</span>root@localhost ~<span class="o">]</span><span class="c1"># yum remove mariadb-libs-5.5.52-1.el7.x86_64</span>
+</pre></div>
+</div>
+<p>添加yum源</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>vi /etc/yum.repos.d/MariaDB.repo
+</pre></div>
+</div>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>mariadb<span class="o">]</span>
+<span class="nv">name</span> <span class="o">=</span> MariaDB
+<span class="nv">baseurl</span> <span class="o">=</span> http://yum.mariadb.org/10.2/centos7-amd64
+<span class="nv">gpgkey</span><span class="o">=</span>https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
+<span class="nv">gpgcheck</span><span class="o">=</span><span class="m">1</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">mariadb</span><span class="p">]</span>
+<span class="n">name</span> <span class="o">=</span> <span class="n">MariaDB</span>
+<span class="n">baseurl</span> <span class="o">=</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">mirrors</span><span class="o">.</span><span class="n">ustc</span><span class="o">.</span><span class="n">edu</span><span class="o">.</span><span class="n">cn</span><span class="o">/</span><span class="n">mariadb</span><span class="o">/</span><span class="n">yum</span><span class="o">/</span><span class="mf">10.5</span><span class="o">/</span><span class="n">centos7</span><span class="o">-</span><span class="n">amd64</span><span class="o">/</span>
+<span class="n">gpgkey</span><span class="o">=</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">mirrors</span><span class="o">.</span><span class="n">ustc</span><span class="o">.</span><span class="n">edu</span><span class="o">.</span><span class="n">cn</span><span class="o">/</span><span class="n">mariadb</span><span class="o">/</span><span class="n">yum</span><span class="o">/</span><span class="n">RPM</span><span class="o">-</span><span class="n">GPG</span><span class="o">-</span><span class="n">KEY</span><span class="o">-</span><span class="n">MariaDB</span>
+<span class="n">gpgcheck</span><span class="o">=</span><span class="mi">1</span>
+</pre></div>
+</div>
+<p>安装mariadb</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>yum install MariaDB-server MariaDB-client -y
+</pre></div>
+</div>
+<p>启动数据库服务</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>systemctl start mariadb
+</pre></div>
+</div>
+<p>对数据库进行安全配置</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>root@localhost ~<span class="o">]</span><span class="c1"># mysql_secure_installation</span>
+
+NOTE: RUNNING ALL PARTS OF THIS SCRIPT IS RECOMMENDED FOR ALL MariaDB
+      SERVERS IN PRODUCTION USE!  PLEASE READ EACH STEP CAREFULLY!
+
+In order to log into MariaDB to secure it, we<span class="s1">&#39;ll need the current</span>
+<span class="s1">password for the root user.  If you&#39;</span>ve just installed MariaDB, and
+you haven<span class="s1">&#39;t set the root password yet, the password will be blank,</span>
+<span class="s1">so you should just press enter here.</span>
+
+<span class="s1">Enter current password for root (enter for none):</span>
+<span class="s1">OK, successfully used password, moving on...</span>
+
+<span class="s1">Setting the root password ensures that nobody can log into the MariaDB</span>
+<span class="s1">root user without the proper authorisation.</span>
+
+<span class="s1">Set root password? [Y/n] y</span>
+<span class="s1">New password:</span>
+<span class="s1">Re-enter new password:</span>
+<span class="s1">Password updated successfully!</span>
+<span class="s1">Reloading privilege tables..</span>
+<span class="s1"> ... Success!</span>
+
+
+<span class="s1">By default, a MariaDB installation has an anonymous user, allowing anyone</span>
+<span class="s1">to log into MariaDB without having to have a user account created for</span>
+<span class="s1">them.  This is intended only for testing, and to make the installation</span>
+<span class="s1">go a bit smoother.  You should remove them before moving into a</span>
+<span class="s1">production environment.</span>
+
+<span class="s1">Remove anonymous users? [Y/n] y</span>
+<span class="s1"> ... Success!</span>
+
+<span class="s1">Normally, root should only be allowed to connect from &#39;</span>localhost<span class="s1">&#39;.  This</span>
+<span class="s1">ensures that someone cannot guess at the root password from the network.</span>
+
+<span class="s1">Disallow root login remotely? [Y/n] y</span>
+<span class="s1"> ... Success!</span>
+
+<span class="s1">By default, MariaDB comes with a database named &#39;</span>test<span class="s1">&#39; that anyone can</span>
+<span class="s1">access.  This is also intended only for testing, and should be removed</span>
+<span class="s1">before moving into a production environment.</span>
+
+<span class="s1">Remove test database and access to it? [Y/n] y</span>
+<span class="s1"> - Dropping test database...</span>
+<span class="s1"> ... Success!</span>
+<span class="s1"> - Removing privileges on test database...</span>
+<span class="s1"> ... Success!</span>
+
+<span class="s1">Reloading the privilege tables will ensure that all changes made so far</span>
+<span class="s1">will take effect immediately.</span>
+
+<span class="s1">Reload privilege tables now? [Y/n] y</span>
+<span class="s1"> ... Success!</span>
+
+<span class="s1">Cleaning up...</span>
+
+<span class="s1">All done!  If you&#39;</span>ve completed all of the above steps, your MariaDB
+installation should now be secure.
+
+Thanks <span class="k">for</span> using MariaDB!
+</pre></div>
+</div>
+<p>开机启动</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>systemctl <span class="nb">enable</span> mariadb
+</pre></div>
+</div>
+<p>查询版本</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>mysql --version
+</pre></div>
+</div>
+</section>
+<section id="nginx">
+<span id="header-n40"></span><h3>安装nginx<a class="headerlink" href="#nginx" title="永久链接至标题">¶</a></h3>
+<p>新建nginx yum文件</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>vi /etc/yum.repos.d/nginx.repo
+</pre></div>
+</div>
+<p>输入下面信息</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>nginx-stable<span class="o">]</span>
+<span class="nv">name</span><span class="o">=</span>nginx stable repo
+<span class="nv">baseurl</span><span class="o">=</span>http://nginx.org/packages/centos/<span class="nv">$releasever</span>/<span class="nv">$basearch</span>/
+<span class="nv">gpgcheck</span><span class="o">=</span><span class="m">1</span>
+<span class="nv">enabled</span><span class="o">=</span><span class="m">1</span>
+<span class="nv">gpgkey</span><span class="o">=</span>https://nginx.org/keys/nginx_signing.key
+
+<span class="o">[</span>nginx-mainline<span class="o">]</span>
+<span class="nv">name</span><span class="o">=</span>nginx mainline repo
+<span class="nv">baseurl</span><span class="o">=</span>http://nginx.org/packages/mainline/centos/<span class="nv">$releasever</span>/<span class="nv">$basearch</span>/
+<span class="nv">gpgcheck</span><span class="o">=</span><span class="m">1</span>
+<span class="nv">enabled</span><span class="o">=</span><span class="m">0</span>
+<span class="nv">gpgkey</span><span class="o">=</span>https://nginx.org/keys/nginx_signing.key
+</pre></div>
+</div>
+<p>查看是否添加成功</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>root@localhost ~<span class="o">]</span><span class="c1"># yum search nginx</span>
+Loaded plugins: fastestmirror
+nginx-stable                                                                                <span class="p">|</span> <span class="m">2</span>.9 kB  <span class="m">00</span>:00:00
+nginx-stable/7/x86_64/primary_db                                                            <span class="p">|</span>  <span class="m">55</span> kB  <span class="m">00</span>:00:00
+Loading mirror speeds from cached hostfile
+ * base: mirrors.tuna.tsinghua.edu.cn
+ * extras: mirrors.tuna.tsinghua.edu.cn
+ * updates: mirrors.tuna.tsinghua.edu.cn
+<span class="o">===============================================</span> N/S matched: <span class="nv">nginx</span> <span class="o">================================================</span>
+nginx-debug.x86_64 : debug version of nginx
+nginx-debuginfo.x86_64 : Debug information <span class="k">for</span> package nginx
+nginx-module-geoip.x86_64 : nginx GeoIP dynamic modules
+nginx-module-geoip-debuginfo.x86_64 : Debug information <span class="k">for</span> package nginx-module-geoip
+nginx-module-image-filter.x86_64 : nginx image filter dynamic module
+nginx-module-image-filter-debuginfo.x86_64 : Debug information <span class="k">for</span> package nginx-module-image-filter
+nginx-module-njs.x86_64 : nginx njs dynamic modules
+nginx-module-njs-debuginfo.x86_64 : Debug information <span class="k">for</span> package nginx-module-njs
+nginx-module-perl.x86_64 : nginx Perl dynamic module
+nginx-module-perl-debuginfo.x86_64 : Debug information <span class="k">for</span> package nginx-module-perl
+nginx-module-xslt.x86_64 : nginx xslt dynamic module
+nginx-module-xslt-debuginfo.x86_64 : Debug information <span class="k">for</span> package nginx-module-xslt
+nginx-nr-agent.noarch : New Relic agent <span class="k">for</span> NGINX and NGINX Plus
+pcp-pmda-nginx.x86_64 : Performance Co-Pilot <span class="o">(</span>PCP<span class="o">)</span> metrics <span class="k">for</span> the Nginx Webserver
+nginx.x86_64 : High performance web server
+
+  Name and summary matches only, use <span class="s2">&quot;search all&quot;</span> <span class="k">for</span> everything.
+</pre></div>
+</div>
+<p>安装nginx</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>yum install nginx
+</pre></div>
+</div>
+<p>确认安装完成</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>rpm -qa<span class="p">|</span>grep nginx
+</pre></div>
+</div>
+<p>启动并添加开机自启动</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>systemctl start nginx
+systemctl <span class="nb">enable</span> nginx
+</pre></div>
+</div>
+<p>查看状态</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>systemctl status nginx
+</pre></div>
+</div>
+<p>查看端口监听情况</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>ss -tnl<span class="p">|</span>grep <span class="m">80</span>
+</pre></div>
+</div>
+<p>开放80端口</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>firewall-cmd  --permanent --add-port<span class="o">=</span><span class="m">80</span>/tcp
+firewall-cmd --reload
+</pre></div>
+</div>
+</section>
+<section id="php7-0">
+<span id="header-n59"></span><h3>安装php7.0<a class="headerlink" href="#php7-0" title="永久链接至标题">¶</a></h3>
+<p>安装php7的yum源</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
+</pre></div>
+</div>
+<p>查看是否添成功</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>root@localhost ~<span class="o">]</span><span class="c1"># yum search php</span>
+····
+php71w-opcache.x86_64 : An opcode cache Zend extension
+php71w-pecl-apcu.x86_64 : APCu - APC User Cache
+php71w-pecl-apcu-devel.x86_64 : APCu developer files <span class="o">(</span>header<span class="o">)</span>
+php71w-pecl-geoip.x86_64 : Extension to map IP addresses to geographic places
+php71w-pecl-igbinary-devel.x86_64 : Igbinary developer files <span class="o">(</span>header<span class="o">)</span>
+php71w-pecl-imagick.x86_64 : Provides a wrapper to the ImageMagick library
+php71w-pecl-imagick-devel.x86_64 : Imagick developer files <span class="o">(</span>header<span class="o">)</span>
+php71w-pecl-memcached.x86_64 : Extension to work with the Memcached caching daemon
+php71w-pecl-mongodb.x86_64 : PECL package MongoDB driver
+php71w-pecl-redis.x86_64 : Extension <span class="k">for</span> communicating with the Redis key-value store
+php72w-opcache.x86_64 : An opcode cache Zend extension
+php72w-pecl-apcu.x86_64 : APCu - APC User Cache
+php72w-pecl-apcu-devel.x86_64 : APCu developer files <span class="o">(</span>header<span class="o">)</span>
+php72w-pecl-geoip.x86_64 : Extension to map IP addresses to geographic places
+php72w-pecl-igbinary-devel.x86_64 : Igbinary developer files <span class="o">(</span>header<span class="o">)</span>
+php72w-pecl-imagick.x86_64 : Provides a wrapper to the ImageMagick library
+php72w-pecl-imagick-devel.x86_64 : Imagick developer files <span class="o">(</span>header<span class="o">)</span>
+php72w-pecl-libsodium.x86_64 : Wrapper <span class="k">for</span> the Sodium cryptographic library
+php72w-pecl-memcached.x86_64 : Extension to work with the Memcached caching daemon
+php72w-pecl-mongodb.x86_64 : PECL package MongoDB driver
+php72w-pecl-redis.x86_64 : Extension <span class="k">for</span> communicating with the Redis key-value store
+php72w-sodium.x86_64 : Wrapper <span class="k">for</span> the Sodium cryptographic library
+····
+</pre></div>
+</div>
+<blockquote>
+<div><p>省略部分输出</p>
+</div></blockquote>
+<p>安装php和php-fpm</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>yum install -y php70w.x86_64 php70w-cli.x86_64 php70w-common.x86_64 php70w-gd.x86_64 php70w-ldap.x86_64 php70w-mbstring.x86_64 php70w-mcrypt.x86_64 php70w-mysql.x86_64 php70w-pdo.x86_64
+yum install -y php70w-fpm php70w-opcache
+</pre></div>
+</div>
+<p>查看是否安装成功</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>root@localhost ~<span class="o">]</span><span class="c1"># php -v</span>
+PHP <span class="m">7</span>.0.33 <span class="o">(</span>cli<span class="o">)</span> <span class="o">(</span>built: Dec  <span class="m">6</span> <span class="m">2018</span> <span class="m">22</span>:30:44<span class="o">)</span> <span class="o">(</span> NTS <span class="o">)</span>
+Copyright <span class="o">(</span>c<span class="o">)</span> <span class="m">1997</span>-2017 The PHP Group
+Zend Engine v3.0.0, Copyright <span class="o">(</span>c<span class="o">)</span> <span class="m">1998</span>-2017 Zend Technologies
+    with Zend OPcache v7.0.33, Copyright <span class="o">(</span>c<span class="o">)</span> <span class="m">1999</span>-2017, by Zend Technologies
+</pre></div>
+</div>
+<p>查看php扩展</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>root@localhost ~<span class="o">]</span><span class="c1"># php -m</span>
+<span class="o">[</span>PHP Modules<span class="o">]</span>
+bz2
+calendar
+Core
+ctype
+curl
+date
+exif
+fileinfo
+filter
+ftp
+gd
+gettext
+gmp
+<span class="nb">hash</span>
+iconv
+json
+ldap
+libxml
+mbstring
+mcrypt
+mysqli
+openssl
+pcntl
+pcre
+PDO
+pdo_mysql
+pdo_sqlite
+Phar
+readline
+Reflection
+session
+shmop
+SimpleXML
+sockets
+SPL
+sqlite3
+standard
+tokenizer
+xml
+Zend OPcache
+zip
+zlib
+
+<span class="o">[</span>Zend Modules<span class="o">]</span>
+Zend OPcache
+</pre></div>
+</div>
+<blockquote>
+<div><p>需要安装其他扩展，通过 yum install php70w-XXX(扩展名字)</p>
+</div></blockquote>
+<p>启动并开机启动php-fpm</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>systemctl start php-fpm
+systemctl <span class="nb">enable</span> php-fpm
+</pre></div>
+</div>
+</section>
+<section id="header-n76">
+<span id="id3"></span><h3>安装zabbix4.4<a class="headerlink" href="#header-n76" title="永久链接至标题">¶</a></h3>
+<p>安装zabbix yum源</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>rpm -Uvh https://repo.zabbix.com/zabbix/4.4/rhel/7/x86_64/zabbix-release-4.4-1.el7.noarch.rpm
+yum clean all
+</pre></div>
+</div>
+<p>安装zabbix-server和agent</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>yum install -y zabbix-server-mysql zabbix-agent
+</pre></div>
+</div>
+<p>安装epel资料库和zabbix前端软件包</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>yum install epel-release
+
+yum install zabbix-web-mysql zabbix-nginx-conf
+</pre></div>
+</div>
+<p>mariadb创建zabbix账号密码（zabbix，下面导入数据库输入这个密码）以及授权zabbix数据库</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1">#mysql -uroot -p</span>
+password
+mysql&gt; create database zabbix character <span class="nb">set</span> utf8 collate utf8_bin<span class="p">;</span>
+mysql&gt; create user zabbix@localhost identified by <span class="s1">&#39;zabbix&#39;</span><span class="p">;</span>
+mysql&gt; grant all privileges on zabbix.* to zabbix@localhost<span class="p">;</span>
+mysql&gt; quit<span class="p">;</span>
+</pre></div>
+</div>
+<p>导入初始架构和数据</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>zcat /usr/share/doc/zabbix-server-mysql*/create.sql.gz <span class="p">|</span> mysql -uzabbix -p zabbix
+</pre></div>
+</div>
+<p>修改zabbix_server配置数据库</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>vi /etc/zabbix/zabbix_server.conf
+<span class="sb">```</span>shell
+    ········
+    <span class="nv">DBPassword</span><span class="o">=</span>zabbix
+    ········
+</pre></div>
+</div>
+<blockquote>
+<div><p>配置行号124</p>
+</div></blockquote>
+<p>配置nginx，删除默认文件</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>mv /etc/nginx/conf.d/default.conf /etc/nginx/conf.d/default.conf.bak
+</pre></div>
+</div>
+<p>编辑/etc/nginx/conf.d/zabbix.conf，取消以下两行注释</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="c1"># listen 88;</span>
+<span class="c1"># server_name example.com;</span>
+</pre></div>
+</div>
+<p>配置php，修改/etc/php-fpm.d/zabbix.conf,取消注释，修改时区</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>php_value<span class="o">[</span>date.timezone<span class="o">]</span> <span class="o">=</span> Asia/Shanghai
+</pre></div>
+</div>
+<p>临时关闭selinux</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>setenforce <span class="m">0</span>
+</pre></div>
+</div>
+<p>永久关闭selinux,编辑/etc/selinux/config,修改</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nv">SELINUX</span><span class="o">=</span>enforcing  -----&gt;  <span class="nv">SELINUX</span><span class="o">=</span>disable
+</pre></div>
+</div>
+<p>重启进程</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>systemctl restart zabbix-server zabbix-agent nginx php-fpm
+systemctl <span class="nb">enable</span> zabbix-server zabbix-agent
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">导入字体包，zabbix默认情况下中文显示图形界面显示会出现乱码，需要导入字体包</div>
+<div class="line">电脑打开：C:WindowsFonts，找到<strong>华文行楷</strong>，复制上传到服务器/usr/share/zabbix/assets/fonts目录下</div>
+</div>
+<blockquote>
+<div><p>可以按照个人喜好上传字体</p>
+</div></blockquote>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>root@localhost fonts<span class="o">]</span><span class="c1"># ls -l</span>
+total <span class="m">3924</span>
+lrwxrwxrwx. <span class="m">1</span> root root      <span class="m">33</span> Jul <span class="m">23</span> <span class="m">21</span>:26 graphfont.ttf -&gt; /etc/alternatives/zabbix-web-font
+-rw-r--r--. <span class="m">1</span> root root <span class="m">4016288</span> Jul  <span class="m">7</span>  <span class="m">2019</span> stxingka.ttf
+<span class="o">[</span>root@localhost fonts<span class="o">]</span><span class="c1"># pwd</span>
+/usr/share/zabbix/assets/fonts
+</pre></div>
+</div>
+<p>编辑/usr/share/zabbix/include/defines.inc.php，将69和111行graphfont修改为stxingka</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="o">[</span>root@localhost fonts<span class="o">]</span><span class="c1"># cat /usr/share/zabbix/include/defines.inc.php|grep -n stxingka</span>
+<span class="m">69</span>:define<span class="o">(</span><span class="s1">&#39;ZBX_GRAPH_FONT_NAME&#39;</span>,                <span class="s1">&#39;stxingka&#39;</span><span class="o">)</span><span class="p">;</span> // font file name
+<span class="m">111</span>:define<span class="o">(</span><span class="s1">&#39;ZBX_FONT_NAME&#39;</span>, <span class="s1">&#39;stxingka&#39;</span><span class="o">)</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>重启服务</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>systemctl restart zabbix-server
+</pre></div>
+</div>
+<p>web打开服务器IP地址，按照提示输入信息即可，安装后登录，账号密码默认：Admin/zabbix</p>
+<figure class="align-default">
+<img alt="" src="非产品服务手册/C:UsersLHOSAppDataRoamingTyporatypora-user-imagesimage-20220413182626830.png" />
+</figure>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="RUNOOB.html" class="btn btn-neutral float-left" title="RUNOOB Markdown Test" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../%E5%85%B6%E4%BB%96/MPLS-RST.html" class="btn btn-neutral float-right" title="MPLS-rst" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2022, Jade.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

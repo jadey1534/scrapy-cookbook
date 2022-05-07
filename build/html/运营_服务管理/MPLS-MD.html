@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MPLS-md &mdash; Test 1.0 文档</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/translations.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="RUNOOB Markdown Test" href="../%E9%9D%9E%E4%BA%A7%E5%93%81%E6%9C%8D%E5%8A%A1%E6%89%8B%E5%86%8C/RUNOOB.html" />
+    <link rel="prev" title="模板-图文解释" href="%E6%A8%A1%E6%9D%BF-%E5%9B%BE%E6%96%87%E8%A7%A3%E9%87%8A.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Test
+            <img src="../_static/Fnetlink.jpg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">客户服务运营:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../%E5%AE%A2%E6%88%B7%E6%9C%8D%E5%8A%A1%E8%BF%90%E8%90%A5/123.html">test</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E5%AE%A2%E6%88%B7%E6%9C%8D%E5%8A%A1%E8%BF%90%E8%90%A5/config.html">Cisco 单机-BGP配置</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">平台服务运营:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../%E5%B9%B3%E5%8F%B0%E6%9C%8D%E5%8A%A1%E8%BF%90%E8%90%A5/hello.html">hello,world</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">运营_服务管理:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="%E6%A8%A1%E6%9D%BF-%E5%9B%BE%E6%96%87%E8%A7%A3%E9%87%8A.html"><strong>模板-图文解释</strong></a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">MPLS-md</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#mpls"><strong>一. MPLS优点：</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1"><strong>二. MPLS报文：</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2"><strong>三. MPLS角色：</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ler"><strong>1. LER：</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lsr"><strong>2. LSR：</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#php"><strong>3. PHP：</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id3"><strong>四. 标签转发过程：</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#lsp"><strong>1.生成单项LSP：</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4"><strong>2. 标签转发：</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id5"><strong>五. MPLS标签分类：</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id6"><strong>（1）特殊标签：</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7"><strong>（2）静态LSP：</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8"><strong>（3）动态LSP：</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id9"><strong>六. 静态MPLS：</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ldp"><strong>七. LDP：</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id10"><strong>1. LDP报文类型：</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id11"><strong>2. LDP收敛过程：</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id12"><strong>3. LDP标签空间：</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id13"><strong>4. 标签分发方式：</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id14"><strong>5. 标签分配控制方式：</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id15"><strong>6. 标签保持模式：</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id16"><strong>7. LDP标签分发过程：</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id17"><strong>8. LDP配置：</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id18"><strong>八. MPLS防环：</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#igp"><strong>1.IGP检测：</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ttl"><strong>2.TTL环路检测：</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#mpls-vpn"><strong>九. MPLS VPN：</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id19"><strong>1. MPLS/VPN特点：</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id20"><strong>2. MPLS VPN角色：</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#vpn-instance"><strong>3. VPN-Instance:</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mp-bgp"><strong>4. MP-BGP:</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id21"><strong>5. MPLS VPN组网：</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">非产品服务手册:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../%E9%9D%9E%E4%BA%A7%E5%93%81%E6%9C%8D%E5%8A%A1%E6%89%8B%E5%86%8C/RUNOOB.html">RUNOOB Markdown Test</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E9%9D%9E%E4%BA%A7%E5%93%81%E6%9C%8D%E5%8A%A1%E6%89%8B%E5%86%8C/zabbix4.4%E6%90%AD%E5%BB%BA.html">zabbix4.4搭建</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">其他:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../%E5%85%B6%E4%BB%96/MPLS-RST.html">MPLS-rst</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Test</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>MPLS-md</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/运营_服务管理/MPLS-MD.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="mpls-md">
+<h1>MPLS-md<a class="headerlink" href="#mpls-md" title="永久链接至标题">¶</a></h1>
+<section id="mpls">
+<h2><strong>一. MPLS优点：</strong><a class="headerlink" href="#mpls" title="永久链接至标题">¶</a></h2>
+<p><strong>MPLS具有以下优点：</strong></p>
+<p>① 根据标签快速转发</p>
+<p>② 解决了BGP路由黑洞的问题</p>
+<p>③ 统一结构（在运行MPLS的网络中可以对从两边来的多种协议进行统一转发，例如FR；</p>
+<p>VPN；BGP）</p>
+<p>④ MPLS VPN的实现</p>
+<p>⑤ MPLS TE流量工程</p>
+<p>⑥ 实现多协议转发</p>
+</section>
+<section id="id1">
+<h2><strong>二. MPLS报文：</strong><a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<p>MPLS报文总共4Byte，32bit。</p>
+<p><img alt="image1.jpeg" src="运营_服务管理/imgs/Aspose.Words.12273e48-67f8-4e55-9e03-28e776284506.001.jpeg" /></p>
+<ol class="simple">
+<li><p>**LABEL：**20bit，用来显示标签号，可以使用2^20为1048576个标签号</p></li>
+</ol>
+<p>**② EXP：**3bit，Experimental Use，实验位，后期用来做QOS。</p>
+<p>**③ S：**1bit，Bottom of Stack，栈底位，一个数据包可以打多层标签，采用协议栈进行打标签（先进后出模式），其中最外层为顶层标签，最里面的为底层标签，S的作用用来确定一个打了多层标签的数据包在弹出标签的时候是否已经完全的弹掉所有的标签。当标签中S位为1的时候，表示当前的标签已为最低层标签。</p>
+<p>**④ TTL：**8bit，用来防环。</p>
+</section>
+<section id="id2">
+<h2><strong>三. MPLS角色：</strong><a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>在MPLS网络中，网络传输存在以下几组角色：</p>
+<p>① LER</p>
+<p>② LSR</p>
+<p>③ PHP</p>
+<p>④ LSP</p>
+<section id="ler">
+<h3><strong>1. LER：</strong><a class="headerlink" href="#ler" title="永久链接至标题">¶</a></h3>
+<p>Label Edge Router，标签边缘路由器，在MPLS网络中，位于网络边缘的路由器称之为LER。主要作用由于压入标签，弹出标签。</p>
+<p>**① Ingress-LER：**上游设备，压入（Push）标签的设备</p>
+<p>**② Egress-LER：**下游设备，弹出（pop）标签的设备；Un-tag（存在多层标签时）全部弹出。</p>
+<p>LER设备默认只为本地/32的路由生成标签：</p>
+<ul class="simple">
+<li><p>在Ingress节点执行该命令时，触发所有的32位路由建立LDP LSP。</p></li>
+<li><p>在Egress节点执行该命令时，触发本地32位路由建立LDP LSP。</p></li>
+</ul>
+</section>
+<section id="lsr">
+<h3><strong>2. LSR：</strong><a class="headerlink" href="#lsr" title="永久链接至标题">¶</a></h3>
+<p>Label Switch Router，标签交换路由器，网络内部的路由器称之为LSR，主要作用为标签的交换，进行标签数据的转发。</p>
+<p>① 接收到/32的路由条目，LSR会生成两条标签</p>
+<ul class="simple">
+<li><p>本地发起的流量标签，入标签Null；出标签下一跳传来的标签</p></li>
+<li><p>Transnet网络，入标签本地生成标签；出标签下一跳传来的标签</p></li>
+</ul>
+<p>② 接收到除/32的路由条目外，只会作为Transnet网络</p>
+<ul class="simple">
+<li><p>Transnet网络，入标签本地生成标签；出标签下一跳传来的标签</p></li>
+</ul>
+<p><img alt="image2.png" src="运营_服务管理/imgs/Aspose.Words.12273e48-67f8-4e55-9e03-28e776284506.002.png" /></p>
+<p>① AR3在OSPF上引入静态路由[Huawei]ip route-static 30.30.30.30 255.255.255.0 NULL 0，使用命令[Huawei-mpls]lsp-trigger all触发所有的本地路由建立LDP LSP，这条路由的标签传递给AR2</p>
+<p>② AR2作为Transnet网络，接收到30.30.30.30/24的标签映射，查看路由表存在这条路由，并且是从最优下一跳路由器得到的，所以只生成Transnet网络的标签映射</p>
+<p><img alt="image3.png" src="运营_服务管理/imgs/Aspose.Words.12273e48-67f8-4e55-9e03-28e776284506.003.png" /></p>
+<p>③ AR2将FEC为30.30.30.30/24的标签传递给AR1，AR1上使用命令[Huawei-mpls]lsp-trigger all，触发所有的路由建立LSP，所以此时会建立关于30.30.30.30/24的LSP，而中间的AR2只作为一个Transnet节点，无法直接发起流量</p>
+<p>④ 如果在中间设备上使用命令[Huawei-mpls]lsp-trigger all，触发所有的路由建立LSP，此时此设备可以作为一个LER设备，并生成一条起始于本地的LSP</p>
+<p><img alt="image4.png" src="运营_服务管理/imgs/Aspose.Words.12273e48-67f8-4e55-9e03-28e776284506.004.png" /></p>
+</section>
+<section id="php">
+<h3><strong>3. PHP：</strong><a class="headerlink" href="#php" title="永久链接至标题">¶</a></h3>
+<p>Penultimate Hop Popping, 次末节弹出，为网络中倒数第二跳路由器，主要作用为弹出标签发给末节路由器。</p>
+<p><img alt="image5.jpeg" src="运营_服务管理/imgs/Aspose.Words.12273e48-67f8-4e55-9e03-28e776284506.005.jpeg" /></p>
+<p>（1）过程：</p>
+<p>① PC1访问目的网络PC2，目标地址为8.8.8.8/32，R1为起始LER，压入标签，发送给R2，</p>
+<p>② R2发现自己位于次末跳路由器，于是弹出标签，发送给R3，R3通过路由表转发给PC2。</p>
+<p>（2）优点：</p>
+<p>① R3将直连PC（8.8.8.8）的路由条目标签置为3（特殊标签）传给R2</p>
+<p>② R2发出R3去往8.8.8.8的标签给R1，自己为去往8.8.8.8的次末跳路由器，于是out为</p>
+<p>NULL，标志着去往8.8.8.8时将弹出标签，交给R3为路由转发，提高了转发效率，节约了R3查看标签表去查询路由表的时间。</p>
+<p>**注1：**在特殊情况下，需要次末跳携带标签，例如在做QOS的时候，全MPLS做优先级转发，</p>
+<p>此时就需要做显示空标签，不让次末跳弹出标签，所以可以配置为显示空标签和正常标签，当配置了显示空标签后，路由器会将直连路由标签设置为0，传递给邻居，当次末跳路由器收到路由包后，会将数据包的标签替换为0，传递给最后一跳路由器，最后一跳路由器当接收到Label为0的数据包后，不会查询标签转发表，而是会直接将Label剔除，查询路由表进行转发。如果想要正常的标签转发。</p>
+<p><strong>使用以下命令进行配置：</strong></p>
+<p>[Huawei-mpls]label advertise explicit-null-显示空标签（最后一跳为0）</p>
+<p>[Huawei-mpls]label advertise non-null——最后一跳携带标签（正常标签）</p>
+<p>[Huawei-mpls]label advertise implicit-null-隐式空标签（PHP默认行为）</p>
+<p>最后重置LDP刷新标签<Huawei>reset mpls ldp all</p>
+</section>
+</section>
+<section id="id3">
+<h2><strong>四. 标签转发过程：</strong><a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p><img alt="image6.jpeg" src="运营_服务管理/imgs/Aspose.Words.12273e48-67f8-4e55-9e03-28e776284506.006.jpeg" /></p>
+<p>① 流量数据包进入LSP中，Ingress-LER根据目的地IP地址，查看标签转发表，会将标签压入数据包中（位于二层和三层中间），并根据标签映射送入下一跳路由器。</p>
+<p>② 下一跳路由器收到带有标签的数据包，查看标签，并根据标签转发表将标签替换，并在此送入下一跳路由器。</p>
+<p>注1：由于MPLS没有水平分割的机制，所以路由器会根据路由表中所有的路由前缀生变标签发送给邻居</p>
+<p>注2： 华为默认只会为<strong>自身产生的/32环回接口</strong>分发标签,使用命令修改为所有的路由条目分配标签</p>
+<p>[Huawei-mpls]lsp-trigger host—–默认，只为自身产生的Loop口生成标签</p>
+<p>[Huawei-mpls]lsp-trigger all—–为路由表中所有的FEC生成标签</p>
+<section id="lsp">
+<h3><strong>1.生成单项LSP：</strong><a class="headerlink" href="#lsp" title="永久链接至标题">¶</a></h3>
+<p>Label switched Path ，标签交换路径，MPLS报文经过的路径称之为LSP。</p>
+<p>一条LSP总是起于一台Ingress的LER，止于另一台Egress的LER，中间经过若干台被称之为Transit的LSR。</p>
+<p>LSP具有单向性，标签只针对FEC进行标识，来回的FEC不一致，所以来回的Label可能不一致，所以LSP具有单向性</p>
+<p>（1）NHLFE：</p>
+<p>Next Hop Label Forwarding Entry，下一跳标签转发表项，用于指导MPLS报文的转发</p>
+<p><img alt="image7.jpeg" src="运营_服务管理/imgs/Aspose.Words.12273e48-67f8-4e55-9e03-28e776284506.007.jpeg" /></p>
+<p>① FEC：转发等价类</p>
+<p>② In-Label：本地标签</p>
+<p>③ Out-Label：远程标签</p>
+<p>④ Label Operation：标签操作</p>
+<p>① FEC：</p>
+<p>Forwarding Equivalence Class，转发等价类，在转发过程中走相同路径、使用相同标签、相同</p>
+<p>策略、相同的QOS服务，查同样路由的数据包的路由前缀地址。通常一个FEC分配唯一的</p>
+<p>标签。例如一个网段的报文属于一个EEC，并分配一个本地唯一的标签。</p>
+<p><strong>如何判断属于同一个FEC：</strong></p>
+<ol class="simple">
+<li><p>属于某特定组的组播报文</p></li>
+<li><p>目的IP地址匹配了某一个特定前缀的报文，根据IP路由表目的网段</p></li>
+<li><p>根据DCSP字段，有相同QOS策略的报文</p></li>
+<li><p>MPLS VPN中，属于同一个VPN的报文</p></li>
+<li><p>报文的目的IP地址属于BGP学习到的路由，并且该路由的下一跳地址相同</p></li>
+</ol>
+<p>② In-Label：</p>
+<p>本地标签，自己产生；并传递给上一跳路由器，表示上一跳路由器去往FE时经过自己应该打什么标签。</p>
+<p>③ Out-Label：</p>
+<p>远程标签，出标签，代表去FEC目标时，送往下一跳路由器应该打入什么标签。</p>
+<p>④ Label Operation：</p>
+<p>标签操作，代表次路由器对去往FEC目标时对来的数据包执行什么样的操作。</p>
+<p><strong>标签操作有三类行为：</strong></p>
+<ol class="simple">
+<li><p>PUSH为压入标签</p></li>
+<li><p>SWAP为交换标签</p></li>
+<li><p>pop为弹出标签</p></li>
+</ol>
+<p>（2）FTN：</p>
+<p>FEC-to-NHLFE，FEC到一组NHLFE的映射称为FTN，通过查看FIB表中的Tunnel ID值不为0x0的表项，能够获得FTN的详细信息。</p>
+<p>FTN只在Ingress存在，用于FIB表中的Tunnel ID对应NHLFE找到相应的动作和压入的标签。</p>
+<p>（3）ILM：</p>
+<p>Incoming Label Map，入标签到下一组下一跳标签转发表项的映射称为入标签映射ILM</p>
+<p><strong>LIM包括：Tunnel ID、入标签，出接口、 标签操作类型等信息</strong></p>
+<p>LIM在Transit节点的作用是将标签和NHLFE绑定，通过标签索引ILM表，就相当于使用目的IP地址查询FIB，能够得到所有的标签转发信息</p>
+<p>（4）Tunnel ID：</p>
+<p>为了给使用隧道的上层应用（如VPN、路由管理）提供统一的接口，系统自动为隧道分配一个ID，也称为Tunnel ID，该Tunnel ID的长度为32bit，只是对本地有效</p>
+</section>
+<section id="id4">
+<h3><strong>2. 标签转发：</strong><a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<p><img alt="image8.jpeg" src="运营_服务管理/imgs/Aspose.Words.12273e48-67f8-4e55-9e03-28e776284506.008.jpeg" /></p>
+<p><strong>Ingress：</strong></p>
+<p>① R1访问4.4.4.4/32,生成数据包，由于没有MPLS标签，此时根据FIB表转发：</p>
+<ul class="simple">
+<li><p>如果FIB表中的Tunnel ID为0x0,进入正常的IP转发流程</p></li>
+<li><p>如果Tunnel ID不为0x0，进入MPLS转发</p></li>
+</ul>
+<p><img alt="image9.png" src="运营_服务管理/imgs/Aspose.Words.12273e48-67f8-4e55-9e03-28e776284506.009.png" /></p>
+<p>② 确定4.4.4.4/32为MPLS转发后，根据FIB中的Tunnel ID查找NHLFE表中一致的Tunnel ID</p>
+<p>③ 找到NHLFE中和FIB一致的Tunnel ID后，根据NHLFE中对应的动作，出标签，以及下一跳对数据报文进行处理</p>
+<p><img alt="image10.png" src="运营_服务管理/imgs/Aspose.Words.12273e48-67f8-4e55-9e03-28e776284506.010.png" /></p>
+<p><strong>Transit：</strong></p>
+<p>① R2收到R1发送过来的报文，根据二层标识得知此数据包为MPLS报文，根据MPLS包头中的标签查看ILM表，根据ILM中的Tunnel ID查找NHLFE表中一致的Tunnel ID</p>
+<p>② 找到那个NHLFE中和ILM一致的Tunnel ID后，根据NHLFE中对应的动作，出标签，以及下一跳对数据报文进行处理</p>
+<p><strong>Egress:</strong></p>
+<p>① 如果Egress收到IP报文，则查看路由表，进行IP转发</p>
+<p>② 如果Egress收到MPLS报文，则查看ILM表获得标签操作类型，同时处理EXP和TTL</p>
+<p>③ 如果标签中的栈底标识为S=1，表示已经到达栈底，直接进行IP转发</p>
+<p>④ 如果标签中的占地标识为s=0，表明还有下一层标签，继续进行下一层标签转发</p>
+</section>
+</section>
+<section id="id5">
+<h2><strong>五. MPLS标签分类：</strong><a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<p>MPLS标签分为以下几类：</p>
+<p>① 0-15：特殊标签</p>
+<p>② 16-1023：静态LSP</p>
+<p>③ 1024以上：动态分配使用</p>
+<section id="id6">
+<h3><strong>（1）特殊标签：</strong><a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<p>|<strong>标签标号</strong>|<strong>标签名称</strong>|<strong>用途</strong>|
+| :- | :- | :- |
+|<strong>Label 0</strong>|<strong>IPv4显示空标签</strong>|<p>IPv4 Explicit NULL Label ，IPv4显示空标签，表示该标签必须被弹出，且报文的转发必须基于IPv4，当最后一跳路由器收到标签为0的数据包时，不会查看MPLS转发表，而是直接将标签弹出查看</p><p>IP表进行转发。</p>|
+|<strong>Label 1</strong>|<strong>Router Alert Label</strong>|只有出现在非栈底时才有效。类似于IP报文的“Router Alert Option”字段，节点收到Router Alert Label时，需要将其送往本地软件模块进一步处理。实际报文转发由下一层标签决定。如果报文需要继续转发，则节点需要将Router Alert Label压回标签栈顶。|
+|<strong>Label 2</strong>|<strong>IPv6显示空标签</strong>|<p>IPv6显示空标签，表示该标签必须被弹出，且报文的转发必须基于IPv6，当最后一跳路由器收到标签为0的数据包时，不会查看MPLS</p><p>转发表，而是直接将标签弹出查看IP表进行转发</p>|
+|<strong>Label 3</strong>|<strong>隐式空标签</strong>|<p>隐式空标签，倒数第二跳LSR进行标签交换时，如果发现交换后的标签值为3，则将标签弹出，并将报文发给最后一跳。最后一跳收</p><p>到该报文直接进行IP转发或下一层标签转发</p>|
+|<strong>Label 4到Label 13</strong>|<strong>保留</strong>|保留|
+|<strong>Label 14</strong>|<strong>OAM Router Alert Label</strong>|<p>MPLS OAM（Operation Administration &amp; Maintenance）通过发送OAM报文检测和通告LSP故障。OAM报文使用MPLS承载。OAM报文</p><p>对于Transit LSR和倒数第二跳LSR（penultimate LSR）是透明的</p>|
+|<strong>Label 15</strong>|<strong>保留</strong>|保留|</p>
+</section>
+<section id="id7">
+<h3><strong>（2）静态LSP：</strong><a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
+<p>16-1023为配置静态LSP使用</p>
+</section>
+<section id="id8">
+<h3><strong>（3）动态LSP：</strong><a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h3>
+<p>1024以上为配置动态标签使用</p>
+</section>
+</section>
+<section id="id9">
+<h2><strong>六. 静态MPLS：</strong><a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h2>
+<p>静态MPLS是用户通过手工为各个转发等价类分配标签而建立的。手工分配标签需要遵循的规则是：（目标网段）下游节点的入标签就是上游节点的出标签</p>
+<p>由于静态LSP各节点上不能相互感知到整个LSP的情况，因此静态LSP是一个本地概念</p>
+<p>静态LSP不使用标签分发协议，不需要交互控制报文，因此消耗资源比较小，适用于拓扑简单并且稳定的小型网络。单通过静态方式分配标签建立LSP不能根据网络拓扑变化动态调整，需要管理员干预，静态LSP不能使用特殊标签。</p>
+<p>**注：**因为In-LER需要查看FIB的Tunnel ID再去查看MPLS转发表，所以In-LER配置静态MPLS需要满足两个条件：</p>
+<ul class="simple">
+<li><p>命令中的下一跳为IGP路由的下一跳</p></li>
+<li><p>FEC存在于IGP路由表中</p></li>
+</ul>
+<p>如果不满足上述两种条件，则在查看LSP表时状态为down，而在LSR中，由于存在标签，所以直接查看ILM表项进行转发，所以不需要关心路由是否可达，所以直接根据标签转发表转发即可，静态LSP中，LER设备的下一跳LSP路径是不可控的，而中间的LSR路径是可控的，LSP的长度是可控的。Huawei设备Transnet节点也要配置next hop字段，但是不需要满足路由表的下一跳，因为中间额Transnet几点并不知道数据包的目标IP，所以中间的LSR路径时可控的，配置Next hop字段的下一跳原因为：</p>
+<ul class="simple">
+<li><p>Broadcast网络中，当同一链路对应多个邻居，由于Transnet LSR并不知道目标IP地址，所以只表明出接口，但ARP表项一个接口对应多个目标MAC，所以路由器并不知道二层的MAC地址应该封装哪一个目标MAC</p></li>
+<li><p>FR网络，同一个链路对应多条PVC，Transnet LSR并不知道目标IP地址，所以只表明出接口，所以路由器并不知道应该封装哪一个PVC</p></li>
+</ul>
+<p>实际设备并不检查二层MAC和PVC问题，所以即使不配置Next hop字段LSP也会处于UP状态，但是数据平面数据包无法封装二层字段，所以数据包会被丢弃</p>
+</section>
+<section id="ldp">
+<h2><strong>七. LDP：</strong><a class="headerlink" href="#ldp" title="永久链接至标题">¶</a></h2>
+<p>Label Distribution Protocol，标签分发协议，可以实现动态的标签分配。</p>
+<section id="id10">
+<h3><strong>1. LDP报文类型：</strong><a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h3>
+<p>LDP分为多种报文，总共分为四大类，每种LDP报文都包含相同的头部信息，全部使用四层（TCP、UDP）进行封装</p>
+<p>UDP类型报文组播地址为224.0.0.2，源端口目标端口都为646</p>
+<p>TCP类型报文使用单播，源端口随机，目标端口646</p>
+<p>LDP包含公告头和具体报文头，每种消息类型使用TLV进行标示</p>
+<p><strong>公共头部信息：</strong></p>
+<p><img alt="image11.png" src="运营_服务管理/imgs/Aspose.Words.12273e48-67f8-4e55-9e03-28e776284506.011.png" /></p>
+<p>**① Version：**2字节 表示版本号。目前LDP的版本号始终为1。</p>
+<p>**② PDU Length：**2字节 表示PDU的总长度，包括LDP ID和整组LDP消息，不包括Version和PDU Length字段。</p>
+<p>**③ LSR-ID：**4字节 LDR-ID标识一台LSR，必须全局唯一。</p>
+<p>**④ Liber Space ID：**2字节 标识了LSR内的标签空间。对于平台范围标签空间，这些数值都应当为0</p>
+<p>**⑤ Bunch of messages：**变长 是一组LDP消息的集合，可以是一个或者多个LDP消息。</p>
+<ul class="simple">
+<li><p>当LDP报文以UDP方式传输时，“Bunch of messages”只能是Hello消息的集合。</p></li>
+<li><p>当LDP报文以TCP方式传输时，“Bunch of messages”可以是除Hello消息外任意类型的LDP消息的集合。</p></li>
+</ul>
+<p><strong>具体报文头信息：</strong></p>
+<p><img alt="image12.png" src="运营_服务管理/imgs/Aspose.Words.12273e48-67f8-4e55-9e03-28e776284506.012.png" /></p>
+<p>**① U ：**1比特，未知的消息，如果对端收到的LDP消息中“Message type”字段为未知的LDP消息类型，且“U”字段的值为“0”，则向源端发送通知（Notification）消息。如果对端收到的LDP消息中“Message type”字段为未知的LDP消息类型，且“U”字段的值为“1”，则忽略该未知消息。</p>
+<p>**② Message Type：**15比特 LDP消息的类型。</p>
+<p>**③ Message Length：**16比特 LDP消息的长度，是Message ID、强制参数和可选参数的长度的总和。</p>
+<p>**④ Message ID：**32比特 LDP消息的编号，用于唯一地标识一个LDP消息。</p>
+<p>**⑤ Mandatory Parameters：**变长 LDP消息的强制参数。</p>
+<p>**⑥ Optional Parameters：**变长 LDP消息的可选参数，包含0~n个TLV。由于LDP报文类型繁多，所以将LDP报文分为四大类，每一类表示不同的作用。</p>
+<p><strong>主要分为以下几类：</strong></p>
+<p>① Discovery message发现消息</p>
+<p>② Session message链接消息</p>
+<p>③ Advertise message通知消息</p>
+<p>④ Notification message通告消息</p>
+<p>|<strong>分类</strong>|<strong>作用</strong>|<strong>消息类型</strong>|<strong>具体作用</strong>|
+| :- | :- | :- | :- |
+|<strong>Discovery message类</strong>|<p>发现消息，宣告和维</p><p>护网络中一个LSR的</p><p>存在，使用UDP发送</p><p>hello消息维护邻居</p>|Hello报文|LDP发现机制中宣告本LSR并发现邻居|
+|<strong>Session message类</strong>|链接消息，用于建立、维护和终止LDP 邻居间的LDP 信息传递，使用TCP传输|Initialization|<p>初始化报文，在LDP Session建立过程中，协商参数，如果协商通过，完成LDP Peer</p><p>的协商</p>|
+|||Keep Alive|<p>监控LDP Session的</p><p>TCP连接的完整性</p>|
+|<strong>Advertise message类</strong>|通知消息，生成、改变和删除FEC的标签映射，使用TCP传输|Address|宣告路由器之间口地址|
+|||Address Withdraw|撤销路由器之间接口地址|
+|||Label Mapping|宣告FEC/Label映射消息|
+|||Label Request|请求FEC的标签映射|
+|||Label Abort Request|<p>终止为完成的Label</p><p>Request Message</p>|
+|||Label Withdraw|撤销FEC/Label映射|
+|||Label Release|释放标签|
+|<strong>Notification message类</strong>|通告消息，宣告告警和错误信息|Notification|通知LDP Peer错误信息|
+（1）Discovery message类：</p>
+<p>发现消息，宣告和维护网络中一个LSR的存在，使用UDP发送hello消息维护邻居</p>
+<p>① Hello：</p>
+<p>Hello报文使用Common Hello Parameters TLV和IPv4 Transport Address TLV标示</p>
+<p>LDP发现协议中宣告本LSR并发现邻居，每隔5S发送一次，15S失效，如果两端时间不一致，</p>
+<p>则取时间小的Hello时间为标准，UDP封装，本地地址为单播IP：646，对端目标地址为</p>
+<p>224.0.0.2:646</p>
+<p>注：基本发现中Hello包只能与直连链路上的Peer建立邻居，当配置远端Peer时，此时目</p>
+<p>端的LSR-ID地址,ransport Address为创建TCP session使用的目标地址，默认使用LSR-ID地址，所以在配置LSR-ID时，需要使用实际接口IP</p>
+<p><img alt="image13.png" src="运营_服务管理/imgs/Aspose.Words.12273e48-67f8-4e55-9e03-28e776284506.013.png" /></p>
+<ol class="simple">
+<li><p><strong>公共Header</strong></p></li>
+<li><p><strong>协议报文Header</strong></p></li>
+<li><p><strong>Common Hello Parameters TLV：</strong></p></li>
+</ol>
+<ul class="simple">
+<li><p>**Type：**类型</p></li>
+<li><p>**Length：**长度</p></li>
+<li><p>**Hold Time：**Hello老化时间</p></li>
+<li><p>**Hello类型：**直连链路为Link Hello</p></li>
+<li><p>**GTSM：**置位符，标示是否使用GTSM功能</p></li>
+</ul>
+<ol class="simple">
+<li><p><strong>IPv4 Transport Address TLV</strong>：</p></li>
+</ol>
+<ul class="simple">
+<li><p>**Type：**类型</p></li>
+<li><p>**Length：**长度</p></li>
+<li><p>**IPv4 Transport Address：**连接地址（默认为LSR-id）</p></li>
+</ul>
+<p>（2）Session message类：</p>
+<p>链接消息，用于建立、维护和终止LDP 邻居间的LDP 信息传递，使用TCP传输。</p>
+<p>① Initialization：</p>
+<p>初始化报文，在LDP Session建立过程中协商参数，如果协商通过，完成LDP Peer的协商，</p>
+<p>使用Common Session Parameters TLV进行承载</p>
+<p><img alt="image14.png" src="运营_服务管理/imgs/Aspose.Words.12273e48-67f8-4e55-9e03-28e776284506.014.png" /></p>
+<ol class="simple">
+<li><p><strong>公共Header</strong></p></li>
+<li><p><strong>协议报文Header</strong></p></li>
+<li><p><strong>Common Session Parameters TLV：</strong></p></li>
+</ol>
+<ul class="simple">
+<li><p>**Type：**类型</p></li>
+<li><p>**Length：**长度</p></li>
+<li><p>**Session Protocol Version：**LDP版本</p></li>
+<li><p>**Session Keep Alive Time：**Keep Alive老化时间</p></li>
+<li><p>**Session Max PDU Length：**最大PDU长度</p></li>
+<li><p><strong>Session Receiver LSR Identifier：</strong> 已经存在的LSR邻居ID</p></li>
+</ul>
+<p>② Keep Alive：</p>
+<p>监控LDP Session的TCP连接的完整性，默认15S发送一次， Hold timer为45S，不能修改，</p>
+<p>Keep Alive消息只包含公共头和协议消息头，在建立TCP连接时可以和Initialization一起承载</p>
+<p><img alt="image15.png" src="运营_服务管理/imgs/Aspose.Words.12273e48-67f8-4e55-9e03-28e776284506.015.png" /></p>
+<p>（3）Advertise message类：</p>
+<p>通知消息，生成、改变和删除FEC的标签映射，使用TCP传输。</p>
+<p>① Address：</p>
+<p>宣告路由器之间接口地址</p>
+<p>② Address Withdraw：</p>
+<p>撤销接口地址</p>
+<p>③ Label Mapping：</p>
+<p>宣告FEC/Label映射消息</p>
+<p>④ Label Request：</p>
+<p>请求FEC的标签映射，在DOD模式中，使用此报文请求下游报文去往目标FEC的标签映射</p>
+<p>⑤ Label Abort Request：</p>
+<p>终止为完成的Label Request Message</p>
+<p>⑥ Label Withdraw：</p>
+<p>撤销FEC/Label映射</p>
+<p>⑦ Label Release：</p>
+<p>释放标签，当收到对方的Label Withdraw报文对FEC标签映射进行撤销，撤销之后发送Label</p>
+<p>Release给对端回复</p>
+<p>（4）Notification message类：</p>
+<p>通告消息，宣告告警和错误信息。</p>
+<p>① Notification：</p>
+<p>通知LDP Peer错误信息</p>
+</section>
+<section id="id11">
+<h3><strong>2. LDP收敛过程：</strong><a class="headerlink" href="#id11" title="永久链接至标题">¶</a></h3>
+<p><img alt="image16.jpeg" src="运营_服务管理/imgs/Aspose.Words.12273e48-67f8-4e55-9e03-28e776284506.016.jpeg" /></p>
+<p>（1）Non Existent：</p>
+<p>当本端没有与对端建立TCP连接时，为此状态。</p>
+<ol class="simple">
+<li><p>配置LDP协议后，路由器通过LDP接口发送hello包，hello包采用UDP封装，目标地址为组播224.0.0.2，源端口号、目标端口号都是646</p></li>
+</ol>
+<p>② 收到对端的Hello报文后，根据对端报文中的Transport Address地址建立TCP三次握手，Transport Address中地址大的设备主动发起TCP连接，源端口随机，目标地址Transport Address:646</p>
+<p>注：使用命令[Huawei-GigabitEthernet0/0/1]mpls ldp transport-address g0/0/1选择接进</p>
+<p>行邻居的建立;或直接使用[Huawei-GigabitEthernet0/0/1]mpls ldp transport-addressinterface命令不发送Transport 地址，直接使用hello报文的源地址建立TCP连接</p>
+<p>（2）Initialized：</p>
+<p>双方TCP建立完成后，进入此状态， 双方开始发送Initialization报文，发送报文时进入Open Sent/ Open Rec状态。</p>
+<p>① 协商KeepAlive时间（如果时间不一致，使用最小的）</p>
+<p>② 协商工作模式</p>
+<p>③ 协商MTU</p>
+<p>（3）Open Sent/ Open Rec：</p>
+<p>双发开始发送接收Initialization报文</p>
+<p>① 主动发送方发送Initialization报文后进入Open Sent状态，并等待对端回复Initialization报文</p>
+<p>② 被动方接收到主动方的Initialization报文后，会立刻发送本端的Initialization报文和Keep Alive报文给主动方，进入Open Rec状态，等待主动方回复Keep Alive报文</p>
+<p>③ 主动方收到被动方发送的Initialization报文和Keep Alive报文后，发送Keep Alive报文并进入Operational状态</p>
+<p>④ 被动方收到主动方的Keep Alive报文后，进入Operational状态</p>
+<p>（4）Operational：</p>
+<p>此状态表明LDP session已建立，双方进入Operational状态后，开始交互Advertisement Message类报文</p>
+<p><img alt="image18.jpeg" src="运营_服务管理/imgs/Aspose.Words.12273e48-67f8-4e55-9e03-28e776284506.017.jpeg" /><img alt="image19.jpeg" src="运营_服务管理/imgs/Aspose.Words.12273e48-67f8-4e55-9e03-28e776284506.018.jpeg" /></p>
+</section>
+<section id="id12">
+<h3><strong>3. LDP标签空间：</strong><a class="headerlink" href="#id12" title="永久链接至标题">¶</a></h3>
+<p>在标签传递给下台路由器时，标签的分发有两种类型：</p>
+<p>① 基于平台</p>
+<p>② 基于接口</p>
+<p>（1）基于平台：</p>
+<p>传统LDP标签映射传递给邻居时都是基于“平台（数据帧模式）”的，即自身将某个网段的标签映射传递给与自身相连的多个路由器时，多个路由器收到去往同一个目的地的上游标签都是一致的。另外基于端口的，与其相反。</p>
+<p><img alt="image20.jpeg" src="运营_服务管理/imgs/Aspose.Words.12273e48-67f8-4e55-9e03-28e776284506.019.jpeg" /></p>
+<p>R2基于“平台”模式，在将1.1.1.1的标签映射下发给R3和R4的标签是相同的。</p>
+<p><img alt="image21.jpeg" src="运营_服务管理/imgs/Aspose.Words.12273e48-67f8-4e55-9e03-28e776284506.020.jpeg" /></p>
+<p>（2）基于接口：</p>
+<p>基于接口的标签空间将接口与Label关联起来，即自身将某个网段的标签映射传递给与自身相连的多个路由器时，同一个FEC在传递给每一个接口邻居时的Label都不相同。</p>
+<p><img alt="image22.jpeg" src="运营_服务管理/imgs/Aspose.Words.12273e48-67f8-4e55-9e03-28e776284506.021.jpeg" /></p>
+</section>
+<section id="id13">
+<h3><strong>4. 标签分发方式：</strong><a class="headerlink" href="#id13" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li><p>下游自主方式（DU）＋ 有序标签分配控制方式（Ordered）＋ 自由标签保持方式（Liberal），该方式为缺省方式。</p></li>
+<li><p>下游按需方式（DoD）＋ 有序标签分配控制方式（Ordered）＋ 保守标签保持方式（Conservative）。</p></li>
+</ul>
+<p>标签分发方式是指下游路由器生成标签如何给上游路由器标签，是直接生成标签分发给上游路由器还是上有路由器请求标签后在分发</p>
+<p>① DOD下游按需</p>
+<p>② DU下游自主</p>
+<p>注：生成路由条目的路由器称为下游路由器</p>
+<p><img alt="image23.jpeg" src="运营_服务管理/imgs/Aspose.Words.12273e48-67f8-4e55-9e03-28e776284506.022.jpeg" /></p>
+<p>（1）DOD模式：</p>
+<p>Downstream Demand，下游按需方式，所有路由器生成标签后，不会主动发送标签给LDP邻居，当某台路由器想要去网目的网段的时候，查看IGP路由表中的下一跳，请求下游路由器去往目的网段的Out-label为多少，被请求的路由器将in-label发送给请求的路由器。</p>
+<p><img alt="image24.jpeg" src="运营_服务管理/imgs/Aspose.Words.12273e48-67f8-4e55-9e03-28e776284506.023.jpeg" /></p>
+<p><strong>过程如下：</strong></p>
+<p>① 所有路由器LDP协议收敛后，都不会想邻居发送Label映射</p>
+<p>② R1想要访问3.3.3.3/32的目标网段，根据IGP路由表得出下游地址为R2，向R2请求去往目标地址3.3.3.3/32的标签</p>
+<p>③ R2收到去往目标地址3.3.3.3/32的Label请求后，根据IGP路由表得出下游地址为R3，向R3请求去往目标地址3.3.3.3/32的标签</p>
+<p>④ R3收到R2去往3.3.3.3/32的Label请求信息后，查看IGP路由表发现为直连网段，将标签转发表中的In-Label回复给R2</p>
+<p>⑤ R2收到R3的回复信息后，将FEC为3.3.3.3/32的目标网段的In-Label回复给R1</p>
+<p>⑥ R1收到R2的回复信息后，将标签作为去往目的地址3.3.3.3/32的Out-Label，并生成标签数据包进行发送</p>
+<p><strong>在接口下修改标签分发类型命令：</strong></p>
+<p>[Huawei-GigabitEthernet0/0/0]mpls ldp advertisement dod</p>
+<p>（2）DU模式：</p>
+<p>Downstream Unsolicited，下游自主模式，对于一个特定的FEC，LSR无需从上游获得标签请求消息及进行标签的分配与分发，默认为此模式</p>
+<p><img alt="image25.jpeg" src="运营_服务管理/imgs/Aspose.Words.12273e48-67f8-4e55-9e03-28e776284506.024.jpeg" /></p>
+<p>R2生成直连网段2.2.2.2/32的FEC标签映射表，无需对方请求，直接发送给LDP Peer邻居</p>
+</section>
+<section id="id14">
+<h3><strong>5. 标签分配控制方式：</strong><a class="headerlink" href="#id14" title="永久链接至标题">¶</a></h3>
+<p>① Independent独立模式</p>
+<p>② Order有序模式</p>
+<p>注：华为默认为Order模式</p>
+<p>（1）Order：</p>
+<p>有序模式，按需分发标签，LDP Spoke必须等到IGP最优下游路由器（或路由产生者）邻居给自己分发Out-Label标签后，才会将本地标签分发给下游路由器。</p>
+<p>注：由于没有水平分割的机制，当LDP Spoke收到下游路由器（或路由产生者）邻居给自己</p>
+<p>分发Out-Label标签后，或生成In-Label标签给所有的LDP Peer邻居，包括下游路由器（路由产生者）</p>
+<p><img alt="image26.jpeg" src="运营_服务管理/imgs/Aspose.Words.12273e48-67f8-4e55-9e03-28e776284506.025.jpeg" /></p>
+<p>① 针对3.3.3.3/32的网段，R2生成FEC标签后，不会之间传递给R1，而是检查IGP路由表</p>
+<p>下一跳，等待下游路由器R3将3.3.3.3/32的标签发送给自己</p>
+<p>② R3查看3.3.3.3/32为直连网段，生成Label标签，发送给下游路由器R2</p>
+<p>（2）Independent：</p>
+<p>独立模式，主动分发标签，当路由器生成FEC标签映射表时，不会等待FEC对应的下游路由器发送给自己的Label，而是只要生成Label会立刻发送给邻居</p>
+<p><strong>使用以下命令更改标签控制方式：</strong></p>
+<p>[Huawei-mpls-ldp]label-distribution independent</p>
+<p>|<strong>分发方式+控制方式：</strong>|<strong>分发过程</strong>|
+| :- | :- |
+|<strong>DU+Independent：</strong>|下游自主分发+独立分发，LSR（Transit）无需等待下游（Egress）的标签，就会直接向上游（Ingress）分发标签|
+|<strong>Ø DU+Order：</strong>|下游自主+有序分发，LSR（Transit）只有收到下游（Egress）的标签映射消息，才会向上游（Ingress）分发标签|
+|<strong>DOD+Independent：</strong>|下游按需分发+独立模式，发送标签请求的LSR（Ingress）的直连下游（Transit）会直接回应标签，而不必等待来自最终下游（Egress）的标签|
+|<strong>DOD+Order：</strong>|下游按需分发+有序模式，且标签分配控制方式为Ordered，则发送标签请求的LSR（Ingress）的直连下游（Transit）只有收到最终下游（Egres）的标签映射消息，才会向上游（Ingress）分发标签|</p>
+</section>
+<section id="id15">
+<h3><strong>6. 标签保持模式：</strong><a class="headerlink" href="#id15" title="永久链接至标题">¶</a></h3>
+<p>在DU模式中，一台路由器存在多个下游邻居时，会收到所有下游路由器发送过来的Label映射，LDP路由器本身保留那些标签取决于标签的保持模式。</p>
+<p><img alt="image27.jpeg" src="运营_服务管理/imgs/Aspose.Words.12273e48-67f8-4e55-9e03-28e776284506.026.jpeg" /></p>
+<p><strong>存在两种保留模式：</strong></p>
+<p>① Conservative保守保持模式</p>
+<p>② Liberal自由保持模式（默认模式）</p>
+<p>（1）Conservative：</p>
+<p>保守保持模式，在工作于保守保留模式的LSR 收到所有LDP Peer邻居发送过来的标签映射后，只会保留IGP路由表中下一跳中对应的路由器发送过来的标签，其余非IGP下一跳最优路由发送的标签将会被删除，优点是少保留标签，节省资源。</p>
+<p><strong>使用以下命令改为Conservative：</strong></p>
+<p>[Huawei-mpls-ldp]label-retention conservative</p>
+<p>（2）Liberal：</p>
+<p>自由保持模式，收到无效的Label 通告后（没有对应的IP 路由或路由通告与Label 通告的下一跳不一致），虽然不生成LSP，但会放入数据库中，并且LSR 向上游通告其它FEC 的Label 绑定时也不占用这些标签，优点是LSR应对网络拓扑变化的响应较快，缺点是浪费标签，所有不能生成LSP 的Label 通告都需要保留。</p>
+</section>
+<section id="id16">
+<h3><strong>7. LDP标签分发过程：</strong><a class="headerlink" href="#id16" title="永久链接至标题">¶</a></h3>
+<p>两端的LDP Peer通过Advertise message类报文进行标签的交换，通常收到对端的Advertise message类报文后会将所有的标签信息放到LDP标签数据库中，并从标签数据库中选举有用的标签条目放入标签转发表中。</p>
+<p>（1）LDP标签数据库：</p>
+<p>由于MPLS默认不开启水平分割功能，所以路由器会将自己的FEC标签通告给所有的邻居，所以数据库中存放着所有邻居传递过来的Label映射。</p>
+<p>Address报文中携带着路由器自身的所有IP地址，当路由器收到同一个FEC不同邻居发送的Label标签映射时，根据IGP路由表的下一跳地址和Address报文中的IP地址进行对应，</p>
+<p>选出最优的Out-Label放入转发表中。</p>
+<p>如果不符合下一跳地址，或者FEC没有存在路由表，都会将其标识为*，并且不会放入</p>
+<p>LDP转发表中。</p>
+<p>使用命令[Huawei-mpls-ldp]loop-detect开启水平分割</p>
+<p><img alt="image28.png" src="运营_服务管理/imgs/Aspose.Words.12273e48-67f8-4e55-9e03-28e776284506.027.png" /></p>
+<p>（2）LDP标签转发表：</p>
+<p>当路由器从LDP Peer邻居收到Label后，由于会从所有的LDP Peer收到标签，所以会查看IP路由表，根据FEC对应的下一跳地址（多条路径为最优路由）选举出对应的标签映射表，放入LDP标签转发表中，所以标签转发表中只存在实际转发使用的标签转发映射信息</p>
+<p><strong>标签转发表由四部分组成：</strong></p>
+<p>① FEC</p>
+<p>② In-Label</p>
+<p>③ Out-Label</p>
+<p>④ IF接口</p>
+<p><img alt="image29.jpeg" src="运营_服务管理/imgs/Aspose.Words.12273e48-67f8-4e55-9e03-28e776284506.028.jpeg" /></p>
+<p><strong>注：除自身产生的FEC外，每条FEC都有两条LSP转发表项：</strong></p>
+<ul class="simple">
+<li><p>一条为Tranter网络，指流量从上游路由器传递归来带标签的数据包，根据LSP转发表将In-Label转换为Out-Label，所以In-Label和Out-Label都不为Null</p></li>
+<li><p>一条为自身去往目标网络的LSP表或没有标签的数据包，自身生成的数据包，所以In-Label为Null，Out-Label为Push动作，huawei没有明确指出，因为没有标签的数据包进入本设备查看的应该为FIB表，而不是标签转发表</p></li>
+<li><p>自身直连的FEC条目时没有出接口的，原因在于FEC的目标地址是自己还是接口路由器通过Label表并不能确定，所以会查看FIB进行确认</p></li>
+</ul>
+<p>（3）标签分发过程：</p>
+<p><strong>华为设备默认：</strong></p>
+<ul class="simple">
+<li><p>存在PHP行为</p></li>
+<li><p>基于平台分发标签</p></li>
+<li><p>DU下游自主模式分发</p></li>
+<li><p>Order有序分配控制</p></li>
+<li><p>Liberal自由保持模式</p></li>
+</ul>
+<p><img alt="image30.png" src="运营_服务管理/imgs/Aspose.Words.12273e48-67f8-4e55-9e03-28e776284506.029.png" /></p>
+<p><strong>针对AR14的FEC14.14.14.14/32分发：</strong></p>
+<p>① 采用Order有序分配模式，所有路由器都等待IGP下一跳路由器分配关于14.14.14.14/32的Out-Label标签</p>
+<p>② AR14为FEC14.14.14.14/32的直连路由器，生成Label标签，由于存在PHP行为，所以生成隐式空标签3，DU模式，所以直接传递给上游路由器AR12</p>
+<p>③ AR12收到FEC14.14.14.14/32对应的Out-Label标签后，生成本地标签In-Label1024（Tranter）和Null（自身发起流量），由于是基于平台分发，不存在水平分割行为，所以传递给自己所有的邻居AR11和AR13和AR14，关于FEC14.14.14.14/32的标签映射都为1024</p>
+<p>④ A13收到FEC14.14.14.14/32对应的Out-Label标签后，生成本地标签In-Label1024（Tranter）和Null（自身发起流量），并传递给自己所有的邻居AR11和AR12</p>
+<p>⑤ AR11从自己的下游路由器收到两份关于FEC14.14.14.14/32的Label标签，会根据IGP下一跳地址和邻居通告的Address报文中的IP进行对应，选出最优邻居，将此Label映射放入Label转发表中（同理AR13也会收到两份）</p>
+<p>⑥ 由于采用Liberal自由保持模式，所以AR11和AR13会在数据库中保留所有邻居传递过来的Label映射</p>
+</section>
+<section id="id17">
+<h3><strong>8. LDP配置：</strong><a class="headerlink" href="#id17" title="永久链接至标题">¶</a></h3>
+<p>（1）对端LDP配置：</p>
+<p>默认使用LSR-ID的地址作为接口地址进行邻居的建立，如果使用loopback作为LSR-ID，一</p>
+<p>定要保证Loopback口地址可达，但无需启用MPLS和LDP，4</p>
+<p>可是使用命令[Huawei-GigabitEthernet0/0/1]mpls ldp transport-address g0/0/1选择接进</p>
+<p>行邻居的建立。</p>
+<p><strong>详细配置：</strong></p>
+<p>[Huawei]mpls lsr-id 1.1.1.1——配置LSR-id</p>
+<p>[Huawei]mpls———开启MPLS</p>
+<p>[Huawei-mpls]lsp-trigger all—启用为所有的路由分配标签</p>
+<p>[Huawei-mpls]mpls ldp—–开启LDP协议</p>
+<p>[Huawei]inter e0/0/1</p>
+<p>[Huawei-Ethernet0/0/1]mpls</p>
+<p>[Huawei-Ethernet0/0/1]mpls ldp</p>
+<p><strong>查看命令：</strong></p>
+<ul class="simple">
+<li><p>使用命令<Huawei>display mpls ldp peer 查看邻居连接数</p></li>
+<li><p>使用命令<Huawei>display mpls ldp session查看邻居状态</p></li>
+<li><p>使用命令<Huawei>display mpls ldp lsp查看LDP数据库</p></li>
+<li><p>使用命令<Huawei>display mpls lsp查看标签交换表</p></li>
+</ul>
+<p>（2）远端LDP配置：</p>
+<p><img alt="image31.jpeg" src="运营_服务管理/imgs/Aspose.Words.12273e48-67f8-4e55-9e03-28e776284506.030.jpeg" /></p>
+<p>[Huawei]mpls lsr-id 1.1.1.1</p>
+<p>[Huawei]mpls</p>
+<p>[Huawei]mpls ldp</p>
+<p>[Huawei]mpls ldp remote-peer huawei</p>
+<p>[Huawei-mpls-ldp-remote-huawei]remote-ip 3.3.3.3</p>
+<p>（3）LDP过滤：</p>
+<p>[Huawei]ip ip-prefix huawei permit 3.3.3.3 32</p>
+<p>[Huawei]mpls ldp</p>
+<p>[Huawei-mpls-ldp]inbound peer 3.3.3.3 fec ip-prefix huawei—–peer对端的LSR-id，也可以使用outbound</p>
+</section>
+</section>
+<section id="id18">
+<h2><strong>八. MPLS防环：</strong><a class="headerlink" href="#id18" title="永久链接至标题">¶</a></h2>
+<p>与传统IP数据包一样，MPLS也会存在环路，但可以通过以下几种方式防止环路：</p>
+<p>① IGP检测</p>
+<p>② TTL环路检测</p>
+<section id="igp">
+<h3><strong>1.IGP检测：</strong><a class="headerlink" href="#igp" title="永久链接至标题">¶</a></h3>
+<p>默认MPLS在创建LSP时，只会将符合IGP下一跳接口传来的Label放入标签转发表，基于</p>
+<p>IGP协议进行防环</p>
+</section>
+<section id="ttl">
+<h3><strong>2.TTL环路检测：</strong><a class="headerlink" href="#ttl" title="永久链接至标题">¶</a></h3>
+<p>如果数据在MPLS传输中出现环路，此时可以使用MPLS中的TTL值进行环路的防止，MPLS防环分为两种模式：</p>
+<p>① Uniform模式</p>
+<p>② Pipe模式</p>
+<p><img alt="image32.jpeg" src="运营_服务管理/imgs/Aspose.Words.12273e48-67f8-4e55-9e03-28e776284506.031.jpeg" /></p>
+<p>（1）Uniform模式：</p>
+<p><strong>统一模式，默认为此模式：</strong></p>
+<p>① 当一个纯IP报文进入LSP中，ingress-LER会将IP报头的TTL值减1，并将数据报文压入</p>
+<p>标签，把数据包中IP报头中的TTL值拷贝到标签汇中的TTL值中。</p>
+<p>② 标签数据包在LSP中传递，每经过一跳，标签头部的TTL值减1。</p>
+<p>③ 当标签数据包进入次末跳路由器中，LER会将标签中的TTL值减1，并将标签中的TTL值替换到IP报头中的TTL值，弹出标签，进行IP转发。</p>
+<p>（2）Pipe模式：</p>
+<p>管道模式，这种模式更安全，攻击者无法使用Tracert命令探知当前LSP中的路由器地址，</p>
+<p>使用[Huawei]undo ttl propagate改为Pipe模式</p>
+<p><strong>过程：</strong></p>
+<p>① 当一个纯IP报文进入LSP中，ingress-LER会将IP报头的TTL值减1，不会将数据报文压</p>
+<p>入标签，而是在MPLS报文中生成新的TTL值为255</p>
+<p>② 标签数据包在LSP中传递，每经过一跳，标签头部的TTL值减1。</p>
+<p>③ 当标签数据包进入次末跳路由器中，LER会将MPLS标签弹出，并将IP报文的TTL减1，送到出接口</p>
+<p>（3）Tracert LSP:</p>
+<p>① ttl expiration pop命令用来配置MPLS TTL超时后ICMP响应报文个人根据探测报文源地址沿本地IP路由转发，缺省情况下，对于一层标签的MPLS TTL超时报文，将根据本地IP路由返回ICMP报文。</p>
+<ol class="simple">
+<li><p>undo ttl expiration pop命令用来取消此功能，即ICMP响应报文沿LSP返回。如果LSR</p></li>
+</ol>
+<p>上不存在到达报文发送者的路由，则ICMP响应报文可以 按照LSP继续传送，到达LSP出节点后，由Egress节点将该消息返回给发送者。</p>
+<p><img alt="image33.png" src="运营_服务管理/imgs/Aspose.Words.12273e48-67f8-4e55-9e03-28e776284506.032.png" /></p>
+<p>① Uniform模式：</p>
+<p>无路由黑洞：</p>
+<ul class="simple">
+<li><p>AR1生成TTL值为1的UDP报文，封装MPLS标签，TTL为1，传递给AR2，AR2收到后TTL减为0，AR2发送差错消息给AR1，AR1得到第一跳路由器的信息</p></li>
+<li><p>AR1发送TTL值为2的UDP报文给AR1，AR1将MPLS TTL值减1，传递给AR3，AR3讲MPLS TTL减1，变为0，发送差错报文给AR1，AR1得出第二跳路由器信息</p></li>
+</ul>
+<p>存在路由黑洞：</p>
+<ul class="simple">
+<li><p>AR1和AR4之间存在路由黑洞，使用MPLS迭代功能解决此问题</p></li>
+<li><p>AR1生成TTL值为1的UDP报文，封装MPLS标签，TTL为1，传递给AR2，AR2收到后TTL减为0，默认华为设备为ttl expiration pop，即根据探测报文源地址发送ICMP错误报文给源设备AR2检查源地址生成差错消息，但是由于没有11.11.11.11/32的路由，所以差错报文丢弃</p></li>
+<li><p>如果使用命令undo ttl expiration pop命令，即ICMP响应报文沿LSP继续传送，此时ICMP错误告知报文会使用数据包的MPLS字段，并将TTL值设置为255继续沿LSP方向传递下去，最终报文传递给AR4，AR4查看目标地址为11.11.11.11/32，重新封装标签传回AR1</p></li>
+</ul>
+<p>VPNv4 LSP：</p>
+<ul class="simple">
+<li><p>AR1发送TTL值为1的UDP报文给AR2，AR2收到后TTL减为0，由于是VPNv4路由，所以之间的P设备是无法访问这些VPNv4路由的，所以Huawei设备默认直接使用undo ttl expiration pop，ICMP错误报文直接封装源数据包的两层标签继续沿着LSP进行转发</p></li>
+<li><p>到达对端PE设备，PE剥除第二层标签，看到ICMP错误报文目标地址重新封装标签传回原设备</p></li>
+</ul>
+<p>② Pipe模式：</p>
+<ul class="simple">
+<li><p>AR1生成TTL值为1的UDP报文，封装MPLS标签，TTL为255，传递给AR2，AR2收到后MPLS TTL减1变为254</p></li>
+<li><p>数据包传递给AR3，MPLS中的TTL值减1，次末跳弹出MPLS报文，将IP报文转发给AR4，AR4查看IP TTL值为1，变为0，丢弃报文，发送差错消息给AR1，所以当配置为Pipe模式的TTL环路检测，所以只能Tracert MPLS中的Ingress-LER和Egress-LER的IP信息</p></li>
+</ul>
+</section>
+</section>
+<section id="mpls-vpn">
+<h2><strong>九. MPLS VPN：</strong><a class="headerlink" href="#mpls-vpn" title="永久链接至标题">¶</a></h2>
+<p>MPLS VPN有时也简称为MPLS L3 VPN，它是MPLS最为广泛的应用，他使用MP-BGP在服务，</p>
+<p>提供商骨干网上发布VPN路由，使用MPLS在服务提供商骨干网上转发VPN报文。BGP/MPLS</p>
+<p>VPN主要部署在运营商网络。</p>
+<section id="id19">
+<h3><strong>1. MPLS/VPN特点：</strong><a class="headerlink" href="#id19" title="永久链接至标题">¶</a></h3>
+<p><strong>MPLS/VPN模型特点：</strong></p>
+<p>① 隧道承载：客户设备透明\运营商设备维护</p>
+<p>② 路由维护：客户设备维护\运营商设备维护</p>
+<p>③ VPN数据封装：MPLS标签报头</p>
+<p>④ 优势：由运营商维护客户路由，降低管理成本</p>
+<p>⑤ 劣势：路由信息被运营商获取，数据缺乏加密</p>
+</section>
+<section id="id20">
+<h3><strong>2. MPLS VPN角色：</strong><a class="headerlink" href="#id20" title="永久链接至标题">¶</a></h3>
+<p><img alt="image34.jpeg" src="运营_服务管理/imgs/Aspose.Words.12273e48-67f8-4e55-9e03-28e776284506.033.jpeg" /></p>
+<p>（1）CE：</p>
+<p>Custom Edge Router，客户端边界路由器，为企业的边界路由器。</p>
+<p>（2）PE：</p>
+<p>Provider Edge Router，运行商边界路由器，用于连接企业的边界路由器。</p>
+<p><strong>PE的作用：</strong></p>
+<p>① 私网标签分配</p>
+<p>② 私网路由交叉</p>
+<p>③ 公网隧道迭代</p>
+<p>（3）P：</p>
+<p>Provider Router，运营商路由器。</p>
+<p>（4）Site：</p>
+<p>VPN用户站点，指相互之间具备IP连通性的一组IP系统，且该系统IP连通性不需通过ISP实现，所以一个Site指一个企业分支的私有网络</p>
+</section>
+<section id="vpn-instance">
+<h3><strong>3. VPN-Instance:</strong><a class="headerlink" href="#vpn-instance" title="永久链接至标题">¶</a></h3>
+<p>通常MPLS VPN中PE的每个接口都连接各个企业的CE，为了保证安全，路由信息相互隔离，所以此时需要在PE上配置VPN-Instance。</p>
+<p>在MPLS-VPN中，每个VPN实例为相应的VPN客户单独维护一张路由和转发表，这种</p>
+<p>技术称之为VPN-Instance（cisco称为VRF- VPN Routing and Forwarding Table）。</p>
+<p>不同的VPN实例间的路由是不能相互通信的，在PE设备上，通过连接CE的接口绑定VPN实例，接口区分不同的VPN客户的路由。当PE将VPN路由传递至VPN实例，每个实例都有自己维护的接口、FIB表、路由协议，各个实例之间相互独立。</p>
+</section>
+<section id="mp-bgp">
+<h3><strong>4. MP-BGP:</strong><a class="headerlink" href="#mp-bgp" title="永久链接至标题">¶</a></h3>
+<p>Multi-Protocol BGP，使用命令将VPN-Instance中路由和MP-BGP路由互相引入，实现用来传递各个VPN-Instance中的路由信息和数据给对端。</p>
+<p><img alt="image35.png" src="运营_服务管理/imgs/Aspose.Words.12273e48-67f8-4e55-9e03-28e776284506.034.png" /></p>
+<p><strong>而在使用MP-BGP传递各个VPN-Instance中的私网路由时，存在两个问题：</strong></p>
+<p>① 在BGP链路上，可能会传递不同VPN实例相同的私网路由，此时如果为BGP的IPv4单播时，由于单播BGP不使用附载均衡，所以BGP只会从中选择其中一条私网路由进行传递，造成有的实例收不到对端实例私网路由的现象，MP-BGP会使用RD值+IPv4地址在全局BGP路由表中唯一标识一条VPNv4路由</p>
+<p>② 当P设备收到对端P设备的VPNv4路由，如何区分这些路由使他们进入到正确的VPN-Instance中，所以两端为不同的VPN-Instance使用相同的标识，每条VPNv4路由携带这些标识，当P设备收到带标识的VPNv4路由时，根据标识将VPNv4路由送入正确的VPN-Instance</p>
+<p>（1）RD：</p>
+<p>Route Distinguisher，路由区分器，用于区分不同实例使用相同的IPv4地址前缀的问题，使用RD值（8Byte）+私有路由地址（4Byte）在MP-BGP路由表中唯一标识一条VPNv4路由</p>
+<p>注：边界路由器同一VPN实例RD值建议不一致（防止出现两端私网路由相同），不同VPN实例的RD必须不一致</p>
+<p><img alt="image36.jpeg" src="运营_服务管理/imgs/Aspose.Words.12273e48-67f8-4e55-9e03-28e776284506.035.jpeg" /></p>
+<p>RD与路由一起被携带在BGP Update报文中发送给对端。</p>
+<p>RD不具有选路能力，不影响路由的发送与接受。</p>
+<p>RD用来区分本地VRF，本地有效。</p>
+<p><strong>RD有三种模式，所以前2Byte用来表示使用哪种模式：</strong></p>
+<ol class="simple">
+<li><p>Type0：Administrator Subfield为2Byte，Assigned Number Subfield为4Byte</p></li>
+</ol>
+<p>16bits自制系统号（最大65535）+32bits用户自定义数字（最大4294967296），例如65534:1</p>
+<p>② Type1：Administrator Subfield为4Byte，Assigned Number Subfield为2Byte</p>
+<p>32bits IPv4地址+16bits用户自定义数字（最大65535），例如172.1.1.1:65534</p>
+<p>③ Type2：Administrator Subfield为4Byte，Assigned Number Subfield为2Byte</p>
+<p>32bit自制系统号+8bit的用户自定义数字，例如65536:1</p>
+<p>（2）RT：</p>
+<p>Route Target，8Byte，路由目标，RT是VPNv4路由携带的一个重要的扩展团体属性，它决定VPN路由的收发和过滤，PE依靠RT属性区分不同VPN之间路由，用于控制VPN路由信息的发布，将PE上接收到的VPNv4前缀通告到正确的CE设备。</p>
+<p><strong>RT包含Export Target和Import Target：</strong></p>
+<p>① Export Target在VPNv4路由前缀通告时作为扩展团体属性携带</p>
+<p>② Import Target在本地VRF用于接收具有特定RT值的VPNv4路由前缀，用于送往正确的CE设备</p>
+<p>注：不同VPN实例的RT必须不一致，相同VPN实例的RT必须一致</p>
+<p><strong>过程如下：</strong></p>
+<p>① 当从VRF表中导出VPN路由时，要用Export RT对VPN路由进行标记。</p>
+<p>② 当往VRF表中导入VPN路由时，只有所带RT标记与VRF表中任意一个Import RT相符的路由才会被导入到VRF表中，如果所有RT都不符合VPN-v4路由的RT值，PE将丢弃该路由</p>
+</section>
+<section id="id21">
+<h3><strong>5. MPLS VPN组网：</strong><a class="headerlink" href="#id21" title="永久链接至标题">¶</a></h3>
+<p>MPLS VPN组网分为三种模式：</p>
+<p>① Intranet VPN</p>
+<p>（1）Intranet VPN：</p>
+<p>最简单的情况下，一个VPN中所有用户形成闭合用户群，相互之间能够进行流量转发，VPN中的用户不能与任何本VPN以外的用户通信。这种组网方式的VPN称为Intranet VPN，其站点通常属于同一个组织。</p>
+<p><img alt="image37.jpeg" src="运营_服务管理/imgs/Aspose.Words.12273e48-67f8-4e55-9e03-28e776284506.036.jpeg" /></p>
+<p>VPN1—VPN1：RT值相同</p>
+<p>VPN2—VPN2：RT值相同</p>
+<p>不同VPN实例时互相隔绝的</p>
+<p>（2）Extranet VPN：</p>
+<p>如果一个VPN用户希望访问其他VPN中的某些站点，可以使用Extranet组网方案。</p>
+<p><img alt="image38.jpeg" src="运营_服务管理/imgs/Aspose.Words.12273e48-67f8-4e55-9e03-28e776284506.037.jpeg" /></p>
+<p>（3）Hub and Spoke：</p>
+<p>如果希望在VPN中心访问控制设备，其他用户的互访都可通过中心访问控制设备进行，可以使用Hub and Spoke组网方案。</p>
+<p><img alt="image39.jpeg" src="运营_服务管理/imgs/Aspose.Words.12273e48-67f8-4e55-9e03-28e776284506.038.jpeg" /></p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="%E6%A8%A1%E6%9D%BF-%E5%9B%BE%E6%96%87%E8%A7%A3%E9%87%8A.html" class="btn btn-neutral float-left" title="模板-图文解释" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../%E9%9D%9E%E4%BA%A7%E5%93%81%E6%9C%8D%E5%8A%A1%E6%89%8B%E5%86%8C/RUNOOB.html" class="btn btn-neutral float-right" title="RUNOOB Markdown Test" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2022, Jade.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

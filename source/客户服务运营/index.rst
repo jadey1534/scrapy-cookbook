@@ -5,7 +5,7 @@
    :caption: MPLSVPN组网产品服务:
 
 
-   MPLSVPN组网产品服务/PE端
+   MPLSVPN组网产品服务/index
 
 .. toctree::
    :maxdepth: 1

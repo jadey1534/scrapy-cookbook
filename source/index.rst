@@ -30,7 +30,7 @@ Welcome to SOP System
 .. toctree::
    :maxdepth: 1
    :includehidden:
-
+   :caption: 非产品服务手册:
    非产品服务手册/index
    
 .. toctree::

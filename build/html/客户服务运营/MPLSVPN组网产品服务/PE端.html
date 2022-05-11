@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>&lt;no title&gt; &mdash; Test 1.0 文档</title>
+  <title>PE端 &mdash; Test 1.0 文档</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/my_theme.css" type="text/css" />
@@ -19,7 +19,9 @@
         <script src="../../_static/translations.js"></script>
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../../genindex.html" />
-    <link rel="search" title="搜索" href="../../search.html" /> 
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="FastIP产品服务" href="../FastIP%E4%BA%A7%E5%93%81%E6%9C%8D%E5%8A%A1/index.html" />
+    <link rel="prev" title="MPLSVPN组网产品服务" href="index.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -39,9 +41,21 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">客户服务运营:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../123.html">test</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../config.html">Cisco 单机-BGP配置</a></li>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">MPLSVPN组网产品服务</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">PE端</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../FastIP%E4%BA%A7%E5%93%81%E6%9C%8D%E5%8A%A1/index.html">FastIP产品服务</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">MPLSVPN组网产品服务</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">PE端</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../%E5%8D%8E%E4%B8%BASD-WAN%E4%BA%A7%E5%93%81%E6%9C%8D%E5%8A%A1/index.html">华为SD-WAN产品服务</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">MPLSVPN组网产品服务</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">PE端</a></li>
+</ul>
+</li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">平台服务运营:</span></p>
 <ul>
@@ -76,7 +90,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>&lt;no title&gt;</li>
+          <li><a href="../index.html">&lt;no title&gt;</a> &raquo;</li>
+          <li><a href="index.html">MPLSVPN组网产品服务</a> &raquo;</li>
+      <li>PE端</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../_sources/客户服务运营/MPLSVPN组网产品服务/PE端.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -86,132 +102,119 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">主线</span>
-
-<span class="n">LineID</span><span class="p">:</span><span class="mi">604828</span><span class="n">C1</span>
-<span class="n">PE</span><span class="p">:</span><span class="n">bja</span><span class="o">-</span><span class="n">upe1</span>
-<span class="n">Tunnel</span><span class="p">:</span><span class="n">Tunnel0</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="mi">1349</span> <span class="c1">#在设备上找到没有被使用过的tunnel编号，即在设备上找不到的tunnel编号</span>
-<span class="n">wanip</span><span class="p">:</span><span class="mf">10.30.33.100</span><span class="o">/</span><span class="mi">30</span>
-<span class="n">PE</span> <span class="n">对接</span><span class="p">:</span><span class="mf">10.200.200.23</span> <span class="c1">#PE对接，用于PE端ipsec拨号的，每台设备用的ip都是不一样的</span>
-<span class="n">CE</span> <span class="n">对接</span><span class="p">:</span><span class="mf">10.50.30.5</span> <span class="c1">#CE对接，用于CE端ipsec拨号的，每个客户用的都是不一样的</span>
-<span class="n">PE</span> <span class="n">AS号</span><span class="p">:</span><span class="mi">65112</span>
-<span class="n">CE</span> <span class="n">AS号</span><span class="p">:</span><span class="mi">65202</span>
-
-<span class="n">拨号PE</span><span class="p">:</span><span class="n">bja</span><span class="o">-</span><span class="n">upe1</span>
-<span class="n">对接IP</span><span class="p">:</span><span class="mf">10.200.200.23</span>
-<span class="n">LoopIP</span><span class="p">:</span><span class="mf">10.50.30.5</span>
-<span class="n">拨号ip</span><span class="p">:</span><span class="mf">118.193.100.28</span>
-<span class="n">秘钥</span><span class="p">:</span><span class="n">both</span><span class="o">-</span><span class="n">win</span>
-
-<span class="c1">#bja-upe1</span>
-<span class="n">acl</span> <span class="n">name</span> <span class="n">CT</span> <span class="c1">#根据工单要求的运营商来选定</span>
- <span class="n">rule</span> <span class="n">permit</span> <span class="n">ip</span> <span class="n">source</span> <span class="mf">10.200.200.23</span> <span class="mi">0</span> <span class="n">destination</span> <span class="mf">10.50.30.5</span> <span class="mi">0</span> <span class="c1">#放通用于给客户拨ipsec的ip 即配置允许进行IPSec加密的地址网段</span>
-
-<span class="c1">#bja-upe1</span>
-
-<span class="c1">#创建vpn实例，命名标准是vrf-客户cid-客户名缩写，RD和RT都是用65000：客户cid的格式</span>
-<span class="n">ip</span> <span class="n">vpn</span><span class="o">-</span><span class="n">instance</span> <span class="n">vrf</span><span class="o">-</span><span class="mi">604828</span><span class="o">-</span><span class="n">WoTai</span>
-<span class="n">ipv4</span><span class="o">-</span><span class="n">family</span>
-<span class="n">route</span><span class="o">-</span><span class="n">distinguisher</span> <span class="mi">65000</span><span class="p">:</span><span class="mi">604828</span>
-<span class="n">vpn</span><span class="o">-</span><span class="n">target</span> <span class="mi">65000</span><span class="p">:</span><span class="mi">604828</span> <span class="n">export</span><span class="o">-</span><span class="n">extcommunity</span>
-<span class="n">vpn</span><span class="o">-</span><span class="n">target</span> <span class="mi">65000</span><span class="p">:</span><span class="mi">604828</span> <span class="mi">65000</span><span class="p">:</span><span class="mi">20150721</span> <span class="mi">65499</span><span class="p">:</span><span class="mi">20191117</span> <span class="n">import</span><span class="o">-</span><span class="n">extcommunity</span>
-
-
-
-<span class="n">interface</span> <span class="n">Tunnel0</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="mi">1349</span>
-<span class="n">description</span> <span class="o">&lt;</span><span class="mi">604828</span><span class="n">C1</span><span class="o">&gt;</span> <span class="n">Wo</span> <span class="n">Tai</span> <span class="n">Neng</span> <span class="n">Yuan</span> <span class="n">Ltd</span> <span class="o">-</span> <span class="n">Frankfurt</span> <span class="n">Site</span> <span class="c1">##Main## (28Feb2022) #命名格式：Guang Lian Ltd-Dong Guang Site ##Main##（分配数据的日期）</span>
-<span class="n">bandwidth</span> <span class="mi">10240</span> <span class="c1">#设置网管在MIB上获取的接口带宽，并不是锁带宽的命令</span>
-<span class="n">ip</span> <span class="n">binding</span> <span class="n">vpn</span><span class="o">-</span><span class="n">instance</span> <span class="n">vrf</span><span class="o">-</span><span class="mi">604828</span><span class="o">-</span><span class="n">WoTai</span> <span class="c1">#在tunnel中绑定vpn实例</span>
-<span class="n">tcp</span> <span class="n">adjust</span><span class="o">-</span><span class="n">mss</span> <span class="mi">1400</span>
-<span class="n">ip</span> <span class="n">address</span> <span class="mf">10.30.33.101</span> <span class="mf">255.255.255.252</span>
-<span class="n">tunnel</span><span class="o">-</span><span class="n">protocol</span> <span class="n">gre</span> <span class="c1">#tunnel模式为GRE</span>
-<span class="n">statistic</span> <span class="n">enable</span> <span class="n">inbound</span> <span class="c1">#使能接口入方向的流量统计功能</span>
-<span class="n">statistic</span> <span class="n">enable</span> <span class="n">outbound</span> <span class="c1">#使能接口出方向的流量统计功能</span>
-<span class="n">source</span> <span class="mf">10.200.200.23</span> <span class="c1">#设置tunnel源对接</span>
-<span class="n">destination</span> <span class="n">vpn</span><span class="o">-</span><span class="n">instance</span> <span class="n">VRF</span><span class="o">-</span><span class="n">S2S</span><span class="o">-</span><span class="n">VPN</span> <span class="mf">10.50.30.5</span> <span class="c1">#设置tunnel目的对接，需要注意的是ipsec数据，目的对接会带一个vpn实例，VRF-S2S-VPN，而openvpn over GRE的数据中，目的对接不带vpn实例</span>
-<span class="n">qos</span> <span class="n">car</span> <span class="n">inbound</span> <span class="n">cir</span> <span class="mi">10240</span> <span class="n">pir</span> <span class="mi">11264</span> <span class="c1">#带宽锁中的pir =（10240=*1.1）= 11264，cir是承诺信息速率，pir是指定峰值信息速率，即能够通过的最大速率</span>
-<span class="n">qos</span> <span class="n">car</span> <span class="n">outbound</span> <span class="n">cir</span> <span class="mi">10240</span> <span class="n">pir</span> <span class="mi">11264</span>
-<span class="n">ip</span> <span class="n">route</span><span class="o">-</span><span class="n">static</span> <span class="mf">10.30.33.100</span> <span class="mi">30</span> <span class="n">Tunnel0</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="mi">1349</span> <span class="mf">10.30.33.102</span> <span class="c1">#将tunnel的wanip发布在全局路由表中</span>
-
-
-<span class="n">bgp</span> <span class="mi">65112</span>
-<span class="n">ipv4</span><span class="o">-</span><span class="n">family</span> <span class="n">vpn</span><span class="o">-</span><span class="n">instance</span> <span class="n">vrf</span><span class="o">-</span><span class="mi">604828</span><span class="o">-</span><span class="n">WoTai</span> <span class="c1">#指定的VPN实例与IPv4地址族进行关联，并进入BGP-VPN实例IPv4地址族视图。</span>
-<span class="n">dampening</span> <span class="mi">10</span> <span class="mi">1500</span> <span class="mi">3000</span> <span class="mi">6000</span> <span class="c1">#设置bgp路由振荡参数</span>
-<span class="n">import</span><span class="o">-</span><span class="n">route</span> <span class="n">direct</span>
-<span class="n">import</span><span class="o">-</span><span class="n">route</span> <span class="n">static</span> <span class="n">route</span><span class="o">-</span><span class="n">policy</span> <span class="n">bgp</span><span class="o">-</span><span class="n">To</span><span class="o">--</span><span class="n">VPN</span><span class="o">-</span><span class="n">Redistribute</span><span class="o">-</span><span class="n">Static</span>
-
-<span class="c1">#配置bgp</span>
-<span class="n">peer</span> <span class="mf">10.30.33.102</span> <span class="k">as</span><span class="o">-</span><span class="n">number</span> <span class="mi">65202</span> <span class="c1">#指定CE端的AS号</span>
-<span class="n">peer</span> <span class="mf">10.30.33.102</span> <span class="n">connect</span><span class="o">-</span><span class="n">interface</span> <span class="n">Tunnel0</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="mi">1349</span> <span class="c1">#指定更新源接口</span>
-<span class="n">peer</span> <span class="mf">10.30.33.102</span> <span class="n">advertise</span><span class="o">-</span><span class="n">community</span> <span class="c1">#使能发送community</span>
-<span class="n">peer</span> <span class="mf">10.30.33.102</span> <span class="n">route</span><span class="o">-</span><span class="n">policy</span> <span class="n">FROM</span><span class="o">-</span><span class="n">CE</span><span class="o">-</span><span class="n">MAIN</span><span class="o">-</span><span class="n">ROUTES</span> <span class="kn">import</span>  <span class="c1">#主线所使用的路由策略，定义从CE端学到的路由调整preferred-value为65535</span>
-<span class="n">peer</span> <span class="mf">10.30.33.102</span> <span class="n">route</span><span class="o">-</span><span class="n">limit</span> <span class="mi">100</span> <span class="mi">90</span> <span class="n">idle</span><span class="o">-</span><span class="n">timeout</span> <span class="mi">5</span> <span class="c1">#设置允许从对等体收到的路由数量为100，路由超限断连后，自动重新建立连接的超时定时器为90分钟</span>
-
-
-
-<span class="n">备线</span>
-
-<span class="n">LineID</span><span class="p">:</span><span class="mi">604828</span><span class="n">C2</span>
-<span class="n">PE</span><span class="p">:</span><span class="n">hkj</span><span class="o">-</span><span class="n">upe1</span>
-<span class="n">Tunnel</span><span class="p">:</span><span class="n">Tunnel0</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="mi">1162</span>
-<span class="n">wanip</span><span class="p">:</span><span class="mf">10.30.82.88</span><span class="o">/</span><span class="mi">30</span>
-<span class="n">PE</span> <span class="n">对接</span><span class="p">:</span><span class="mf">10.200.200.29</span>
-<span class="n">CE</span> <span class="n">对接</span><span class="p">:</span><span class="mf">10.50.43.9</span>
-<span class="n">PE</span> <span class="n">AS号</span><span class="p">:</span><span class="mi">65117</span>
-<span class="n">CE</span> <span class="n">AS号</span><span class="p">:</span><span class="mi">65202</span>
-
-<span class="n">拨号PE</span><span class="p">:</span><span class="n">hkj</span><span class="o">-</span><span class="n">upe1</span>
-<span class="n">对接IP</span><span class="p">:</span><span class="mf">10.200.200.29</span>
-<span class="n">LoopIP</span><span class="p">:</span><span class="mf">10.50.43.9</span>
-<span class="n">拨号ip</span><span class="p">:</span><span class="mf">154.18.8.116</span>
-<span class="n">秘钥</span><span class="p">:</span><span class="n">both</span><span class="o">-</span><span class="n">win</span>
-
-<span class="c1">#hkj-upe1</span>
-<span class="n">acl</span> <span class="n">name</span> <span class="n">OT</span>
- <span class="n">rule</span> <span class="n">permit</span> <span class="n">ip</span> <span class="n">source</span> <span class="mf">10.200.200.29</span> <span class="mi">0</span> <span class="n">destination</span> <span class="mf">10.50.43.9</span> <span class="mi">0</span>
-
-<span class="c1">#hkj-upe1</span>
-<span class="n">ip</span> <span class="n">vpn</span><span class="o">-</span><span class="n">instance</span> <span class="n">vrf</span><span class="o">-</span><span class="mi">604828</span><span class="o">-</span><span class="n">WoTai</span>
-<span class="n">ipv4</span><span class="o">-</span><span class="n">family</span>
-<span class="n">route</span><span class="o">-</span><span class="n">distinguisher</span> <span class="mi">65000</span><span class="p">:</span><span class="mi">604828</span>
-<span class="n">vpn</span><span class="o">-</span><span class="n">target</span> <span class="mi">65000</span><span class="p">:</span><span class="mi">604828</span> <span class="n">export</span><span class="o">-</span><span class="n">extcommunity</span>
-<span class="n">vpn</span><span class="o">-</span><span class="n">target</span> <span class="mi">65000</span><span class="p">:</span><span class="mi">604828</span> <span class="mi">65000</span><span class="p">:</span><span class="mi">20150721</span> <span class="mi">65499</span><span class="p">:</span><span class="mi">20191117</span> <span class="n">import</span><span class="o">-</span><span class="n">extcommunity</span>
-
-
-
-<span class="n">interface</span> <span class="n">Tunnel0</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="mi">1162</span>
-<span class="n">description</span> <span class="o">&lt;</span><span class="mi">604828</span><span class="n">C2</span><span class="o">&gt;</span> <span class="n">Wo</span> <span class="n">Tai</span> <span class="n">Neng</span> <span class="n">Yuan</span> <span class="n">Ltd</span> <span class="o">-</span> <span class="n">Frankfurt</span> <span class="n">Site</span> <span class="c1">##Backup## (28Feb2022)</span>
-<span class="n">bandwidth</span> <span class="mi">10240</span>
-<span class="n">ip</span> <span class="n">binding</span> <span class="n">vpn</span><span class="o">-</span><span class="n">instance</span> <span class="n">vrf</span><span class="o">-</span><span class="mi">604828</span><span class="o">-</span><span class="n">WoTai</span>
-<span class="n">tcp</span> <span class="n">adjust</span><span class="o">-</span><span class="n">mss</span> <span class="mi">1400</span>
-<span class="n">ip</span> <span class="n">address</span> <span class="mf">10.30.82.89</span> <span class="mf">255.255.255.252</span>
-<span class="n">tunnel</span><span class="o">-</span><span class="n">protocol</span> <span class="n">gre</span>
-<span class="n">statistic</span> <span class="n">enable</span> <span class="n">inbound</span>
-<span class="n">statistic</span> <span class="n">enable</span> <span class="n">outbound</span>
-<span class="n">source</span> <span class="mf">10.200.200.29</span>
-<span class="n">destination</span> <span class="n">vpn</span><span class="o">-</span><span class="n">instance</span> <span class="n">VRF</span><span class="o">-</span><span class="n">S2S</span><span class="o">-</span><span class="n">VPN</span> <span class="mf">10.50.43.9</span>
-<span class="n">qos</span> <span class="n">car</span> <span class="n">inbound</span> <span class="n">cir</span> <span class="mi">10240</span> <span class="n">pir</span> <span class="mi">11264</span>
-<span class="n">qos</span> <span class="n">car</span> <span class="n">outbound</span> <span class="n">cir</span> <span class="mi">10240</span> <span class="n">pir</span> <span class="mi">11264</span>
-<span class="n">ip</span> <span class="n">route</span><span class="o">-</span><span class="n">static</span> <span class="mf">10.30.82.88</span> <span class="mi">30</span> <span class="n">Tunnel0</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="mi">1162</span> <span class="mf">10.30.82.90</span>
-
-
-<span class="n">bgp</span> <span class="mi">65117</span>
-<span class="n">ipv4</span><span class="o">-</span><span class="n">family</span> <span class="n">vpn</span><span class="o">-</span><span class="n">instance</span> <span class="n">vrf</span><span class="o">-</span><span class="mi">604828</span><span class="o">-</span><span class="n">WoTai</span>
-<span class="n">dampening</span> <span class="mi">10</span> <span class="mi">1500</span> <span class="mi">3000</span> <span class="mi">6000</span>
-<span class="n">import</span><span class="o">-</span><span class="n">route</span> <span class="n">direct</span>
-<span class="n">import</span><span class="o">-</span><span class="n">route</span> <span class="n">static</span> <span class="n">route</span><span class="o">-</span><span class="n">policy</span> <span class="n">bgp</span><span class="o">-</span><span class="n">To</span><span class="o">--</span><span class="n">VPN</span><span class="o">-</span><span class="n">Redistribute</span><span class="o">-</span><span class="n">Static</span>
-<span class="n">peer</span> <span class="mf">10.30.82.90</span> <span class="k">as</span><span class="o">-</span><span class="n">number</span> <span class="mi">65202</span>
-<span class="n">peer</span> <span class="mf">10.30.82.90</span> <span class="n">connect</span><span class="o">-</span><span class="n">interface</span> <span class="n">Tunnel0</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="mi">1162</span>
-<span class="n">peer</span> <span class="mf">10.30.82.90</span> <span class="n">advertise</span><span class="o">-</span><span class="n">community</span>
-<span class="n">peer</span> <span class="mf">10.30.82.90</span> <span class="n">route</span><span class="o">-</span><span class="n">policy</span> <span class="n">FROM</span><span class="o">-</span><span class="n">CE</span><span class="o">-</span><span class="n">BACKUP</span><span class="o">-</span><span class="n">ROUTES</span> <span class="kn">import</span> <span class="c1">#备线所使用的路由策略，定义从CE端学到的路由调整local-preference为80，并打上community为65000:2222</span>
-<span class="n">peer</span> <span class="mf">10.30.82.90</span> <span class="n">route</span><span class="o">-</span><span class="n">limit</span> <span class="mi">100</span> <span class="mi">90</span> <span class="n">idle</span><span class="o">-</span><span class="n">timeout</span> <span class="mi">5</span>
-</pre></div>
-</div>
+  <section id="pe">
+<h1>PE端<a class="headerlink" href="#pe" title="永久链接至标题">¶</a></h1>
+<blockquote>
+<div><p>主线</p>
+<p>LineID:604828C1
+PE:bja-upe1
+Tunnel:Tunnel0/0/1349 #在设备上找到没有被使用过的tunnel编号，即在设备上找不到的tunnel编号
+wanip:10.30.33.100/30
+PE 对接:10.200.200.23 #PE对接，用于PE端ipsec拨号的，每台设备用的ip都是不一样的
+CE 对接:10.50.30.5 #CE对接，用于CE端ipsec拨号的，每个客户用的都是不一样的
+PE AS号:65112
+CE AS号:65202</p>
+<p>拨号PE:bja-upe1
+对接IP:10.200.200.23
+LoopIP:10.50.30.5
+拨号ip:118.193.100.28
+秘钥:both-win</p>
+<p>#bja-upe1
+acl name CT #根据工单要求的运营商来选定</p>
+<blockquote>
+<div><p>rule permit ip source 10.200.200.23 0 destination 10.50.30.5 0 #放通用于给客户拨ipsec的ip 即配置允许进行IPSec加密的地址网段</p>
+</div></blockquote>
+<p>#bja-upe1</p>
+<p>#创建vpn实例，命名标准是vrf-客户cid-客户名缩写，RD和RT都是用65000：客户cid的格式
+ip vpn-instance vrf-604828-WoTai
+ipv4-family
+route-distinguisher 65000:604828
+vpn-target 65000:604828 export-extcommunity
+vpn-target 65000:604828 65000:20150721 65499:20191117 import-extcommunity</p>
+<p>interface Tunnel0/0/1349
+description &lt;604828C1&gt; Wo Tai Neng Yuan Ltd - Frankfurt Site ##Main## (28Feb2022) #命名格式：Guang Lian Ltd-Dong Guang Site ##Main##（分配数据的日期）
+bandwidth 10240 #设置网管在MIB上获取的接口带宽，并不是锁带宽的命令
+ip binding vpn-instance vrf-604828-WoTai #在tunnel中绑定vpn实例
+tcp adjust-mss 1400
+ip address 10.30.33.101 255.255.255.252
+tunnel-protocol gre #tunnel模式为GRE
+statistic enable inbound #使能接口入方向的流量统计功能
+statistic enable outbound #使能接口出方向的流量统计功能
+source 10.200.200.23 #设置tunnel源对接
+destination vpn-instance VRF-S2S-VPN 10.50.30.5 #设置tunnel目的对接，需要注意的是ipsec数据，目的对接会带一个vpn实例，VRF-S2S-VPN，而openvpn over GRE的数据中，目的对接不带vpn实例
+qos car inbound cir 10240 pir 11264 #带宽锁中的pir =（10240=*1.1）= 11264，cir是承诺信息速率，pir是指定峰值信息速率，即能够通过的最大速率
+qos car outbound cir 10240 pir 11264
+ip route-static 10.30.33.100 30 Tunnel0/0/1349 10.30.33.102 #将tunnel的wanip发布在全局路由表中</p>
+<p>bgp 65112
+ipv4-family vpn-instance vrf-604828-WoTai #指定的VPN实例与IPv4地址族进行关联，并进入BGP-VPN实例IPv4地址族视图。
+dampening 10 1500 3000 6000 #设置bgp路由振荡参数
+import-route direct
+import-route static route-policy bgp-To–VPN-Redistribute-Static</p>
+<p>#配置bgp
+peer 10.30.33.102 as-number 65202 #指定CE端的AS号
+peer 10.30.33.102 connect-interface Tunnel0/0/1349 #指定更新源接口
+peer 10.30.33.102 advertise-community #使能发送community
+peer 10.30.33.102 route-policy FROM-CE-MAIN-ROUTES import  #主线所使用的路由策略，定义从CE端学到的路由调整preferred-value为65535
+peer 10.30.33.102 route-limit 100 90 idle-timeout 5 #设置允许从对等体收到的路由数量为100，路由超限断连后，自动重新建立连接的超时定时器为90分钟</p>
+<p>备线</p>
+<p>LineID:604828C2
+PE:hkj-upe1
+Tunnel:Tunnel0/0/1162
+wanip:10.30.82.88/30
+PE 对接:10.200.200.29
+CE 对接:10.50.43.9
+PE AS号:65117
+CE AS号:65202</p>
+<p>拨号PE:hkj-upe1
+对接IP:10.200.200.29
+LoopIP:10.50.43.9
+拨号ip:154.18.8.116
+秘钥:both-win</p>
+<p>#hkj-upe1
+acl name OT</p>
+<blockquote>
+<div><p>rule permit ip source 10.200.200.29 0 destination 10.50.43.9 0</p>
+</div></blockquote>
+<p>#hkj-upe1
+ip vpn-instance vrf-604828-WoTai
+ipv4-family
+route-distinguisher 65000:604828
+vpn-target 65000:604828 export-extcommunity
+vpn-target 65000:604828 65000:20150721 65499:20191117 import-extcommunity</p>
+<p>interface Tunnel0/0/1162
+description &lt;604828C2&gt; Wo Tai Neng Yuan Ltd - Frankfurt Site ##Backup## (28Feb2022)
+bandwidth 10240
+ip binding vpn-instance vrf-604828-WoTai
+tcp adjust-mss 1400
+ip address 10.30.82.89 255.255.255.252
+tunnel-protocol gre
+statistic enable inbound
+statistic enable outbound
+source 10.200.200.29
+destination vpn-instance VRF-S2S-VPN 10.50.43.9
+qos car inbound cir 10240 pir 11264
+qos car outbound cir 10240 pir 11264
+ip route-static 10.30.82.88 30 Tunnel0/0/1162 10.30.82.90</p>
+<p>bgp 65117
+ipv4-family vpn-instance vrf-604828-WoTai
+dampening 10 1500 3000 6000
+import-route direct
+import-route static route-policy bgp-To–VPN-Redistribute-Static
+peer 10.30.82.90 as-number 65202
+peer 10.30.82.90 connect-interface Tunnel0/0/1162
+peer 10.30.82.90 advertise-community
+peer 10.30.82.90 route-policy FROM-CE-BACKUP-ROUTES import #备线所使用的路由策略，定义从CE端学到的路由调整local-preference为80，并打上community为65000:2222
+peer 10.30.82.90 route-limit 100 90 idle-timeout 5</p>
+</div></blockquote>
+</section>
 
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="MPLSVPN组网产品服务" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../FastIP%E4%BA%A7%E5%93%81%E6%9C%8D%E5%8A%A1/index.html" class="btn btn-neutral float-right" title="FastIP产品服务" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 

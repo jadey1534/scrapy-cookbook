@@ -27,7 +27,7 @@ source_suffix = ['.rst', '.md']
 
 # -- Project information -----------------------------------------------------
 
-project = 'SOP System'
+project = 'SOP'
 copyright = '2022, Jade'
 author = 'Jade'
 

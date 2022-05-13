@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RUNOOB Markdown Test &mdash; Test 1.0 文档</title>
+  <title>夜间演练操作SOP及注意事项 &mdash; SOP 1.0 文档</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/my_theme.css" type="text/css" />
@@ -20,8 +20,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
-    <link rel="next" title="zabbix4.4搭建" href="zabbix4.4%E6%90%AD%E5%BB%BA.html" />
-    <link rel="prev" title="日常维护" href="index.html" /> 
+    <link rel="next" title="MPLS-rst" href="../%E5%85%B6%E4%BB%96/MPLS-RST.html" />
+    <link rel="prev" title="zabbix4.4搭建" href="zabbix4.4%E6%90%AD%E5%BB%BA.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -29,8 +29,8 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> Test
-            <img src="../_static/Fnetlink.jpg" class="logo" alt="Logo"/>
+            <a href="../index.html" class="icon icon-home"> SOP
+            <img src="../_static/Fnetlink-bw.jpg" class="logo" alt="Logo"/>
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -60,12 +60,16 @@
 <p class="caption" role="heading"><span class="caption-text">非产品服务手册:</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">日常维护</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">RUNOOB Markdown Test</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#hello-world">Hello World!</a></li>
+<li class="toctree-l2"><a class="reference internal" href="zabbix4.4%E6%90%AD%E5%BB%BA.html">zabbix4.4搭建</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">夜间演练操作SOP及注意事项</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">演练前准备工作</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">1.1进入演练网页</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">1.2添加任务</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id4">演练完成后的修复动作</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="zabbix4.4%E6%90%AD%E5%BB%BA.html">zabbix4.4搭建</a></li>
-<li class="toctree-l2"><a class="reference internal" href="%E5%A4%9C%E9%97%B4%E6%BC%94%E7%BB%83%E6%93%8D%E4%BD%9CSOP%E5%8F%8A%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9.html">夜间演练操作SOP及注意事项</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -80,7 +84,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../index.html">Test</a>
+          <a href="../index.html">SOP</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -89,9 +93,9 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="index.html">日常维护</a> &raquo;</li>
-      <li>RUNOOB Markdown Test</li>
+      <li>夜间演练操作SOP及注意事项</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../_sources/非产品服务手册/RUNOOB.md.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/非产品服务手册/夜间演练操作SOP及注意事项.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -99,10 +103,50 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="runoob-markdown-test">
-<h1>RUNOOB Markdown Test<a class="headerlink" href="#runoob-markdown-test" title="永久链接至标题">¶</a></h1>
-<section id="hello-world">
-<h2>Hello World!<a class="headerlink" href="#hello-world" title="永久链接至标题">¶</a></h2>
+  <section id="sop">
+<h1>夜间演练操作SOP及注意事项<a class="headerlink" href="#sop" title="永久链接至标题">¶</a></h1>
+<p>Fastsdwan演练是为了减少因各种原因导致主备切换不成功，当发生故障时<strong>减少对客户业务造成影响为目的</strong>的前期工作。<strong>感谢系统组为爱发电制作的自动演练脚本</strong></p>
+<section id="id1">
+<h2>演练前准备工作<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+</section>
+<section id="id2">
+<h2>1.1进入演练网页<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>具体网址和账号密码，找主管要</p>
+<p>打开网址输入账号密码后</p>
+<p>点击自动化管理</p>
+<p><a class="reference internal" href="../_images/image1.png"><img alt="image0" src="../_images/image1.png" style="width: 5.76528in; height: 2.81389in;" /></a></p>
+<p>具体各个文件作用和下载地址均已标识情况，请自行理解</p>
+<p><a class="reference internal" href="../_images/image2.png"><img alt="image1" src="../_images/image2.png" style="width: 5.76458in; height: 1.47083in;" /></a></p>
+<p>进入连接后下载对应需求名单</p>
+<p>如名字</p>
+<p><strong>已演练名单</strong>：Drill_results.xlsx
+–即已经演练过的名单，里面的类别包括：</p>
+<p>1、不规范（数据不完整）</p>
+<p>2、演练前后不一致（NO，也就是重点对象）</p>
+<p>3、演练前后一致（分三类：全部通、全部不通、部分通）</p>
+<p><strong>未演练名单</strong>：no_drill_results.xlsx–未演练名单，添加任务事需要筛选吗，排除vip，shutdown、off等名单。</p>
+</section>
+<section id="id3">
+<h2>1.2添加任务<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p><a class="reference internal" href="../_images/image3.png"><img alt="image2" src="../_images/image3.png" style="width: 5.76458in; height: 3.16111in;" /></a></p>
+<p>如图所示，添加任务有格式要求</p>
+<p>例：LineID：605044A1,601773B10,602663A3,600512B7,600512C4,600512M5</p>
+<p>Date：2022_5_10</p>
+<p>要求值班期间每天5-10个进行演练。</p>
+<section id="id4">
+<h3>演练完成后的修复动作<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
+<p>打开已演练名单</p>
+<p><a class="reference internal" href="../_images/image4.png"><img alt="image3" src="../_images/image4.png" style="width: 5.75972in; height: 2.50833in;" /></a></p>
+<p>第一阶段是先将演练结果为NO的名单进行修复</p>
+<p>夜班同事需要讲NO为结果的记录，输出在企业微信共享文档内的《Fast
+IP演练跟进》文档</p>
+<p>具体操作如下：</p>
+<p><a class="reference internal" href="../_images/image5.png"><img alt="image4" src="../_images/image5.png" style="width: 4.89792in; height: 4.18611in;" /></a></p>
+<p><a class="reference internal" href="../_images/image6.png"><img alt="image5" src="../_images/image6.png" style="width: 4.72778in; height: 3.80208in;" /></a></p>
+<p>注意：要注意格式</p>
+<p>贴上后的朋友可以，尝试修复CE配置，如发现BGPIP为旧香港IP的统一更换为最新的BGPseverIP。</p>
+<p>配置修复后，需要再次在夜间请NOC同事做主线shutdown测试，检验修复结果。</p>
+</section>
 </section>
 </section>
 
@@ -110,8 +154,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="index.html" class="btn btn-neutral float-left" title="日常维护" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="zabbix4.4%E6%90%AD%E5%BB%BA.html" class="btn btn-neutral float-right" title="zabbix4.4搭建" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="zabbix4.4%E6%90%AD%E5%BB%BA.html" class="btn btn-neutral float-left" title="zabbix4.4搭建" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../%E5%85%B6%E4%BB%96/MPLS-RST.html" class="btn btn-neutral float-right" title="MPLS-rst" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

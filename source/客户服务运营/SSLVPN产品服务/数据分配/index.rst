@@ -5,6 +5,6 @@
 
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    gzd-sslvpn3数据分配

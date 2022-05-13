@@ -16,7 +16,6 @@ Welcome to SOP System
    :includehidden:
    :caption: 平台服务运营:
 
-
    平台服务运营/hello.md
  
 .. toctree::
@@ -24,8 +23,6 @@ Welcome to SOP System
    :includehidden:
    :caption: 运营_服务管理:
    
-   运营_服务管理/模板-图文解释
-   运营_服务管理/MPLS-MD
   
 .. toctree::
    :maxdepth: 1
@@ -39,7 +36,6 @@ Welcome to SOP System
    :includehidden:
    :caption: 其他:
 
-   其他/MPLS-RST
 
 
 

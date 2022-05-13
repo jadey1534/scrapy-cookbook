@@ -5,6 +5,6 @@ SSLVPN产品服务
 
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    数据分配/index

@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>华为路由器时间锁配置 &mdash; SOP 1.0 文档</title>
+  <title>数据分配 &mdash; SOP 1.0 文档</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/my_theme.css" type="text/css" />
@@ -20,8 +20,8 @@
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../../../genindex.html" />
     <link rel="search" title="搜索" href="../../../search.html" />
-    <link rel="next" title="FastIP产品服务" href="../../FastIP%E4%BA%A7%E5%93%81%E6%9C%8D%E5%8A%A1/index.html" />
-    <link rel="prev" title="数据调整" href="index.html" /> 
+    <link rel="next" title="第一步 创建用户" href="gzd-sslvpn3%E6%95%B0%E6%8D%AE%E5%88%86%E9%85%8D.html" />
+    <link rel="prev" title="SSLVPN产品服务" href="../index.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -42,19 +42,17 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">客户服务运营:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="../index.html">MPLSVPN组网产品服务</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="index.html">数据调整</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">华为路由器时间锁配置</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id2">时间锁要求</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id3">配置</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../../MPLSVPN%E7%BB%84%E7%BD%91%E4%BA%A7%E5%93%81%E6%9C%8D%E5%8A%A1/index.html">MPLSVPN组网产品服务</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../FastIP%E4%BA%A7%E5%93%81%E6%9C%8D%E5%8A%A1/index.html">FastIP产品服务</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../SSLVPN%E4%BA%A7%E5%93%81%E6%9C%8D%E5%8A%A1/index.html">SSLVPN产品服务</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">SSLVPN产品服务</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">数据分配</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="gzd-sslvpn3%E6%95%B0%E6%8D%AE%E5%88%86%E9%85%8D.html">第一步 创建用户</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gzd-sslvpn3%E6%95%B0%E6%8D%AE%E5%88%86%E9%85%8D.html#vrf">第二步 创建vrf</a></li>
+<li class="toctree-l3"><a class="reference internal" href="gzd-sslvpn3%E6%95%B0%E6%8D%AE%E5%88%86%E9%85%8D.html#id2">第三步 建立隧道，并划分至vrf</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../%E5%8D%8E%E4%B8%BASD-WAN%E4%BA%A7%E5%93%81%E6%9C%8D%E5%8A%A1/index.html">华为SD-WAN产品服务</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">平台服务运营:</span></p>
@@ -81,11 +79,10 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../../index.html">&lt;no title&gt;</a> &raquo;</li>
-          <li><a href="../index.html">MPLSVPN组网产品服务</a> &raquo;</li>
-          <li><a href="index.html">数据调整</a> &raquo;</li>
-      <li>华为路由器时间锁配置</li>
+          <li><a href="../index.html">SSLVPN产品服务</a> &raquo;</li>
+      <li>数据分配</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../../../_sources/客户服务运营/MPLSVPN组网产品服务/数据调整/华为路由器时间锁配置.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../../_sources/客户服务运营/SSLVPN产品服务/数据分配/index.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -94,64 +91,22 @@
            <div itemprop="articleBody">
              
   <section id="id1">
-<h1>华为路由器时间锁配置<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
-<section id="id2">
-<h2>时间锁要求<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
-<p>时间锁：6:00-20:00—75M</p>
-<p>  20:00—60:00–10M</p>
-</section>
-<section id="id3">
-<h2>配置<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
-<p>时间段配置</p>
-<p> time-range A602710_T1 06:00 to 20:00 daily</p>
-<p> time-range A602710_T2 20:01 to 00:00 daily</p>
-<p> time-range A602710_T2 00:01 to 05:59 daily</p>
-<p>ACL规则生效时间段配置</p>
-<p>acl name A602710_Time02 3997</p>
-<p> rule 15 permit ip time-range A602710_T2</p>
-<p>acl name A602710_Time01 3998</p>
-<p> rule 5 permit ip time-range A602710_T1</p>
-<p>配置流分类</p>
-<p>traffic classifier A602710_Class01 operator and</p>
-<p> if-match acl A602710_Time01</p>
-<p>traffic classifier A602710_Class02 operator and</p>
-<p> if-match acl A602710_Time02</p>
-<p>traffic classifier A602710_QOS operator and</p>
-<p> if-match acl A602710_QOS</p>
-<p>配置流行为</p>
-<p>traffic behavior A602710_Behaviro01</p>
-<p> car cir 76800 pir 84480 cbs 9600000 pbs 10560000 mode color-blind green
-pass yellow pass red discard</p>
-<p> statistic enable</p>
-<p>traffic behavior A602710_Behaviro02</p>
-<p> car cir 10240 pir 11264 cbs 1280000 pbs 1408000 mode color-blind green
-pass yellow pass red discard</p>
-<p> statistic enable</p>
-<p>配置流策略</p>
-<p>traffic policy 602710A_P01</p>
-<p> classifier A602710_Class01 behavior A602710_Behaviro01 precedence 4</p>
-<p> classifier A602710_Class02 behavior A602710_Behaviro02 precedence 10</p>
-<p>应用流策略</p>
-<p>interface Tunnel0/0/2022</p>
-<p> traffic-policy 602710A_P01 outbound</p>
-<p>操作步骤</p>
-<p>执行命令display traffic classifier { system-defined | user-defined } [
-classifier-name ]，查看已配置的流分类信息。</p>
-<p>执行命令display traffic behavior { system-defined | user-defined } [
-behavior-name ]，查看已配置的流行为信息。</p>
-<p>执行命令display traffic policy user-defined [ policy-name [ classifier
-classifier-name ] ]，查看流策略的配置信息。</p>
-<p>执行命令display traffic-policy applied-record [ policy-name
-]，查看流策略的应用记录。</p>
-</section>
+<h1>数据分配<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="gzd-sslvpn3%E6%95%B0%E6%8D%AE%E5%88%86%E9%85%8D.html">第一步 创建用户</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gzd-sslvpn3%E6%95%B0%E6%8D%AE%E5%88%86%E9%85%8D.html#vrf">第二步 创建vrf</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gzd-sslvpn3%E6%95%B0%E6%8D%AE%E5%88%86%E9%85%8D.html#id2">第三步 建立隧道，并划分至vrf</a></li>
+</ul>
+</div>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="index.html" class="btn btn-neutral float-left" title="数据调整" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../../FastIP%E4%BA%A7%E5%93%81%E6%9C%8D%E5%8A%A1/index.html" class="btn btn-neutral float-right" title="FastIP产品服务" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../index.html" class="btn btn-neutral float-left" title="SSLVPN产品服务" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="gzd-sslvpn3%E6%95%B0%E6%8D%AE%E5%88%86%E9%85%8D.html" class="btn btn-neutral float-right" title="第一步 创建用户" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

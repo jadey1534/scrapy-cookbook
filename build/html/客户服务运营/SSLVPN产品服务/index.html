@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FastIP实验 &mdash; SOP 1.0 文档</title>
+  <title>SSLVPN产品服务 &mdash; SOP 1.0 文档</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/my_theme.css" type="text/css" />
@@ -20,8 +20,8 @@
     <script src="../../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
-    <link rel="next" title="SSLVPN产品服务" href="../SSLVPN%E4%BA%A7%E5%93%81%E6%9C%8D%E5%8A%A1/index.html" />
-    <link rel="prev" title="test" href="123.html" /> 
+    <link rel="next" title="数据分配" href="%E6%95%B0%E6%8D%AE%E5%88%86%E9%85%8D/index.html" />
+    <link rel="prev" title="test" href="../FastIP%E4%BA%A7%E5%93%81%E6%9C%8D%E5%8A%A1/123.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -43,12 +43,12 @@
               <p class="caption" role="heading"><span class="caption-text">客户服务运营:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../MPLSVPN%E7%BB%84%E7%BD%91%E4%BA%A7%E5%93%81%E6%9C%8D%E5%8A%A1/index.html">MPLSVPN组网产品服务</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">FastIP产品服务</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="123.html">test</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">FastIP实验</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FastIP%E4%BA%A7%E5%93%81%E6%9C%8D%E5%8A%A1/index.html">FastIP产品服务</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">SSLVPN产品服务</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="%E6%95%B0%E6%8D%AE%E5%88%86%E9%85%8D/index.html">数据分配</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../SSLVPN%E4%BA%A7%E5%93%81%E6%9C%8D%E5%8A%A1/index.html">SSLVPN产品服务</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E5%8D%8E%E4%B8%BASD-WAN%E4%BA%A7%E5%93%81%E6%9C%8D%E5%8A%A1/index.html">华为SD-WAN产品服务</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">平台服务运营:</span></p>
 <ul>
@@ -74,10 +74,9 @@
   <ul class="wy-breadcrumbs">
       <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
           <li><a href="../index.html">&lt;no title&gt;</a> &raquo;</li>
-          <li><a href="index.html">FastIP产品服务</a> &raquo;</li>
-      <li>FastIP实验</li>
+      <li>SSLVPN产品服务</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="../../_sources/客户服务运营/FastIP产品服务/Fastip.rst.txt" rel="nofollow"> View page source</a>
+            <a href="../../_sources/客户服务运营/SSLVPN产品服务/index.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -85,44 +84,21 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="fastip">
-<h1>FastIP实验<a class="headerlink" href="#fastip" title="永久链接至标题">¶</a></h1>
-<p><a class="reference internal" href="imgs/media/rId20.jpg"><img alt="0001.jpg" src="imgs/media/rId20.jpg" style="width: 6.5in; height: 3.82685in;" /></a></p>
-<p>0.图中路由器全部为VYOS；</p>
-<p>1.R1-R11中的实线按照过往互联IP规则进行连接；</p>
-<p>2.R1-R11都有loopback0 X.X.X.X/32;</p>
-<p>3.图中虚线是openvpn的隧道（基于实线建立）；Tunnle100是10.10.23.0/30；Tunnel200是10.11.23.0/30；</p>
-<p>4.CE上面有两个HKIP，loopback23和45，114.112.236.23/32，114.112.239.23/32；</p>
-<p>5.两个BGPCore上面都通过静态路由可以到达R8-R11的loopback0;</p>
-<p>6.R8-R11上面都有默认路由，指向互联路由器；</p>
-<p>7.IP1和IP2上面有loopback23和45，8.8.8.8/32，4.4.4.4/32；R11上面
-有loopback23,100.100.100.100/32;</p>
-<p>8.R1上面有默认路由指向R11；</p>
-<p>9.两个BGPSer上面有四条带描述的静态路由，CT：100.0.0.0/8；CU：110.0.0.0/8；CM：120.0.0.0/8；Oversea：0.0.0.0/0；</p>
-<p>10.CE使用loopback0和两个BGPSer的loopbackup0建立BGP
-Peer，学习8中的四条路由；</p>
-<p>并优选BGPSer1的，次选BGPSer2的；</p>
-<p>11.PE和BGPCore按照图中线路，建立BGP Peer，此时BGPCore使用的AS是65000；</p>
-<p>两台PE都从BGPCore学习默认路由，并优选BGPCore1；</p>
-<p>12.BGPCore之间和BGPCore和IPT之间都建立BGP
-Peer，此时BGPCore使用的AS是133929；</p>
-<p>13.当CE访问www.baidu.com的时候，找R11进行解析，解析IP是100.100.100.100/32；</p>
-<p>当CE访问www.google.com的时候，找R10进行解析，解析IP是8.8.8.8/32和4.4.4.4/32；</p>
-<p>14.当CE访问4.4.4.4的时候，走的路径是R1-R2-R4-R5-R7；当CE访问8.8.8.8的时候，走的路径是R1-R2-R4-R6；</p>
-<p>15.实现IPT上面的回程流程，都优先通过主的PE；</p>
-<p>16.实现全世界上面找114.112.236.23的时候，优先走IPT1
-；找114.112.239.23的时候，优先走IPT2；</p>
-<p>17.描述一下图中Fast IP方案实现的过程；</p>
-<p>18.判断说明一下当前架构的风险点；</p>
-<p>19.针对当前架构，提出优化建议；</p>
+  <section id="sslvpn">
+<h1>SSLVPN产品服务<a class="headerlink" href="#sslvpn" title="永久链接至标题">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="%E6%95%B0%E6%8D%AE%E5%88%86%E9%85%8D/index.html">数据分配</a></li>
+</ul>
+</div>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="123.html" class="btn btn-neutral float-left" title="test" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../SSLVPN%E4%BA%A7%E5%93%81%E6%9C%8D%E5%8A%A1/index.html" class="btn btn-neutral float-right" title="SSLVPN产品服务" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../FastIP%E4%BA%A7%E5%93%81%E6%9C%8D%E5%8A%A1/123.html" class="btn btn-neutral float-left" title="test" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="%E6%95%B0%E6%8D%AE%E5%88%86%E9%85%8D/index.html" class="btn btn-neutral float-right" title="数据分配" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>第一步 创建用户 &mdash; SOP 1.0 文档</title>
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/my_theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+        <script src="../../../_static/jquery.js"></script>
+        <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/doctools.js"></script>
+        <script src="../../../_static/translations.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../../genindex.html" />
+    <link rel="search" title="搜索" href="../../../search.html" />
+    <link rel="next" title="华为SD-WAN产品服务" href="../../%E5%8D%8E%E4%B8%BASD-WAN%E4%BA%A7%E5%93%81%E6%9C%8D%E5%8A%A1/index.html" />
+    <link rel="prev" title="数据分配" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../../index.html" class="icon icon-home"> SOP
+            <img src="../../../_static/Fnetlink-bw.jpg" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">客户服务运营:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../MPLSVPN%E7%BB%84%E7%BD%91%E4%BA%A7%E5%93%81%E6%9C%8D%E5%8A%A1/index.html">MPLSVPN组网产品服务</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../FastIP%E4%BA%A7%E5%93%81%E6%9C%8D%E5%8A%A1/index.html">FastIP产品服务</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">SSLVPN产品服务</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">数据分配</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">第一步 创建用户</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#vrf">第二步 创建vrf</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">第三步 建立隧道，并划分至vrf</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../%E5%8D%8E%E4%B8%BASD-WAN%E4%BA%A7%E5%93%81%E6%9C%8D%E5%8A%A1/index.html">华为SD-WAN产品服务</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">平台服务运营:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../%E5%B9%B3%E5%8F%B0%E6%9C%8D%E5%8A%A1%E8%BF%90%E8%90%A5/hello.html">hello,world</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">非产品服务手册:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../%E9%9D%9E%E4%BA%A7%E5%93%81%E6%9C%8D%E5%8A%A1%E6%89%8B%E5%86%8C/index.html">日常维护</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">SOP</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../index.html">&lt;no title&gt;</a> &raquo;</li>
+          <li><a href="../index.html">SSLVPN产品服务</a> &raquo;</li>
+          <li><a href="index.html">数据分配</a> &raquo;</li>
+      <li>第一步 创建用户</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/客户服务运营/SSLVPN产品服务/数据分配/gzd-sslvpn3数据分配.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <p>GZD-SSLVPN3手册</p>
+<section id="id1">
+<h1>第一步 创建用户<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>sslvpn_useradd 123456 1 123456A 1</p>
+<p>—–123456是CID,账号会从12345601开始，第一个1表示是创建一个账号（2个账号就是2，）6000563A是组，1表示是随机密码</p>
+<p>这个会自动生成账号密码、vrf-123456A和/etc/ocserv/config-per-group/组的配置文件</p>
+<p><a class="reference internal" href="../../../_images/image1.png"><img alt="image0" src="../../../_images/image1.png" style="width: 5.76319in; height: 1.44722in;" /></a></p>
+<p><strong>注意</strong></p>
+<p><strong>如果单独为客户开账号 或者修改账号的密码 ，可以使用如下命令：-g 123456A
+意思是12345601这个账号是归属于123456A这个组,会要求输入两次密码</strong></p>
+<p>ocpasswd -c /etc/ocserv/ocpasswd -g <strong>123456A</strong> <strong>12345601</strong></p>
+</section>
+<section id="vrf">
+<h1>第二步 创建vrf<a class="headerlink" href="#vrf" title="永久链接至标题">¶</a></h1>
+<p>ip link add vrf-123456A type vrf table 23456</p>
+<p>ip link set dev vrf-123456A up</p>
+<p><strong>这个配置需要先贴</strong></p>
+<p>vi /etc/ocserv/config-per-group/123456A</p>
+<p>—————脚本生成的，需要修改可以进文件里面修改。</p>
+<p><a class="reference internal" href="../../../_images/image2.png"><img alt="image1" src="../../../_images/image2.png" style="width: 5.76528in; height: 2.66736in;" /></a></p>
+</section>
+<section id="id2">
+<h1>第三步 建立隧道，并划分至vrf<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h1>
+<p>如果需要分配Tunnel</p>
+<p>ip tunnel add gre17157 mode gre local 1.1.1.1 remote 2.2.2.2</p>
+<p>ip addr add 10.10.10.0/30 dev gre17157</p>
+<p>ip link set gre17157 alias 123456A1</p>
+<p>ip link set gre17157 mtu 1400</p>
+<p>ip link set gre17157 up</p>
+<p>ip link set gre17157 master vrf-123456A1</p>
+<p>##如果使用openvpn</p>
+<p>vi /etc/openvpn/server/vtun17157.conf</p>
+<p>dev-type tun</p>
+<p>dev vtun17157———————————————-tunnel号</p>
+<p>local 121.46.28.78——————————————对接IP</p>
+<p>lport 17157———————————- ————– 端口号</p>
+<p>ifconfig 10.30.106.233 10.30.106.234—————–wanip</p>
+<p>push “ping 10”</p>
+<p>push “ping-restart 60”</p>
+<p>push “persist-tun”</p>
+<p>push “persist-key”</p>
+<p>persist-tun</p>
+<p>secret /etc/openvpn/easy-rsa/keys/openvpn.secret</p>
+<p>writepid /var/run/openvpn-server/vtun17157.pid</p>
+<p>status /var/run/openvpn-server/vtun17157.status 30</p>
+<p>verb 3</p>
+<p>topology net30</p>
+<p>setenv vrf_tenant vrf-123456A————————–绑定VRF</p>
+<p>setenv next_hop 10.30.106.234—————–wanip</p>
+<p>setenv vrf_table 23456————————————table号</p>
+<p>script-security 2</p>
+<p>up /etc/openvpn/up.sh</p>
+<p>启动tunnel</p>
+<p>systemctl restart <a class="reference external" href="mailto:openvpn-server&#37;&#52;&#48;vtun17157&#46;service">openvpn-server<span>&#64;</span>vtun17157<span>&#46;</span>service</a></p>
+<p>systemctl enable <a class="reference external" href="mailto:openvpn-server&#37;&#52;&#48;vtun17157&#46;service">openvpn-server<span>&#64;</span>vtun17157<span>&#46;</span>service</a></p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="数据分配" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../%E5%8D%8E%E4%B8%BASD-WAN%E4%BA%A7%E5%93%81%E6%9C%8D%E5%8A%A1/index.html" class="btn btn-neutral float-right" title="华为SD-WAN产品服务" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2022, Jade.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

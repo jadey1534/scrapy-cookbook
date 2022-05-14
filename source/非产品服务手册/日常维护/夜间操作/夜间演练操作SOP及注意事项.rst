@@ -9,11 +9,13 @@ Fastsdwan演练是为了减少因各种原因导致主备切换不成功，当�
 1.1进入演练网页
 ---------------
 
-链接：http://adminset.fnetlink.cn/
+链接：http://xxx/
 
-账号：iso
+账号：xxx
 
-密码：\ iso@fnetlink.com
+密码：xxxx
+
+具体网址、账号和密码，询问主管即可获得
 
 打开网址输入账号密码后
 

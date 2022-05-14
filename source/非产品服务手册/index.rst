@@ -7,4 +7,3 @@
 
    RUNOOB.md
    zabbix4.4搭建.rst
-   夜间演练操作SOP及注意事项.rst

@@ -6,5 +6,4 @@
    :maxdepth: 1
 
    日常操作/index
-   RUNOOB.md
    zabbix4.4搭建.rst

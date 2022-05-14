@@ -5,5 +5,5 @@
 .. toctree::
    :maxdepth: 1
 
-   日常操作/index
+   日常维护/index
    zabbix4.4搭建.rst

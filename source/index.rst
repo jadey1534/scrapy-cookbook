@@ -30,7 +30,14 @@ Welcome to SOP System
    :caption: 非产品服务手册:
    
    非产品服务手册/index
-   
+
+.. toctree::
+   :maxdepth: 1
+   :includehidden:
+   :caption: 成长规划:   
+
+   成长规划/index
+
 .. toctree::
    :maxdepth: 1
    :includehidden:

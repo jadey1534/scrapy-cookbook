@@ -19,7 +19,9 @@
         <script src="../../../_static/translations.js"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../../../genindex.html" />
-    <link rel="search" title="搜索" href="../../../search.html" /> 
+    <link rel="search" title="搜索" href="../../../search.html" />
+    <link rel="next" title="zabbix4.4搭建" href="../../zabbix4.4%E6%90%AD%E5%BB%BA.html" />
+    <link rel="prev" title="系统日常操作手册" href="index.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -50,8 +52,23 @@
 <li class="toctree-l1"><a class="reference internal" href="../../../%E5%B9%B3%E5%8F%B0%E6%9C%8D%E5%8A%A1%E8%BF%90%E8%90%A5/hello.html">hello,world</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">非产品服务手册:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">日常维护</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">日常维护</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../%E5%A4%9C%E9%97%B4%E6%93%8D%E4%BD%9C/index.html">夜间操作</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="index.html">系统日常操作手册</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">开虚拟机操作流程</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../zabbix4.4%E6%90%AD%E5%BB%BA.html">zabbix4.4搭建</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">成长规划:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../index.html">日常维护</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../%E6%88%90%E9%95%BF%E8%A7%84%E5%88%92/index.html">成长规划</a></li>
 </ul>
 
         </div>
@@ -68,6 +85,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="../../index.html">日常维护</a> &raquo;</li>
+          <li><a href="../index.html">日常维护</a> &raquo;</li>
+          <li><a href="index.html">系统日常操作手册</a> &raquo;</li>
       <li>开虚拟机操作流程</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../../_sources/非产品服务手册/日常维护/系统日常操作手册/开虚拟机操作流程.rst.txt" rel="nofollow"> View page source</a>
@@ -86,23 +106,45 @@
 <h3>工单需求<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
 <p>收到系统工单后，需要确认以下几个信息：需要开在所属机房、VM归属者、VM的操作系统、VM的配置需求（包括网卡、cpu、内存、硬盘、分区）</p>
 <p><strong>表格</strong></p>
-<p>所属机房     说明需求所需的机器资源                                     Yes
-VM归属者     需要说明需求VM的归属者，是骨干还是客户；是测试还是正式使用 Yes
-VM的操作系统 必须是明确的操作系统，如centos7.9，fnetlink2.1.7等         Yes
-VM的配置需求 网卡：说明需求的网卡数量、必要时提供ip                     Yes</p>
-<blockquote>
-<div><p>cpu、内存、硬盘、分区：如（2H4G内存50G硬盘，默认分区）</p>
-</div></blockquote>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 73%" />
+<col style="width: 11%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>所属机房</p></th>
+<th class="head"><p>说明需求所需的机器资源</p></th>
+<th class="head"><p>Yes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>VM归属者</p></td>
+<td><p>需要说明需求VM的归属者，是骨干还是客户；是测试还是正式使用</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-odd"><td><p>VM的操作系统</p></td>
+<td><p>必须是明确的操作系统，如centos7.9，fnetlink2.1.7等</p></td>
+<td><p>Yes</p></td>
+</tr>
+<tr class="row-even"><td><p>VM的配置需求</p></td>
+<td><p>网卡：说明需求的网卡数量、必要时提供ip</p>
+<p>cpu、内存、硬盘、分区：如（2H4G内存50G硬盘，默认分区）</p>
+</td>
+<td><p>Yes</p></td>
+</tr>
+</tbody>
+</table>
 <p>获取到工单需求，根据需求进行开虚拟机的操作。</p>
-<p>1、首先要确定所需VM所在的机房，如果无要求，可按照我们目前服务器资源相对比较充足的地方开设VM，默认配置，如果工单需求没有写明白，默认配置为2H2G内存20G硬盘，centos7.9系统。（登录链接、账号密码可找系统组同事要）</p>
-<p>2、确定所在机房后，骨干所需要VM资源开设在集群上，客户或者测试资源，逻辑上应开在单机版服务器上；如果该机房没有集群，全部需求都开单机版服务器上面。</p>
-<p>虚拟机命名规则：机房宿主机类型+归属者+vm用途；如：dgb-vsphere1-sys-ctdns1</p>
-<p>机房宿主机类型：一般是有机房名称+（vsphere（集群）/vmware（单机）/pve（集群）/proxmox（单机））</p>
-<p>归属：有sys，pe，cli，test四种类型</p>
-<p>vm用途：骨干使用则由具体功能用途来命名，客户使用的话则由客户cid来命名</p>
-<p>3、开好机器后，要把cpu、内存开启热添加。如下图：</p>
+<p><strong>1、首先要确定所需VM所在的机房</strong>，如果无要求，可按照我们目前服务器资源相对比较充足的地方开设VM，默认配置，如果工单需求没有写明白，默认配置为2H2G内存20G硬盘，centos7.9系统。（登录链接、账号密码可找系统组同事要）</p>
+<p><strong>2、确定所需VM的服务器在哪里</strong>，骨干所需要VM资源开设在集群上，客户或者测试资源，逻辑上应开在单机版服务器上；如果该机房没有集群，全部需求都开单机版服务器上面。</p>
+<p><strong>虚拟机命名规则</strong>：机房宿主机类型+归属者+vm用途；如：dgb-vsphere1-sys-ctdns1</p>
+<p><strong>机房宿主机类型</strong>：一般是有机房名称+（vsphere（集群）/vmware（单机）/pve（集群）/proxmox（单机））</p>
+<p><strong>归属</strong>：有sys，pe，cli，test四种类型</p>
+<p><strong>vm用途</strong>：骨干使用则由具体功能用途来命名，客户使用的话则由客户cid来命名</p>
+<p><strong>3、开好机器后，要把cpu、内存开启热添加</strong>。如下图：</p>
 <p><a class="reference internal" href="../../../_images/image4.png"><img alt="image0" src="../../../_images/image4.png" style="width: 4.37014in; height: 3.56806in;" /></a></p>
-<p>4、骨干类的服务器，做好服务VM的标准化，回复工单，客户类的服务器开设好之后回复工单。</p>
+<p>4、<strong>骨干类的服务器，做好服务VM的标准化，回复工单，客户类的服务器开设好之后回复工单。</strong></p>
 <p><a class="reference internal" href="../../../_images/image5.png"><img alt="image1" src="../../../_images/image5.png" style="width: 6.26736in; height: 2.97014in;" /></a></p>
 </section>
 </section>
@@ -111,7 +153,10 @@ VM的配置需求 网卡：说明需求的网卡数量、必要时提供ip      
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="系统日常操作手册" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../zabbix4.4%E6%90%AD%E5%BB%BA.html" class="btn btn-neutral float-right" title="zabbix4.4搭建" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 

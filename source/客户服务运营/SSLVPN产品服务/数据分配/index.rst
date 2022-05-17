@@ -7,4 +7,4 @@
 .. toctree::
    :maxdepth: 1
 
-   gzd-sslvpn3数据分配
+   gzd-sslvpn3使用手册

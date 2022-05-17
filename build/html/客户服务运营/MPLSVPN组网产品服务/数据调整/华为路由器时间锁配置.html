@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>时间锁要求 &mdash; SOP 1.0 文档</title>
+  <title>华为路由器时间锁配置 &mdash; SOP 1.0 文档</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/my_theme.css" type="text/css" />
@@ -44,8 +44,11 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">MPLSVPN组网产品服务</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">数据调整</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">时间锁要求</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id2">配置</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">华为路由器时间锁配置</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id2">时间锁要求</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">配置</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -80,7 +83,7 @@
           <li><a href="../../index.html">&lt;no title&gt;</a> &raquo;</li>
           <li><a href="../index.html">MPLSVPN组网产品服务</a> &raquo;</li>
           <li><a href="index.html">数据调整</a> &raquo;</li>
-      <li>时间锁要求</li>
+      <li>华为路由器时间锁配置</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../../_sources/客户服务运营/MPLSVPN组网产品服务/数据调整/华为路由器时间锁配置.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -90,14 +93,15 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <p>华为路由器时间锁配置</p>
-<section id="id1">
-<h1>时间锁要求<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+  <section id="id1">
+<h1>华为路由器时间锁配置<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<section id="id2">
+<h2>时间锁要求<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>时间锁：6:00-20:00—75M</p>
 <p>  20:00—60:00–10M</p>
 </section>
-<section id="id2">
-<h1>配置<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h1>
+<section id="id3">
+<h2>配置<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
 <p>时间段配置</p>
 <p> time-range A602710_T1 06:00 to 20:00 daily</p>
 <p> time-range A602710_T2 20:01 to 00:00 daily</p>
@@ -139,6 +143,7 @@ behavior-name ]，查看已配置的流行为信息。</p>
 classifier-name ] ]，查看流策略的配置信息。</p>
 <p>执行命令display traffic-policy applied-record [ policy-name
 ]，查看流策略的应用记录。</p>
+</section>
 </section>
 
 

@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>第一步 创建用户 &mdash; SOP 1.0 文档</title>
+  <title>GZD-SSLVPN3手册 &mdash; SOP 1.0 文档</title>
       <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../../_static/my_theme.css" type="text/css" />
@@ -46,9 +46,12 @@
 <li class="toctree-l1"><a class="reference internal" href="../../FastIP%E4%BA%A7%E5%93%81%E6%9C%8D%E5%8A%A1/index.html">FastIP产品服务</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">SSLVPN产品服务</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">数据分配</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">第一步 创建用户</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#vrf">第二步 创建vrf</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id2">第三步 建立隧道，并划分至vrf</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">GZD-SSLVPN3手册</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">第一步 创建用户</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#vrf">第二步 创建vrf</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">第三步 建立隧道，并划分至vrf</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -81,7 +84,7 @@
           <li><a href="../../index.html">&lt;no title&gt;</a> &raquo;</li>
           <li><a href="../index.html">SSLVPN产品服务</a> &raquo;</li>
           <li><a href="index.html">数据分配</a> &raquo;</li>
-      <li>第一步 创建用户</li>
+      <li>GZD-SSLVPN3手册</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../../../_sources/客户服务运营/SSLVPN产品服务/数据分配/gzd-sslvpn3使用手册.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -91,9 +94,10 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <p>GZD-SSLVPN3手册</p>
+  <section id="gzd-sslvpn3">
+<h1>GZD-SSLVPN3手册<a class="headerlink" href="#gzd-sslvpn3" title="永久链接至标题">¶</a></h1>
 <section id="id1">
-<h1>第一步 创建用户<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<h2>第一步 创建用户<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <p>sslvpn_useradd 123456 1 123456A 1</p>
 <p>—–123456是CID,账号会从12345601开始，第一个1表示是创建一个账号（2个账号就是2，）6000563A是组，1表示是随机密码</p>
 <p>这个会自动生成账号密码、vrf-123456A和/etc/ocserv/config-per-group/组的配置文件</p>
@@ -104,7 +108,7 @@
 <p>ocpasswd -c /etc/ocserv/ocpasswd -g <strong>123456A</strong> <strong>12345601</strong></p>
 </section>
 <section id="vrf">
-<h1>第二步 创建vrf<a class="headerlink" href="#vrf" title="永久链接至标题">¶</a></h1>
+<h2>第二步 创建vrf<a class="headerlink" href="#vrf" title="永久链接至标题">¶</a></h2>
 <p>ip link add vrf-123456A type vrf table 23456</p>
 <p>ip link set dev vrf-123456A up</p>
 <p><strong>这个配置需要先贴</strong></p>
@@ -113,7 +117,7 @@
 <p><a class="reference internal" href="../../../_images/image2.png"><img alt="image1" src="../../../_images/image2.png" style="width: 5.76528in; height: 2.66736in;" /></a></p>
 </section>
 <section id="id2">
-<h1>第三步 建立隧道，并划分至vrf<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h1>
+<h2>第三步 建立隧道，并划分至vrf<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
 <p>如果需要分配Tunnel</p>
 <p>ip tunnel add gre17157 mode gre local 1.1.1.1 remote 2.2.2.2</p>
 <p>ip addr add 10.10.10.0/30 dev gre17157</p>
@@ -146,6 +150,7 @@
 <p>启动tunnel</p>
 <p>systemctl restart <a class="reference external" href="mailto:openvpn-server&#37;&#52;&#48;vtun17157&#46;service">openvpn-server<span>&#64;</span>vtun17157<span>&#46;</span>service</a></p>
 <p>systemctl enable <a class="reference external" href="mailto:openvpn-server&#37;&#52;&#48;vtun17157&#46;service">openvpn-server<span>&#64;</span>vtun17157<span>&#46;</span>service</a></p>
+</section>
 </section>
 
 
